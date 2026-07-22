@@ -1,158 +1,158 @@
-# 📘 Guía de Uso Oficial — Plataforma Trebond Inmobiliaria
+# 📘 Guía de Uso Oficial & Manual del Cliente — Trebond Inmobiliaria
 
-**Documento de Capacitación y Prueba para Usuario Final y Cliente**  
+**Plataforma Integral de Gestión Inmobiliaria**  
 **Versión:** 1.0.0 (Producción) | **Fecha:** Julio 2026
 
 ---
 
 ## 📋 Contenido del Documento
 
-1. [Bienvenida e Introducción](#1-bienvenida-e-introducción)
-2. [Enlaces de Acceso a la Plataforma](#2-enlaces-de-acceso-a-la-plataforma)
-3. [Credenciales de Prueba y Cuentas Precargadas](#3-credenciales-de-prueba-y-cuentas-precargadas)
-4. [Guía de Uso: Postulantes e Inquilinos](#4-guía-de-uso-postulantes-e-inquilinos)
-5. [Guía de Uso: Propietarios](#5-guía-de-uso-propietarios)
-6. [Guía de Uso: Panel de Administración Inmobiliaria](#6-guía-de-uso-panel-de-administración-inmobiliaria)
-7. [Novedad: Mapa Interactivo de Propiedades y GPS](#7-novedad-mapa-interactivo-de-propiedades-y-gps)
-8. [Paso a Paso: Guía de Prueba E2E Recomendada](#8-paso-a-paso-guía-de-prueba-e2e-recomendada)
-9. [Preguntas Frecuentes y Soporte](#9-preguntas-frecuentes-y-soporte)
+1. [Enlaces de Acceso a Producción](#1-enlaces-de-acceso-a-producción)
+2. [Cuentas de Prueba Precargadas](#2-cuentas-de-prueba-precargadas)
+3. [Panel de Administración — Los 24 Módulos Operativos](#3-panel-de-administración--los-24-módulos-operativos)
+4. [Guía de Uso: Portal del Inquilino y Postulantes](#4-guía-de-uso-portal-del-inquilino-y-postulantes)
+5. [Guía de Uso: Portal del Propietario](#5-guía-de-uso-portal-del-propietario)
+6. [Novedad: Mapa Interactivo & Integración GPS Google Maps](#6-novedad-mapa-interactivo--integración-gps-google-maps)
+7. [Guía de Validación Rápida E2E (5 Minutos)](#7-guía-de-validación-rápida-e2e-5-minutos)
 
 ---
 
-## 1. Bienvenida e Introducción
+## 1. Enlaces de Acceso a Producción
 
-Bienvenido a la **Plataforma Trebond Inmobiliaria**. Esta herramienta integral ha sido diseñada para digitalizar y automatizar por completo la gestión inmobiliaria:
-
-- **Para Inquilinos y Buscadores:** Búsqueda geográfica en mapa, agendamiento de visitas, postulación con carga de documentación, firma digital de contratos y gestión de pagos/mantenimiento online.
-- **Para Propietarios:** Consulta del estado de sus inmuebles, firma digital de contratos y recepción de liquidaciones mensuales.
-- **Para la Inmobiliaria (Administrador):** Control centralizado de propiedades, aprobación de solicitudes, gestión de contratos, cobranzas, liquidaciones, facturación AFIP y control de mantenimiento.
-
----
-
-## 2. Enlaces de Acceso a la Plataforma
-
-Para probar la plataforma en producción desde cualquier navegador (computadora, tablet o celular), utilice los siguientes enlaces:
-
-| Servicio | URL de Acceso | Descripción |
+| Servicio / Pantalla | URL Directa | Propósito |
 |---|---|---|
-| 🏠 **Portal Web Principal** | [https://trebond-frontend.vercel.app](https://trebond-frontend.vercel.app) | Plataforma de acceso para todos los usuarios. |
-| 🗺️ **Mapa Interactivo de Propiedades** | [https://trebond-frontend.vercel.app/mapa](https://trebond-frontend.vercel.app/mapa) | Exploración geográfica en pantalla completa de todos los inmuebles disponibles. |
-| 🔑 **Iniciar Sesión** | [https://trebond-frontend.vercel.app/login](https://trebond-frontend.vercel.app/login) | Formulario de acceso por email y contraseña. |
-| 📝 **Registro de Usuarios** | [https://trebond-frontend.vercel.app/signup](https://trebond-frontend.vercel.app/signup) | Registro de nuevas cuentas. |
+| **Portal Web Público** | [https://trebond-frontend.vercel.app](https://trebond-frontend.vercel.app) | Catálogo de inmuebles, landing y accesos. |
+| **Mapa Interactivo 全屏** | [https://trebond-frontend.vercel.app/mapa](https://trebond-frontend.vercel.app/mapa) | Mapa panorámico con todos los inmuebles y GPS. |
+| **Inicio de Sesión** | [https://trebond-frontend.vercel.app/login](https://trebond-frontend.vercel.app/login) | Formulario de acceso para todos los roles. |
+| **Registro de Cuentas** | [https://trebond-frontend.vercel.app/signup](https://trebond-frontend.vercel.app/signup) | Registro de nuevas cuentas. |
+| **Servidor API Backend** | [https://trebond-app-production.up.railway.app](https://trebond-app-production.up.railway.app) | API REST en Railway. |
 
 ---
 
-## 3. Credenciales de Prueba y Cuentas Precargadas
+## 2. Cuentas de Prueba Precargadas
 
-> [!IMPORTANT]
-> Se han habilitado las siguientes cuentas de prueba precargadas en el servidor de producción. Puede utilizarlas inmediatamente para ingresar con distintos roles sin necesidad de configurar nada previamente:
-
-| Rol | Correo Electrónico | Contraseña | Permisos y Vistas |
+| Rol de Usuario | Email de Acceso | Contraseña | Alcance de Permisos |
 |---|---|---|---|
-| 🔴 **Administrador** | `admin@trebond.com` | `admin123` | Control total del sistema: aprobación de postulantes, creación de contratos, cobranzas, liquidaciones y balances. |
-| 🟠 **Propietario** | `marcelo.rodriguez@owner.com` | `admin123` | Acceso a sus propiedades, firma digital de alquileres y liquidaciones recibidas. |
-| 🟢 **Inquilino** | `carlos@tenant.com` | `admin123` | Acceso a su contrato activo, carga de comprobantes de pago de alquiler/expensas y solicitudes de mantenimiento. |
+| 🔴 **Administrador** | `admin@trebond.com` | `admin123` | Control total: configuración de comisiones, aprobación de postulaciones, creación de contratos, cobranzas, liquidaciones y AFIP. |
+| 🟠 **Propietario** | `marcelo.rodriguez@owner.com` | `admin123` | Consulta de inmuebles propios, firma digital de alquileres con OTP y recibos de liquidación mensual. |
+| 🟢 **Inquilino** | `carlos@tenant.com` | `admin123` | Firma digital de contrato, carga de transferencias de pago de alquiler/expensas y creación de tickets de mantenimiento. |
 
 ---
 
-## 4. Guía de Uso: Postulantes e Inquilinos
+## 3. Panel de Administración (Los 24 Módulos Operativos)
 
-### 4.1 Búsqueda y Selección de Propiedades
-1. Ingrese a la plataforma y diríjase al catálogo en `/propiedades` o a la vista panorámica en `/mapa`.
-2. Utilice los filtros superiores para acotar la búsqueda por ciudad, tipo de inmueble (*Departamento, Casa, PH, Oficina*), tipo de operación (*Alquiler o Venta*) y rango de precio.
-3. Haga clic sobre la tarjeta o sobre el pin del mapa para acceder al **Detalle de la Propiedad**.
+Al iniciar sesión con `admin@trebond.com`, la barra lateral le otorga acceso a los 24 módulos operativos de la agencia:
 
-### 4.2 Galería de Fotos y Mapa GPS
-- **Visor a Pantalla Completa:** Al hacer clic sobre cualquier foto principal o miniatura, se desplegará el visor modal oscuro sin distracciones. Puede pasar de foto con las flechas en pantalla o con las teclas `←` y `→` de su teclado.
-- **Navegación GPS:** En la sección de ubicación del detalle o en los pins del mapa, haga clic en el botón **`📍 Ver en Google Maps`** para abrir la ubicación exacta en Google Maps.
+### ⚙️ 1. Configuración de la Agencia (`/admin/config-agencia`)
+Configuración central de la empresa: Nombre comercial, CUIT, dirección, teléfono y correo oficial. Permite definir:
+- **Comisión cobrada al propietario** (ej. 5%).
+- **Honorarios al inquilino** (ej. 4.5%).
+- **Fee inicial de redacción de contrato** (ej. 2 meses o valor fijo).
+- **Tasa de interés moratorio diario/mensual por pagos a destiempo** (ej. 2.5%).
+- **Días de tolerancia de pago** (ej. del 1 al 10 de cada mes).
 
-### 4.3 Postulación para Alquilar
-1. En el detalle del departamento que le interese, presione el botón **"Postularse para Alquilar"**.
-2. **Carga de Documentación:** Suba sus archivos requeridos (DNI frontal/dorso, últimos 3 recibos de sueldo y comprobante de garantía).
-3. Presione **"Enviar Postulación"**. Recibirá un mensaje de confirmación y el equipo de la inmobiliaria evaluará sus antecedentes.
+### 📊 2. Dashboard Principal & KPIs (`/admin/dashboard`)
+Visión ejecutiva del negocio. Muestra tarjetas métricas de Propiedades Totales, Contratos Activos, Cobranza Acumulada del Mes y Porcentaje de Vacancia, acompañados de gráficos de tendencia de ingresos de los últimos 6 meses.
 
-### 4.4 Firma Digital de Contrato
-1. Una vez que la administración apruebe su solicitud, ingrese al portal en `/portal/contratos`.
-2. Verifique las condiciones del contrato de alquiler generado.
-3. Presione **"Solicitar Código de Firma OTP"** (recibirá el código seguro en pantalla/email).
-4. Ingrese los dígitos del código y presione **"Confirmar y Firmar Contrato"**.
+### 👥 3. Gestión de Usuarios & Asignación de Roles (`/admin/usuarios`)
+Control de todos los usuarios registrados. Permite buscar por nombre o correo, cambiar el rol de cualquier usuario (convertir un `user` a `owner` o `tenant`), desactivar cuentas o **forzar el cierre de sesión remoto (Force Logout)**.
 
-### 4.5 Pago de Alquiler y Expensas
-1. Desde `/portal/pagos`, consulte el monto a abonar del mes en curso.
-2. Realice la transferencia bancaria y presione **"Cargar Comprobante de Pago"**.
-3. Adjunte la foto o PDF de su transferencia. Una vez validada por la inmobiliaria, podrá descargar su **Recibo Oficial en PDF**.
+### 🏠 4. Catálogo de Propiedades (`/admin/propiedades`)
+Alta, edición y eliminación de inmuebles. Permite cargar dirección, ciudad, precio, habitaciones, superficie, asignar el propietario del inmueble, cambiar su estado (`available`, `rented`, `maintenance`) y realizar la **carga masiva de fotografías de alta resolución**.
 
----
+### ✅ 5. Aprobación de Inmuebles de Dueños (`/admin/property-approvals`)
+Módulo de control de calidad. Revisa y aprueba las propiedades publicadas por propietarios o vendedores externos antes de hacerlas visibles en el catálogo público y en el mapa.
 
-## 5. Guía de Uso: Propietarios
+### 📝 6. Solicitudes de Alquiler & Conversión (`/admin/solicitudes`)
+Evaluación de postulantes. Muestra las solicitudes enviadas por interesados con su documentación adjunta (DNI, 3 recibos de sueldo y garantía). Al presionar **"Aprobar y Convertir"**, el sistema transforma al usuario en Inquilino oficial y redacta el borrador del contrato.
 
-### 5.1 Gestión de Mis Propiedades
-- Ingrese con su cuenta de Propietario (`marcelo.rodriguez@owner.com`).
-- En el panel principal visualizará la lista de sus inmuebles, estado de ocupación (*Alquilado / Disponible*) y valor locativo.
+### 📅 7. Gestión de Visitas & Agenda (`/admin/turnos`)
+Calendario de turnos agendados por clientes interesados para conocer propiedades. Permite asignar el agente inmobiliario que acompañará la visita y confirmar o reprogramar la cita.
 
-### 5.2 Firma Digital de Alquileres
-- Cuando un inquilino es aprobado y firma el contrato, recibirá una notificación.
-- Diríjase a su sección de Contratos, revise las cláusulas del alquiler, solicite su código OTP de seguridad e ingréselo para dejar el contrato **completamente vigente y firmado por ambas partes**.
+### ⏰ 8. Configuración de Horarios de Citas (`/admin/turnos/config`)
+Definición de días hábiles de atención (Lunes a Sábados), franjas horarias (ej. 09:00 a 18:00 hs) y duración estimada por visita (30 o 45 min) para habilitar en el turnero automático.
 
-### 5.3 Liquidaciones Mensuales
-- Desde la sección de Liquidaciones podrá consultar los pagos recibidos por la inmobiliaria.
-- Verá el desglose detallado: Alquiler bruto cobrado, deducción de comisión de administración, retenciones por arreglos y el **monto neto transferido a su cuenta bancaria**.
+### 🏷️ 9. Solicitudes de Tasación (`/admin/tasaciones`)
+Módulo para atender pedidos de vendedores que desean cotizar su propiedad. Permite asignar un tasador oficial, registrar la visita técnica e ingresar la valuación final de mercado.
 
----
+### 📜 10. Contratos Activos & Firma OTP (`/admin/contratos`)
+Módulo central contractual. Redacción de contratos de alquiler especificando valor mensual, depósito en garantía, comisión de la agencia, fecha de inicio/vencimiento y seguimiento de las firmas digitales del Inquilino y Propietario.
 
-## 6. Guía de Uso: Panel de Administración Inmobiliaria
+### 📈 11. Indexación por Inflación (`/admin/indexacion`)
+Reajuste periódico de alquileres. Permite aplicar los índices oficiales de actualización (ICL, IPC, IPIM), calcular automáticamente el nuevo canon locativo e informar por correo a las partes.
 
-> [!NOTE]
-> Para ingresar al panel administrativo, inicie sesión con `admin@trebond.com` / `admin123` y acceda a `/admin/dashboard`.
+### 🔒 12. Depósitos en Garantía (`/admin/depositos`)
+Control de los fondos de reserva en custodia. Administra la restitución del depósito al finalizar el contrato o la aplicación de deducciones por deudas o reparaciones.
 
-### 6.1 Control General (Dashboard)
-Visualice los indicadores de rendimiento de la oficina en tiempo real:
-- **KPIs:** Total de propiedades, Contratos activos, Cobranza acumulada del mes y Porcentaje de vacancia.
-- **Gráficos:** Evolución de ingresos y distribución de estados de pago.
+### 💰 13. Cobranzas & Validación de Pagos (`/admin/pagos`)
+Módulo de tesorería. Muestra los comprobantes de transferencia subidos por los inquilinos. Al hacer clic en **"Validar Pago"**, el sistema liquida la cuota, actualiza el estado de cuenta y emite el **Recibo Oficial en PDF**.
 
-### 6.2 Gestión de Solicitudes de Alquiler y Conversión
-1. Diríjase a **Solicitudes de Alquiler** (`/admin/solicitudes`).
-2. Haga clic en una solicitud pendiente para evaluar la documentación adjuntada por el postulante (DNI, recibos, garantía).
-3. Presione **"Aprobar y Convertir en Inquilino"**.
-4. El sistema convertirá automáticamente al usuario al rol de Inquilino y abrirá el formulario para confeccionar el nuevo contrato.
+### 🏢 14. Control de Expensas (`/admin/expensas`)
+Registro de liquidaciones de expensas enviadas por la administración del edificio, control de vencimientos y verificación de pago oportuno por parte del inquilino.
 
-### 6.3 Administración de Contratos e Indexación
-- **Creación:** Defina el monto inicial de alquiler, porcentaje de comisión de la agencia, fecha de inicio/fin y frecuencia de ajuste.
-- **Ajuste por Inflación (Indexación):** Al cumplirse el período de actualización, presione **"Indexar Contrato"**, ingrese el índice (ICL/IPC/IPIM) y el sistema recalculará los nuevos valores locativos notificando a las partes.
+### 💡 15. Control de Servicios de Inquilinos (`/admin/servicios-inquilinos`)
+Monitoreo de boletas de servicios públicos (Luz, Gas, Agua, Tasa Municipal) cargadas por el inquilino para garantizar el certificado de libre deuda continuo.
 
-### 6.4 Validaciones de Cobro y Facturación
-- En **Gestión de Pagos** (`/admin/pagos`), revise los comprobantes subidos por los inquilinos.
-- Al hacer clic en **"Validar Pago"**, el sistema emite automáticamente el recibo de cobro y actualiza la cuenta corriente.
+### 🎁 16. Bonificaciones & Descuentos (`/admin/bonificaciones`)
+Gestión de créditos o quitas especiales sobre el valor del alquiler (por ejemplo, cuando el inquilino abona arreglos a su cargo o por promociones de la inmobiliaria).
 
----
+### 💵 17. Liquidaciones a Propietarios (`/admin/liquidaciones`)
+Cálculo de rendición mensual al dueña del inmueble. Descuenta la comisión de administración (5%) y retenciones por mantenimiento, emitiendo la orden de pago y comprobante de liquidación PDF.
 
-## 7. Novedad: Mapa Interactivo de Propiedades y GPS
+### 📖 18. Cuenta Corriente (`/admin/cuenta-corriente`)
+Libro mayor contable por cliente. Detalla el historial completo de débitos (alquileres, honorarios) y créditos (pagos, transferencias) por contrato.
 
-Se ha incorporado una nueva vista geográfica avanzada accesible desde el menú principal haciendo clic en **"Mapa"**:
+### 🏦 19. Caja & Bancos (`/admin/caja`)
+Flujo de fondos diario de la inmobiliaria. Registra ingresos en efectivo, cobranzas bancarias, pago a proveedores y retiros.
 
-- **Página `/mapa`:** Visualice en pantalla completa la ubicación de todas las propiedades disponibles en la ciudad.
-- **Selección Dinámica:** Al hacer clic en cualquier tarjeta del listado lateral, el mapa se desplazará automáticamente hacia la ubicación del departamento.
-- **Filtros Geográficos:** Filtre instantáneamente por zona, tipo de propiedad o rango de precio.
-- **Acceso GPS Directo:** En la ventana emergente de cada pin, el botón **`📍 Ver en Google Maps`** permite abrir la posición exacta en la aplicación de Google Maps de su teléfono o navegador para iniciar la navegación guiada por GPS.
+### 🧾 20. Facturación Electrónica AFIP (`/admin/facturacion`)
+Integración directa con los servidores de la AFIP. Emisión de Facturas electrónicas A, B y C con código CAE oficial para el cobro de comisiones y servicios.
 
----
+### 🛠️ 21. Reclamos & Tickets de Mantenimiento (`/admin/mantenimiento`)
+Módulo de incidencias. Recibe las solicitudes de reparación enviadas por los inquilinos (ej. filtración, cortocircuito). Asigna el proveedor de la agencia, fija prioridad, sigue el arreglo y carga el gasto.
 
-## 8. Paso a Paso: Guía de Prueba E2E Recomendada
+### 🔧 22. Gestión de Proveedores (`/admin/proveedores`)
+Directorio de especialistas de confianza (plomeros, electricistas, gasistas, cerrajeros). Almacena contacto, rubro, historial de trabajos y datos de facturación.
 
-Para validar todo el flujo del sistema en 5 minutos de principio a fin:
+### 📈 23. Reportes de Vacancia & Mercado (`/admin/reportes`)
+Informes analíticos sobre tasa de vacancia, tiempo promedio de publicación antes de alquilar y rendimiento porcentual de alquiler por zona.
 
-1. **Paso 1 (Postulación):** Ingrese a [https://trebond-frontend.vercel.app/propiedades](https://trebond-frontend.vercel.app/propiedades), elija un departamento y postúlese adjuntando archivos de prueba.
-2. **Paso 2 (Aprobación Admin):** Inicie sesión como Admin (`admin@trebond.com` / `admin123`), vaya a `/admin/solicitudes`, revise la postulación y presione **Aprobar**.
-3. **Paso 3 (Firma Inquilino):** Inicie sesión con la cuenta postulante, vaya a `/portal/contratos`, solicite el código OTP y confirme la firma digital.
-4. **Paso 4 (Firma Propietario):** Inicie sesión como Propietario (`marcelo.rodriguez@owner.com` / `admin123`), vaya a su panel de contratos y confirme la firma con su OTP.
-5. **Paso 5 (Pago y Recibo):** Desde el portal de inquilino suba un comprobante de pago de prueba, luego como Admin en `/admin/pagos` presione **Validar** y descargue el **Recibo PDF**.
+### 🔐 24. Auditoría & Logs de Seguridad (`/admin/seguridad`)
+Registro inalterable de eventos: inicios de sesión, cambios de roles, modificaciones de valores locativos e intentos de ingreso fallidos.
 
 ---
 
-## 9. Preguntas Frecuentes y Soporte
+## 4. Guía de Uso: Portal del Inquilino y Postulantes
 
-- **¿Cómo registro un usuario nuevo con un rol específico?**  
-  Cree la cuenta normalmente desde `/signup`. Luego inicie sesión como Admin, vaya a `/admin/usuarios` y cambie el rol de la cuenta registrada a `owner`, `tenant`, etc.
-- **¿Qué sucede si un usuario olvida su contraseña?**  
-  Puede utilizar la opción "Recuperar Contraseña" en la pantalla de ingreso o el administrador puede forzar el reinicio desde `/admin/usuarios`.
-- **Soporte Técnico:** Para consultas o solicitudes adicionales sobre la plataforma, contactar al equipo de desarrollo de Trebond.
+1. **Búsqueda y Navegación:** Explore propiedades en `/propiedades` o en el mapa panorámico `/mapa`.
+2. **Visor de Fotos y Ubicación GPS:** Abra fotos a pantalla completa y navegue con flechas. Presione `📍 Ver en Google Maps` para abrir las coordenadas GPS.
+3. **Postulación y Carga de Documentación:** Desde el detalle del inmueble presione **"Postularse para Alquilar"** y adjunte su DNI, 3 recibos de sueldo y garantía.
+4. **Firma Digital de Contrato:** Una vez aprobado, acceda a `/portal/contratos`, solicite el código OTP e ingréselo para firmar digitalmente.
+5. **Carga de Pagos:** En `/portal/pagos` adjunte el comprobante de transferencia para que la administración emita el Recibo PDF.
+6. **Tickets de Mantenimiento:** En `/portal/mantenimiento/nuevo` reporte filtraciones o averías indicando categoría (Plomería, Gas, Electricidad), urgencia y fotos del daño.
+7. **Mi Perfil & Seguridad:** En `/portal/perfil` actualice sus datos personales o cambie su contraseña.
+
+---
+
+## 5. Guía de Uso: Portal del Propietario
+
+1. **Estado de Inmuebles:** Visualice sus propiedades ocupadas o disponibles con su respectivo valor locativo.
+2. **Firma Digital de Alquileres:** Al generarse un nuevo contrato, verifique las cláusulas e ingrese su clave OTP para validar la firma.
+3. **Liquidaciones Mensuales:** Consulte la rendición de cobros: Alquiler bruto (-) comisión agencia (5%) (-) retenciones por arreglos = Neto transferido a su cuenta bancaria. Descargue el comprobante PDF.
+
+---
+
+## 6. Novedad: Mapa Interactivo & Integración GPS Google Maps
+
+- **Vista Panorama `/mapa`:** Mapa geográfico interactivo de pantalla completa con todas las propiedades disponibles.
+- **Sincronización Panel-Mapa:** Al seleccionar una tarjeta en la lista lateral, el mapa se desplaza suavemente hacia su posición exacta.
+- **Botón GPS:** El botón `📍 Ver en Google Maps` en cada pin abre las coordenadas en Google Maps para navegación giro a giro o Street View.
+
+---
+
+## 7. Guía de Validación Rápida E2E (5 Minutos)
+
+1. **Postulación:** Ingrese a [/propiedades](https://trebond-frontend.vercel.app/propiedades), elija un departamento y postúlese subiendo archivos.
+2. **Aprobación Admin:** Inicie sesión como Admin (`admin@trebond.com` / `admin123`), vaya a `/admin/solicitudes` y apruebe la postulación.
+3. **Firmas Digitales:** Inicie sesión como inquilino y luego como propietario para firmar el contrato usando el sistema OTP.
+4. **Pago y Liquidación:** Suba un comprobante como inquilino, valídelo en `/admin/pagos`, descargue el Recibo PDF y emita la liquidación al dueño en `/admin/liquidaciones`.
