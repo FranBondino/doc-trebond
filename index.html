@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía de Uso Oficial — Trebond Inmobiliaria</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    
+    @page {
+      size: A4;
+      margin: 20mm 15mm;
+    }
+    
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: #0f172a;
+      background-color: #f8fafc;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    /* Floating Print Button */
+    .no-print-bar {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 9999;
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-print {
+      background-color: #003345;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px -5px rgba(0, 51, 69, 0.4);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-print:hover {
+      transform: translateY(-2px);
+      background-color: #002230;
+      box-shadow: 0 15px 30px -5px rgba(0, 51, 69, 0.5);
+    }
+
+    /* Container */
+    .document-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background-color: white;
+      padding: 60px 70px;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Cover Header */
+    .cover-header {
+      border-bottom: 3px solid #003345;
+      padding-bottom: 30px;
+      margin-bottom: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .brand-title {
+      font-size: 32px;
+      font-weight: 900;
+      color: #003345;
+      letter-spacing: -1px;
+      margin: 0;
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      font-size: 14px;
+      color: #64748b;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-top: 6px;
+    }
+
+    .doc-meta {
+      text-align: right;
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .doc-meta strong {
+      color: #0f172a;
+    }
+
+    /* Section Headings */
+    h2 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #003345;
+      border-left: 4px solid #003345;
+      padding-left: 14px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+      page-break-after: avoid;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      page-break-after: avoid;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #334155;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 13px;
+      page-break-inside: avoid;
+    }
+
+    th {
+      background-color: #003345;
+      color: white;
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 16px;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e2e8f0;
+      color: #334155;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #f8fafc;
+    }
+
+    /* Badges & Highlights */
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-admin { background-color: #fee2e2; color: #991b1b; }
+    .badge-owner { background-color: #ffedd5; color: #9a3412; }
+    .badge-tenant { background-color: #dcfce7; color: #166534; }
+    .badge-user { background-color: #e0f2fe; color: #075985; }
+
+    /* Callout Boxes */
+    .callout {
+      background-color: #f0fdf4;
+      border-left: 4px solid #16a34a;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      font-size: 13px;
+      page-break-inside: avoid;
+    }
+
+    .callout-title {
+      font-weight: 800;
+      color: #166534;
+      margin-bottom: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .callout-blue {
+      background-color: #f0f9ff;
+      border-left-color: #0284c7;
+    }
+    .callout-blue .callout-title { color: #0369a1; }
+
+    /* Step Cards */
+    .step-card {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      background-color: #003345;
+      color: white;
+      font-weight: 800;
+      font-size: 12px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .step-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    /* Print CSS */
+    @media print {
+      body {
+        background-color: white;
+        font-size: 12px;
+      }
+      .no-print-bar {
+        display: none !important;
+      }
+      .document-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+      }
+      .page-break {
+        page-break-after: always;
+      }
+      a {
+        text-decoration: none;
+        color: #0f172a;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Print Button -->
+  <div class="no-print-bar">
+    <button class="btn-print" onclick="window.print()">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Imprimir / Guardar como PDF
+    </button>
+  </div>
+
+  <div class="document-container">
+    <!-- Header / Cover -->
+    <div class="cover-header">
+      <div>
+        <h1 class="brand-title">Trebond Inmobiliaria</h1>
+        <div class="brand-subtitle">Guía de Uso Oficial & Manual de Cliente</div>
+      </div>
+      <div class="doc-meta">
+        <div><strong>Versión:</strong> 1.0.0 (Producción)</div>
+        <div><strong>Fecha:</strong> Julio 2026</div>
+        <div><strong>Documento:</strong> Manual de Usuario Final</div>
+      </div>
+    </div>
+
+    <!-- Intro -->
+    <div class="callout callout-blue">
+      <div class="callout-title">📌 Introducción y Propósito del Documento</div>
+      Este documento contiene la guía de uso completa y las credenciales de acceso para validar la versión final en producción de la plataforma inmobiliaria <strong>Trebond</strong>. Permite recorrer de principio a fin los flujos de postulación, firmas digitales, cobranzas, mapa interactivo y liquidaciones.
+    </div>
+
+    <!-- Section 1: URLs -->
+    <h2>1. Enlaces de Acceso a la Plataforma</h2>
+    <p>Para ingresar al sistema desde cualquier navegador web (computadora, tablet o smartphone), utilice los siguientes enlaces oficiales:</p>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Módulo / Pantalla</th>
+          <th>URL de Acceso</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Plataforma Principal</strong></td>
+          <td><a href="https://trebond-frontend.vercel.app" target="_blank">https://trebond-frontend.vercel.app</a></td>
+          <td>Portal público y de usuarios generales.</td>
+        </tr>
+        <tr>
+          <td><strong>Mapa Interactivo</strong></td>
+          <td><a href="https://trebond-frontend.vercel.app/mapa" target="_blank">https://trebond-frontend.vercel.app/mapa</a></td>
+          <td>Vista geográfica pantalla completa de todas las propiedades.</td>
+        </tr>
+        <tr>
+          <td><strong>Ingreso de Usuarios</strong></td>
+          <td><a href="https://trebond-frontend.vercel.app/login" target="_blank">https://trebond-frontend.vercel.app/login</a></td>
+          <td>Formulario de inicio de sesión.</td>
+        </tr>
+        <tr>
+          <td><strong>Registro de Cuentas</strong></td>
+          <td><a href="https://trebond-frontend.vercel.app/signup" target="_blank">https://trebond-frontend.vercel.app/signup</a></td>
+          <td>Formulario para alta de nuevos usuarios.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Section 2: Credentials -->
+    <h2>2. Credenciales de Prueba Precargadas</h2>
+    <p>La base de datos de producción cuenta con las siguientes cuentas precargadas para probar los diferentes roles del sistema:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Rol de Usuario</th>
+          <th>Correo Electrónico</th>
+          <th>Contraseña</th>
+          <th>Permisos y Cobertura</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="badge badge-admin">🔴 Administrador</span></td>
+          <td><code>admin@trebond.com</code></td>
+          <td><code>admin123</code></td>
+          <td>Control total: aprobación de postulantes, creación de contratos, cobranzas, liquidaciones y balances.</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-owner">🟠 Propietario</span></td>
+          <td><code>marcelo.rodriguez@owner.com</code></td>
+          <td><code>admin123</code></td>
+          <td>Consulta de inmuebles propios, firma digital de contratos y liquidaciones emitidas.</td>
+        </tr>
+        <tr>
+          <td><span class="badge badge-tenant">🟢 Inquilino</span></td>
+          <td><code>carlos@tenant.com</code></td>
+          <td><code>admin123</code></td>
+          <td>Consulta de contrato activo, pago de alquiler/expensas y tickets de mantenimiento.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-break"></div>
+
+    <!-- Section 3: Inquilino Flow -->
+    <h2>3. Guía de Uso: Postulantes e Inquilinos</h2>
+
+    <div class="step-card">
+      <div class="step-title">
+        <span class="step-number">1</span> Búsqueda y Navegación de Propiedades
+      </div>
+      Ingrese a <code>/propiedades</code> o a la vista panorámica <code>/mapa</code>. Utilice los filtros por zona, tipo de inmueble (<em>Departamento, Casa, PH</em>), operación (<em>Alquiler/Venta</em>) y rango de precio.
+    </div>
+
+    <div class="step-card">
+      <div class="step-title">
+        <span class="step-number">2</span> Visor de Fotos y Ubicación GPS
+      </div>
+      Al hacer clic en cualquier imagen, se abrirá el visor modal de alta definición (navegación por flechas o teclado con <code>←</code> y <code>→</code>). En el mapa, haga clic en <strong>"📍 Ver en Google Maps"</strong> para abrir las coordenadas en Google Maps.
+    </div>
+
+    <div class="step-card">
+      <div class="step-title">
+        <span class="step-number">3</span> Postulación y Carga de Documentos
+      </div>
+      Presione <strong>"Postularse para Alquilar"</strong> en el detalle de la propiedad. Adjunte su DNI frontal/dorso, los últimos 3 recibos de sueldo y el comprobante de garantía. Envíe la solicitud para revisión.
+    </div>
+
+    <div class="step-card">
+      <div class="step-title">
+        <span class="step-number">4</span> Firma Digital del Contrato
+      </div>
+      Una vez aprobada la postulación por la administración, ingrese a <code>/portal/contratos</code>. Revise el contrato, presione <strong>"Solicitar Código OTP"</strong> e ingrese los 6 dígitos para firmar digitalmente.
+    </div>
+
+    <!-- Section 4: Propietarios -->
+    <h2>4. Guía de Uso: Propietarios</h2>
+
+    <div class="step-card">
+      <div class="step-title">
+        <span class="step-number">1</span> Estado de Propiedades
+      </div>
+      Al ingresar con su cuenta (<code>marcelo.rodriguez@owner.com</code>), podrá visualizar el listado de sus inmuebles, su estado de ocupación y el precio locativo fijado.
+    </div>
+
+    <div class="step-card">
+      <div class="step-title">
+        <span class="step-number">2</span> Firma Digital de Alquileres
+      </div>
+      Cuando se genera un nuevo alquiler sobre su propiedad, accederá al contrato desde el portal, solicitará su código OTP de seguridad e ingresará la clave para validar la firma del propietario.
+    </div>
+
+    <div class="step-card">
+      <div class="step-title">
+        <span class="step-number">3</span> Liquidaciones Mensuales
+      </div>
+      En el panel de liquidaciones podrá consultar el detalle de cobros: Alquiler bruto cobrado, descuento de comisión de administración, retenciones por arreglos y el <strong>neto transferido a su cuenta bancaria</strong>.
+    </div>
+
+    <!-- Section 5: Admin Panel -->
+    <h2>5. Guía de Uso: Panel de Administración Inmobiliaria</h2>
+    <p>Para ingresar al panel de administración inicie sesión con <code>admin@trebond.com</code> y acceda a <code>/admin/dashboard</code>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Módulo Administrador</th>
+          <th>Ruta en Sistema</th>
+          <th>Acciones Principales</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Dashboard / Métricas</strong></td>
+          <td><code>/admin/dashboard</code></td>
+          <td>KPIs de cobranzas del mes, vacancia, contratos activos y tendencias.</td>
+        </tr>
+        <tr>
+          <td><strong>Solicitudes de Alquiler</strong></td>
+          <td><code>/admin/solicitudes</code></td>
+          <td>Revisión de documentación de postulantes, aprobación y conversión automática a Inquilino.</td>
+        </tr>
+        <tr>
+          <td><strong>Gestión de Contratos</strong></td>
+          <td><code>/admin/contratos</code></td>
+          <td>Alta de contratos, ajuste e indexación por inflación (ICL/IPC/IPIM).</td>
+        </tr>
+        <tr>
+          <td><strong>Control de Pagos</strong></td>
+          <td><code>/admin/pagos</code></td>
+          <td>Validación de transferencias cargadas por inquilinos y generación de Recibo PDF.</td>
+        </tr>
+        <tr>
+          <td><strong>Liquidaciones a Dueños</strong></td>
+          <td><code>/admin/liquidaciones</code></td>
+          <td>Emisión de liquidaciones mensuales con cálculo automático de comisiones y gastos.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="page-break"></div>
+
+    <!-- Section 6: Mapa Interactivo -->
+    <h2>6. Novedad: Mapa Interactivo de Propiedades (`/mapa`)</h2>
+    
+    <div class="callout callout-blue">
+      <div class="callout-title">🗺️ Exploración Geográfica en Pantalla Completa</div>
+      La nueva vista <code>/mapa</code> integra un mapa geográfico interactivo de pantalla completa con todas las propiedades marcadas en la ciudad de Buenos Aires:
+      <ul style="margin-top: 8px; margin-bottom: 0; padding-left: 20px;">
+        <li><strong>Sincronización Panel-Mapa:</strong> Al hacer clic en cualquier tarjeta del menú lateral, el mapa se centra instantáneamente en el departamento.</li>
+        <li><strong>Filtros Simultáneos:</strong> Filtrado dinámico por zona, tipo de inmueble, tipo de operación y precio.</li>
+        <li><strong>Botón "Ver en Google Maps":</strong> Al tocar el pin de una propiedad, el botón rojo <code>📍 Ver en Google Maps</code> abre las coordenadas en la app móvil o web de Google Maps para navegación GPS o Street View.</li>
+      </ul>
+    </div>
+
+    <!-- Section 7: E2E Guide -->
+    <h2>7. Paso a Paso: Guía de Prueba E2E Recomendada (5 Minutos)</h2>
+
+    <ol style="padding-left: 20px; font-weight: 500;">
+      <li style="margin-bottom: 10px;"><strong>Postulación:</strong> Ingrese a <a href="https://trebond-frontend.vercel.app/propiedades" target="_blank">/propiedades</a>, seleccione un departamento y presione "Postularse para Alquilar" cargando archivos de prueba.</li>
+      <li style="margin-bottom: 10px;"><strong>Aprobación Admin:</strong> Inicie sesión como Admin (<code>admin@trebond.com</code> / <code>admin123</code>), acceda a <code>/admin/solicitudes</code> y presione <strong>Aprobar y Convertir en Inquilino</strong>.</li>
+      <li style="margin-bottom: 10px;"><strong>Firma Inquilino:</strong> Inicie sesión con la cuenta postulante, acceda a <code>/portal/contratos</code>, solicite su código OTP y firme el contrato.</li>
+      <li style="margin-bottom: 10px;"><strong>Firma Propietario:</strong> Inicie sesión como Propietario (<code>marcelo.rodriguez@owner.com</code> / <code>admin123</code>), acceda a su panel de contratos y confirme con su OTP.</li>
+      <li style="margin-bottom: 10px;"><strong>Pago y Recibo:</strong> Desde el portal de inquilino cargue un comprobante de pago, luego como Admin en <code>/admin/pagos</code> presione <strong>Validar</strong> y descargue el <strong>Recibo PDF</strong>.</li>
+    </ol>
+
+    <!-- Footer -->
+    <div style="margin-top: 60px; pt-30 border-top: 2px solid #e2e8f0; text-align: center; color: #94a3b8; font-size: 12px;">
+      Trebond Inmobiliaria &copy; 2026 — Plataforma de Gestión Inmobiliaria Integral. Todos los derechos reservados.
+    </div>
+
+  </div>
+
+</body>
+</html>
