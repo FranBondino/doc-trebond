@@ -7,13 +7,48 @@
 
 ## 📋 Contenido del Documento
 
-1. [Enlaces de Acceso a Producción](#1-enlaces-de-acceso-a-producción)
-2. [Cuentas de Prueba Precargadas](#2-cuentas-de-prueba-precargadas)
-3. [Panel de Administración — Los 24 Módulos Operativos](#3-panel-de-administración--los-24-módulos-operativos)
-4. [Guía de Uso: Portal del Inquilino y Postulantes](#4-guía-de-uso-portal-del-inquilino-y-postulantes)
-5. [Guía de Uso: Portal del Propietario](#5-guía-de-uso-portal-del-propietario)
-6. [Novedad: Mapa Interactivo & Integración GPS Google Maps](#6-novedad-mapa-interactivo--integración-gps-google-maps)
-7. [Guía de Validación Rápida E2E (5 Minutos)](#7-guía-de-validación-rápida-e2e-5-minutos)
+1. [💡 Recomendaciones para Probar la Plataforma (Carga Inicial)](#-recomendaciones-para-probar-la-plataforma-carga-inicial)
+2. [Enlaces de Acceso a Producción](#1-enlaces-de-acceso-a-producción)
+3. [Cuentas de Prueba Precargadas](#2-cuentas-de-prueba-precargadas)
+4. [Panel de Administración — Los 24 Módulos Operativos](#3-panel-de-administración--los-24-módulos-operativos)
+5. [Guía de Uso: Portal del Inquilino y Postulantes](#4-guía-de-uso-portal-del-inquilino-y-postulantes)
+6. [Guía de Uso: Portal del Propietario](#5-guía-de-uso-portal-del-propietario)
+7. [Novedad: Mapa Interactivo & Integración GPS Google Maps](#6-novedad-mapa-interactivo--integración-gps-google-maps)
+
+---
+
+## 💡 Recomendaciones para Probar la Plataforma (Carga Inicial)
+
+Dado que la plataforma se entrega lista para operar pero recién instalada, le sugerimos seguir este orden recomendado para crear datos de prueba y validar todo el sistema de manera limpia:
+
+### 1️⃣ Paso 1: Configurar la Agencia y Proveedores de Servicio
+- Inicie sesión como `admin@trebond.com` / `admin123`.
+- Ingrese a **Configuración de Agencia (`/admin/config-agencia`)**: Verifique los porcentajes de comisión del propietario (ej. 5%), inquilino (4.5%), tasa de interés por mora (2.5%) y guarde la configuración.
+- Ingrese a **Proveedores (`/admin/proveedores`)**: Cree 1 o 2 proveedores de prueba (ej. *"Plomería San Martín"* y *"Electricista González"* con teléfono y rubro) para poder asignar arreglos cuando los inquilinos abran tickets de mantenimiento.
+
+### 2️⃣ Paso 2: Crear una Propiedad de Prueba
+- En **Propiedades (`/admin/propiedades`)**, presione **"Agregar Propiedad"**.
+- Ingrese dirección (ej. *Av. del Libertador 1500*), ciudad, ambientes, superficie, valor locativo y seleccione como propietario a `marcelo.rodriguez@owner.com` (o cree un propietario nuevo en Usuarios).
+- Suba fotografías en alta resolución. Al guardar, la propiedad estará lista y aparecerá automáticamente en el mapa interactivo (`/mapa`) y en la web pública.
+
+### 3️⃣ Paso 3: Simular Postulación como Interesado
+- Abra una ventana de incógnito o registre una cuenta nueva en `/signup` (ej. `juan.perez@test.com`).
+- Explore la propiedad creada en `/propiedades` o en `/mapa` y presione **"Postularse para Alquilar"**.
+- Suba 3 documentos de prueba (imágenes o PDFs para DNI, recibo de sueldo y garantía) y envíe la postulación.
+
+### 4️⃣ Paso 4: Aprobar Solicitud y Redactar Contrato
+- Vuelva a la cuenta de Admin en **Solicitudes (`/admin/solicitudes`)**.
+- Revise la postulación de Juan Pérez y presione **"Aprobar y Convertir en Inquilino"**.
+- El sistema abrirá la pantalla de creación de contrato en `/admin/contratos`: confirme montos, plazos y envíe el borrador.
+
+### 5️⃣ Paso 5: Firmar Digitalmente con Clave OTP (Inquilino y Dueño)
+- Inicie sesión como el Inquilino recién convertido: en `/portal/contratos` presione **"Solicitar Código OTP"** e ingrese la clave recibida para firmar.
+- Inicie sesión como el Propietario (`marcelo.rodriguez@owner.com`): en su sección de contratos solicite su OTP y confirme la firma. El contrato pasa inmediatamente a estado **Activo (`active`)**.
+
+### 6️⃣ Paso 6: Probar Cobranzas, Ticket de Mantenimiento y Liquidación
+- **Pago de Alquiler:** Desde el Inquilino en `/portal/pagos` informe una transferencia subiendo un comprobante de prueba. Como Admin en `/admin/pagos` presione **Validar** y descargue el **Recibo PDF**.
+- **Mantenimiento:** Desde el Inquilino en `/portal/mantenimiento/nuevo` cree un reclamo por una pérdida de agua. Como Admin en `/admin/mantenimiento` asigne el plomero creado en el Paso 1 y cierre el ticket.
+- **Liquidación al Dueño:** Como Admin en `/admin/liquidaciones` genere la liquidación mensual. El sistema descontará la comisión (5%) y la reparación del plomero, emitiendo la **Liquidación PDF** final.
 
 ---
 
@@ -147,12 +182,3 @@ Registro inalterable de eventos: inicios de sesión, cambios de roles, modificac
 - **Vista Panorama `/mapa`:** Mapa geográfico interactivo de pantalla completa con todas las propiedades disponibles.
 - **Sincronización Panel-Mapa:** Al seleccionar una tarjeta en la lista lateral, el mapa se desplaza suavemente hacia su posición exacta.
 - **Botón GPS:** El botón `📍 Ver en Google Maps` en cada pin abre las coordenadas en Google Maps para navegación giro a giro o Street View.
-
----
-
-## 7. Guía de Validación Rápida E2E (5 Minutos)
-
-1. **Postulación:** Ingrese a [/propiedades](https://trebond-frontend.vercel.app/propiedades), elija un departamento y postúlese subiendo archivos.
-2. **Aprobación Admin:** Inicie sesión como Admin (`admin@trebond.com` / `admin123`), vaya a `/admin/solicitudes` y apruebe la postulación.
-3. **Firmas Digitales:** Inicie sesión como inquilino y luego como propietario para firmar el contrato usando el sistema OTP.
-4. **Pago y Liquidación:** Suba un comprobante como inquilino, valídelo en `/admin/pagos`, descargue el Recibo PDF y emita la liquidación al dueño en `/admin/liquidaciones`.

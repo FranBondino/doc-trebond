@@ -288,7 +288,7 @@
     <div class="cover-header">
       <div>
         <h1 class="brand-title">Trebond Inmobiliaria</h1>
-        <div class="brand-subtitle">Manual Exhaustivo de Uso & Guía de Cliente Completa</div>
+        <div class="brand-subtitle">Manual Exhaustivo de Uso & Guía de Prueba Inicial</div>
       </div>
       <div class="doc-meta">
         <div><strong>Versión:</strong> 1.0.0 (Producción)</div>
@@ -300,8 +300,55 @@
     <!-- Intro Callout -->
     <div class="callout callout-blue">
       <div class="callout-title">📌 Documentación Integral de la Plataforma</div>
-      Este manual detalla <strong>todas y cada una de las páginas, formularios, módulos y configuraciones</strong> del sistema inmobiliario Trebond. Sirve como referencia completa tanto para el cliente final como para los usuarios operativos de la inmobiliaria (Administradores, Propietarios, Inquilinos y Buscadores).
+      Este manual detalla <strong>todas y cada una de las páginas, formularios, módulos y configuraciones</strong> del sistema inmobiliario Trebond. Incluye una <strong>Guía de Recomendaciones para Probar la Plataforma desde Cero</strong> para poblar datos iniciales y validar todo el circuito sin quedar trabado.
     </div>
+
+    <!-- Section: Recomendaciones de Prueba Inicial -->
+    <h2>💡 Recomendaciones para Probar la Plataforma (Carga Inicial)</h2>
+    <p>Dado que la plataforma se entrega lista para operar pero recién instalada, le sugerimos seguir este orden recomendado para crear datos de prueba y validar todo el sistema de manera limpia:</p>
+
+    <div class="module-card" style="border-left: 4px solid #003345;">
+      <div class="module-title">1️⃣ Paso 1: Configurar la Agencia y Proveedores de Servicio</div>
+      - Inicie sesión como <code>admin@trebond.com</code> / <code>admin123</code>.<br>
+      - Ingrese a <strong>Configuración de Agencia (<code>/admin/config-agencia</code>)</strong>: Verifique los porcentajes de comisión del propietario (ej. 5%), inquilino (4.5%), tasa de interés por mora (2.5%) y guarde la configuración.<br>
+      - Ingrese a <strong>Proveedores (<code>/admin/proveedores</code>)</strong>: Cree 1 o 2 proveedores de prueba (ej. <em>"Plomería San Martín"</em> y <em>"Electricista González"</em> con teléfono y rubro) para poder asignar arreglos cuando los inquilinos abran tickets de mantenimiento.
+    </div>
+
+    <div class="module-card" style="border-left: 4px solid #0284c7;">
+      <div class="module-title">2️⃣ Paso 2: Crear una Propiedad de Prueba</div>
+      - En <strong>Propiedades (<code>/admin/propiedades</code>)</strong>, presione <strong>"Agregar Propiedad"</strong>.<br>
+      - Ingrese dirección (ej. <em>Av. del Libertador 1500</em>), ciudad, ambientes, superficie, valor locativo y seleccione como propietario a <code>marcelo.rodriguez@owner.com</code> (o cree un propietario nuevo en Usuarios).<br>
+      - Suba fotografías en alta resolución. Al guardar, la propiedad estará lista y aparecerá automáticamente en el mapa interactivo (<code>/mapa</code>) y en la web pública.
+    </div>
+
+    <div class="module-card" style="border-left: 4px solid #16a34a;">
+      <div class="module-title">3️⃣ Paso 3: Simular Postulación como Interesado</div>
+      - Abra una ventana de incógnito o registre una cuenta nueva en <code>/signup</code> (ej. <code>juan.perez@test.com</code>).<br>
+      - Explore la propiedad creada en <code>/propiedades</code> o en <code>/mapa</code> y presione <strong>"Postularse para Alquilar"</strong>.<br>
+      - Suba 3 documentos de prueba (imágenes o PDFs para DNI, recibo de sueldo y garantía) y envíe la postulación.
+    </div>
+
+    <div class="module-card" style="border-left: 4px solid #d97706;">
+      <div class="module-title">4️⃣ Paso 4: Aprobar Solicitud y Redactar Contrato</div>
+      - Vuelva a la cuenta de Admin en <strong>Solicitudes (<code>/admin/solicitudes</code>)</strong>.<br>
+      - Revise la postulación de Juan Pérez y presione <strong>"Aprobar y Convertir en Inquilino"</strong>.<br>
+      - El sistema abrirá la pantalla de creación de contrato en <code>/admin/contratos</code>: confirme montos, plazos y envíe el borrador.
+    </div>
+
+    <div class="module-card" style="border-left: 4px solid #9333ea;">
+      <div class="module-title">5️⃣ Paso 5: Firmar Digitalmente con Clave OTP (Inquilino y Dueño)</div>
+      - Inicie sesión como el Inquilino recién convertido: en <code>/portal/contratos</code> presione <strong>"Solicitar Código OTP"</strong> e ingrese la clave recibida para firmar.<br>
+      - Inicie sesión como el Propietario (<code>marcelo.rodriguez@owner.com</code>): en su sección de contratos solicite su OTP y confirme la firma. El contrato pasa inmediatamente a estado <strong>Activo (<code>active</code>)</strong>.
+    </div>
+
+    <div class="module-card" style="border-left: 4px solid #e11d48;">
+      <div class="module-title">6️⃣ Paso 6: Probar Cobranzas, Ticket de Mantenimiento y Liquidación</div>
+      - <strong>Pago de Alquiler:</strong> Desde el Inquilino en <code>/portal/pagos</code> informe una transferencia subiendo un comprobante de prueba. Como Admin en <code>/admin/pagos</code> presione <strong>Validar</strong> y descargue el <strong>Recibo PDF</strong>.<br>
+      - <strong>Mantenimiento:</strong> Desde el Inquilino en <code>/portal/mantenimiento/nuevo</code> cree un reclamo por una pérdida de agua. Como Admin en <code>/admin/mantenimiento</code> asigne el plomero creado en el Paso 1 y cierre el ticket.<br>
+      - <strong>Liquidación al Dueño:</strong> Como Admin en <code>/admin/liquidaciones</code> genere la liquidación mensual. El sistema descontará la comisión (5%) y la reparación del plomero, emitiendo la <strong>Liquidación PDF</strong> final.
+    </div>
+
+    <div class="page-break"></div>
 
     <!-- 1. Enlaces -->
     <h2>1. Enlaces de Acceso a Producción</h2>
@@ -344,7 +391,7 @@
 
     <!-- 2. Credenciales -->
     <h2>2. Cuentas de Prueba Precargadas</h2>
-    <p>Para ingresar inmediatamente sin necesidad de configurar datos nuevos, utilice las siguientes cuentas precargadas en producción:</p>
+    <p>La base de datos de producción cuenta con las siguientes cuentas precargadas para probar los diferentes roles del sistema:</p>
 
     <table>
       <thead>
@@ -377,9 +424,7 @@
       </tbody>
     </table>
 
-    <div class="page-break"></div>
-
-    <!-- 3. Módulos Administrativos (LOS 24 MÓDULOS) -->
+    <!-- 3. Módulos Administrativos -->
     <h2>3. Panel de Administración (Todos los 24 Módulos)</h2>
     <p>Al iniciar sesión con <code>admin@trebond.com</code>, la barra lateral le otorga acceso a los 24 módulos operativos de la agencia:</p>
 
@@ -559,15 +604,6 @@
       - <strong>Selección Cruzada:</strong> Al seleccionar una propiedad en la lista lateral, el mapa se desplaza suavemente hacia su posición exactas.<br>
       - <strong>Acceso GPS Móvil:</strong> Al hacer clic en el pin de una propiedad, el botón destacado <code>📍 Ver en Google Maps</code> abre las coordenadas en la app de Google Maps para iniciar navegación giro a giro o visualizar Street View.
     </div>
-
-    <!-- 7. Flujo E2E -->
-    <h2>7. Guía de Validación Rápida E2E (5 Minutos)</h2>
-    <ol style="padding-left: 20px; font-weight: 500;">
-      <li style="margin-bottom: 8px;"><strong>1. Postulación:</strong> Ingrese a <a href="https://trebond-frontend.vercel.app/propiedades" target="_blank">/propiedades</a>, postúlese a un departamento subiendo documentación de prueba.</li>
-      <li style="margin-bottom: 8px;"><strong>2. Aprobación Admin:</strong> Ingrese como Admin (<code>admin@trebond.com</code> / <code>admin123</code>), vaya a <code>/admin/solicitudes</code> y apruebe al candidato.</li>
-      <li style="margin-bottom: 8px;"><strong>3. Firma Digitales:</strong> Inicie sesión como inquilino y luego como propietario para firmar el contrato usando el sistema OTP.</li>
-      <li style="margin-bottom: 8px;"><strong>4. Pago y Liquidación:</strong> Suba un pago como inquilino, valídelo como Admin en <code>/admin/pagos</code>, descargue el Recibo PDF y genere la liquidación al propietario en <code>/admin/liquidaciones</code>.</li>
-    </ol>
 
     <!-- Footer -->
     <div style="margin-top: 50px; padding-top: 20px; border-top: 2px solid #e2e8f0; text-align: center; color: #94a3b8; font-size: 11.5px;">
