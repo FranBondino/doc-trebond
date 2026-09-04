@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guía de Uso Completa y Manual de Cliente — Trebond Inmobiliaria</title>
+  <title>Guía Maestra de Uso Oficial — Trebond Inmobiliaria</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
     
     @page {
       size: A4;
-      margin: 18mm 15mm;
+      margin: 15mm 12mm;
     }
     
     * {
@@ -19,7 +19,7 @@
     }
     
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
       color: #0f172a;
       background-color: #f8fafc;
       margin: 0;
@@ -28,7 +28,7 @@
       font-size: 13.5px;
     }
 
-    /* Floating Print Bar */
+    /* Floating Print & Action Bar */
     .no-print-bar {
       position: fixed;
       top: 20px;
@@ -38,44 +38,53 @@
       gap: 12px;
     }
 
-    .btn-print {
+    .btn-action {
       background-color: #003345;
       color: white;
       border: none;
-      padding: 12px 24px;
-      font-size: 14px;
+      padding: 11px 22px;
+      font-size: 13px;
       font-weight: 700;
       border-radius: 50px;
       cursor: pointer;
-      box-shadow: 0 10px 25px -5px rgba(0, 51, 69, 0.4);
+      box-shadow: 0 10px 25px -5px rgba(0, 51, 69, 0.35);
       transition: all 0.2s ease;
       display: flex;
       align-items: center;
       gap: 8px;
+      text-decoration: none;
     }
 
-    .btn-print:hover {
+    .btn-action:hover {
       transform: translateY(-2px);
       background-color: #002230;
-      box-shadow: 0 15px 30px -5px rgba(0, 51, 69, 0.5);
+      box-shadow: 0 15px 30px -5px rgba(0, 51, 69, 0.45);
+      color: white;
     }
 
-    /* Document Layout */
+    .btn-secondary {
+      background-color: #0284c7;
+    }
+    .btn-secondary:hover {
+      background-color: #0369a1;
+    }
+
+    /* Document Container */
     .document-container {
-      max-width: 960px;
-      margin: 40px auto;
+      max-width: 940px;
+      margin: 30px auto;
       background-color: white;
-      padding: 60px 75px;
-      border-radius: 24px;
-      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+      padding: 55px 65px;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.07);
       border: 1px solid #e2e8f0;
     }
 
-    /* Header Cover */
+    /* Cover Header */
     .cover-header {
-      border-bottom: 4px solid #003345;
-      padding-bottom: 25px;
-      margin-bottom: 35px;
+      border-bottom: 3px solid #003345;
+      padding-bottom: 24px;
+      margin-bottom: 32px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
@@ -91,7 +100,7 @@
     }
 
     .brand-subtitle {
-      font-size: 13px;
+      font-size: 14px;
       color: #0284c7;
       font-weight: 700;
       text-transform: uppercase;
@@ -104,21 +113,22 @@
       font-size: 12px;
       color: #64748b;
       font-weight: 500;
+      line-height: 1.5;
     }
 
     .doc-meta strong {
       color: #0f172a;
     }
 
-    /* Headings */
+    /* Section Headings */
     h2 {
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 800;
       color: #003345;
-      border-left: 5px solid #003345;
-      padding-left: 14px;
-      margin-top: 40px;
-      margin-bottom: 18px;
+      border-left: 4px solid #003345;
+      padding-left: 12px;
+      margin-top: 36px;
+      margin-bottom: 16px;
       letter-spacing: -0.5px;
       page-break-after: avoid;
     }
@@ -126,11 +136,9 @@
     h3 {
       font-size: 15px;
       font-weight: 700;
-      color: #0284c7;
-      margin-top: 26px;
+      color: #1e293b;
+      margin-top: 20px;
       margin-bottom: 10px;
-      border-bottom: 1px solid #e2e8f0;
-      padding-bottom: 4px;
       page-break-after: avoid;
     }
 
@@ -139,11 +147,52 @@
       color: #334155;
     }
 
+    /* Table of Contents */
+    .toc-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 30px;
+    }
+
+    .toc-title {
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #003345;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 20px;
+      font-size: 12.5px;
+    }
+
+    .toc-link {
+      color: #0369a1;
+      text-decoration: none;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .toc-link:hover {
+      text-decoration: underline;
+      color: #003345;
+    }
+
     /* Tables */
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 18px 0;
+      margin: 16px 0 24px 0;
       font-size: 12.5px;
       page-break-inside: avoid;
     }
@@ -155,7 +204,7 @@
       text-align: left;
       padding: 10px 14px;
       text-transform: uppercase;
-      font-size: 10.5px;
+      font-size: 11px;
       letter-spacing: 0.8px;
     }
 
@@ -163,27 +212,32 @@
       padding: 10px 14px;
       border-bottom: 1px solid #e2e8f0;
       color: #334155;
+      vertical-align: middle;
     }
 
     tr:nth-child(even) td {
       background-color: #f8fafc;
     }
 
-    /* Badges */
+    /* Badges & Highlights */
     .badge {
       display: inline-block;
       padding: 3px 8px;
-      border-radius: 4px;
+      border-radius: 6px;
       font-size: 10.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      white-space: nowrap;
     }
 
     .badge-admin { background-color: #fee2e2; color: #991b1b; }
     .badge-owner { background-color: #ffedd5; color: #9a3412; }
     .badge-tenant { background-color: #dcfce7; color: #166534; }
-    .badge-user { background-color: #e0f2fe; color: #075985; }
+    .badge-afip { background-color: #e0e7ff; color: #3730a3; }
+    .badge-crm { background-color: #f3e8ff; color: #6b21a8; }
+    .badge-sync { background-color: #fef3c7; color: #92400e; }
+    .badge-bio { background-color: #ccfbf1; color: #115e59; }
 
     /* Callout Boxes */
     .callout {
@@ -192,7 +246,7 @@
       padding: 14px 18px;
       border-radius: 8px;
       margin: 18px 0;
-      font-size: 13px;
+      font-size: 12.5px;
       page-break-inside: avoid;
     }
 
@@ -203,6 +257,9 @@
       font-size: 11.5px;
       text-transform: uppercase;
       letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .callout-blue {
@@ -211,39 +268,89 @@
     }
     .callout-blue .callout-title { color: #0369a1; }
 
+    .callout-purple {
+      background-color: #faf5ff;
+      border-left-color: #9333ea;
+    }
+    .callout-purple .callout-title { color: #7e22ce; }
+
     .callout-amber {
       background-color: #fffbeb;
       border-left-color: #d97706;
     }
     .callout-amber .callout-title { color: #b45309; }
 
-    /* Module Grid */
-    .module-card {
-      background-color: #ffffff;
-      border: 1px solid #cbd5e1;
+    /* Step Cards */
+    .step-card {
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
       border-radius: 10px;
-      padding: 16px 20px;
-      margin-bottom: 14px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
       page-break-inside: avoid;
     }
 
-    .module-title {
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      background-color: #003345;
+      color: white;
       font-weight: 800;
+      font-size: 11px;
+      border-radius: 50%;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-weight: 700;
       font-size: 14px;
-      color: #003345;
+      color: #0f172a;
       display: flex;
       align-items: center;
-      gap: 8px;
       margin-bottom: 6px;
     }
 
-    .module-route {
-      font-family: monospace;
+    /* Grid for Feature Cards */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    .feature-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 14px 16px;
+      background: white;
+    }
+
+    .feature-card h4 {
+      margin: 0 0 6px 0;
+      font-size: 13.5px;
+      color: #003345;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .feature-card p {
+      margin: 0;
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    code {
       background-color: #f1f5f9;
       color: #0f172a;
       padding: 2px 6px;
       border-radius: 4px;
-      font-size: 11px;
+      font-size: 12px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
 
     /* Print CSS */
@@ -271,135 +378,157 @@
         color: #0f172a;
       }
     }
+
+    @media (max-width: 768px) {
+      .document-container {
+        padding: 24px 18px;
+        margin: 10px;
+      }
+      .cover-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      .doc-meta {
+        text-align: left;
+      }
+      .toc-grid, .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      .no-print-bar {
+        position: static;
+        margin: 12px auto;
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Floating Print Button -->
+  <!-- Floating Print & Quick Access Bar -->
   <div class="no-print-bar">
-    <button class="btn-print" onclick="window.print()">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-      Imprimir / Guardar como PDF
+    <a href="https://trebond-frontend.vercel.app" target="_blank" class="btn-action btn-secondary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      Abrir App en Vivo
+    </a>
+    <button class="btn-action" onclick="window.print()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      Imprimir / PDF
     </button>
   </div>
 
   <div class="document-container">
-    <!-- Header Cover -->
+    <!-- Header / Cover -->
     <div class="cover-header">
       <div>
         <h1 class="brand-title">Trebond Inmobiliaria</h1>
-        <div class="brand-subtitle">Manual Exhaustivo de Uso & Guía de Prueba Inicial</div>
+        <div class="brand-subtitle">Guía Maestra de Uso & Manual de Operaciones</div>
       </div>
       <div class="doc-meta">
-        <div><strong>Versión:</strong> 1.0.0 (Producción)</div>
-        <div><strong>Fecha:</strong> Julio 2026</div>
-        <div><strong>Documento:</strong> Manual de Usuario 100% Exhaustivo</div>
+        <div><strong>Versión:</strong> 2.0.0 (Producción Hardened)</div>
+        <div><strong>Fecha:</strong> Septiembre 2026</div>
+        <div><strong>Estado del Sistema:</strong> 100% Operativo</div>
+        <div><strong>Entorno:</strong> Vercel (Front) + Railway (Back)</div>
       </div>
     </div>
 
-    <!-- Intro Callout -->
+    <!-- Intro Box -->
     <div class="callout callout-blue">
-      <div class="callout-title">📌 Documentación Integral de la Plataforma</div>
-      Este manual detalla <strong>todas y cada una de las páginas, formularios, módulos y configuraciones</strong> del sistema inmobiliario Trebond. Incluye una <strong>Guía de Recomendaciones para Probar la Plataforma desde Cero</strong> para poblar datos iniciales y validar todo el circuito sin quedar trabado.
+      <div class="callout-title">📌 Propósito de la Guía</div>
+      Este documento es el manual operativo integral de <strong>Trebond Inmobiliaria</strong>. Contempla el ecosistema completo de la plataforma: desde la captación comercial y sindicación de propiedades, pasando por el alquiler con validación biométrica facial, hasta la administración financiera avanzada con <strong>Facturación Electrónica AFIP oficial</strong>, <strong>Arqueo de Caja</strong>, <strong>Cuentas Corrientes</strong> y <strong>Liquidaciones a Propietarios</strong>.
     </div>
 
-    <!-- Section: Recomendaciones de Prueba Inicial -->
-    <h2>💡 Recomendaciones para Probar la Plataforma (Carga Inicial)</h2>
-    <p>Dado que la plataforma se entrega lista para operar pero recién instalada, le sugerimos seguir este orden recomendado para crear datos de prueba y validar todo el sistema de manera limpia:</p>
-
-    <div class="module-card" style="border-left: 4px solid #003345;">
-      <div class="module-title">1️⃣ Paso 1: Configurar la Agencia y Proveedores de Servicio</div>
-      - Inicie sesión como <code>admin@trebond.com</code> / <code>admin123</code>.<br>
-      - Ingrese a <strong>Configuración de Agencia (<code>/admin/config-agencia</code>)</strong>: Verifique los porcentajes de comisión del propietario (ej. 5%), inquilino (4.5%), tasa de interés por mora (2.5%) y guarde la configuración.<br>
-      - Ingrese a <strong>Proveedores (<code>/admin/proveedores</code>)</strong>: Cree 1 o 2 proveedores de prueba (ej. <em>"Plomería San Martín"</em> y <em>"Electricista González"</em> con teléfono y rubro) para poder asignar arreglos cuando los inquilinos abran tickets de mantenimiento.
+    <!-- Table of Contents -->
+    <div class="toc-box">
+      <div class="toc-title">📑 Índice de Contenidos</div>
+      <div class="toc-grid">
+        <a href="#sec-1" class="toc-link">1. Enlaces y Accesos a la Plataforma</a>
+        <a href="#sec-2" class="toc-link">2. Credenciales de Prueba Precargadas</a>
+        <a href="#sec-3" class="toc-link">3. Facturación Electrónica AFIP (CAE & QR)</a>
+        <a href="#sec-4" class="toc-link">4. Caja y Arqueo Diario de Fondos</a>
+        <a href="#sec-5" class="toc-link">5. Cuentas Corrientes y Mora</a>
+        <a href="#sec-6" class="toc-link">6. Liquidaciones a Propietarios</a>
+        <a href="#sec-7" class="toc-link">7. CRM Inmobiliario & Pipeline Kanban</a>
+        <a href="#sec-8" class="toc-link">8. Sindicación (ZonaProp & ArgenProp)</a>
+        <a href="#sec-9" class="toc-link">9. Firma con Biometría Facial & OTP</a>
+        <a href="#sec-10" class="toc-link">10. Portales Mobile-First (Inquilino/Dueño)</a>
+        <a href="#sec-11" class="toc-link">11. Mapa Interactivo de Propiedades</a>
+        <a href="#sec-12" class="toc-link">12. Paso a Paso: Guía de Prueba E2E (7 Min)</a>
+      </div>
     </div>
 
-    <div class="module-card" style="border-left: 4px solid #0284c7;">
-      <div class="module-title">2️⃣ Paso 2: Crear una Propiedad de Prueba</div>
-      - En <strong>Propiedades (<code>/admin/propiedades</code>)</strong>, presione <strong>"Agregar Propiedad"</strong>.<br>
-      - Ingrese dirección (ej. <em>Av. del Libertador 1500</em>), ciudad, ambientes, superficie, valor locativo y seleccione como propietario a <code>marcelo.rodriguez@owner.com</code> (o cree un propietario nuevo en Usuarios).<br>
-      - Suba fotografías en alta resolución. Al guardar, la propiedad estará lista y aparecerá automáticamente en el mapa interactivo (<code>/mapa</code>) y en la web pública.
-    </div>
-
-    <div class="module-card" style="border-left: 4px solid #16a34a;">
-      <div class="module-title">3️⃣ Paso 3: Simular Postulación como Interesado</div>
-      - Abra una ventana de incógnito o registre una cuenta nueva en <code>/signup</code> (ej. <code>juan.perez@test.com</code>).<br>
-      - Explore la propiedad creada en <code>/propiedades</code> o en <code>/mapa</code> y presione <strong>"Postularse para Alquilar"</strong>.<br>
-      - Suba 3 documentos de prueba (imágenes o PDFs para DNI, recibo de sueldo y garantía) y envíe la postulación.
-    </div>
-
-    <div class="module-card" style="border-left: 4px solid #d97706;">
-      <div class="module-title">4️⃣ Paso 4: Aprobar Solicitud y Redactar Contrato</div>
-      - Vuelva a la cuenta de Admin en <strong>Solicitudes (<code>/admin/solicitudes</code>)</strong>.<br>
-      - Revise la postulación de Juan Pérez y presione <strong>"Aprobar y Convertir en Inquilino"</strong>.<br>
-      - El sistema abrirá la pantalla de creación de contrato en <code>/admin/contratos</code>: confirme montos, plazos y envíe el borrador.
-    </div>
-
-    <div class="module-card" style="border-left: 4px solid #9333ea;">
-      <div class="module-title">5️⃣ Paso 5: Firmar Digitalmente con Clave OTP (Inquilino y Dueño)</div>
-      - Inicie sesión como el Inquilino recién convertido: en <code>/portal/contratos</code> presione <strong>"Solicitar Código OTP"</strong> e ingrese la clave recibida para firmar.<br>
-      - Inicie sesión como el Propietario (<code>marcelo.rodriguez@owner.com</code>): en su sección de contratos solicite su OTP y confirme la firma. El contrato pasa inmediatamente a estado <strong>Activo (<code>active</code>)</strong>.
-    </div>
-
-    <div class="module-card" style="border-left: 4px solid #e11d48;">
-      <div class="module-title">6️⃣ Paso 6: Probar Cobranzas, Ticket de Mantenimiento y Liquidación</div>
-      - <strong>Pago de Alquiler:</strong> Desde el Inquilino en <code>/portal/pagos</code> informe una transferencia subiendo un comprobante de prueba. Como Admin en <code>/admin/pagos</code> presione <strong>Validar</strong> y descargue el <strong>Recibo PDF</strong>.<br>
-      - <strong>Mantenimiento:</strong> Desde el Inquilino en <code>/portal/mantenimiento/nuevo</code> cree un reclamo por una pérdida de agua. Como Admin en <code>/admin/mantenimiento</code> asigne el plomero creado en el Paso 1 y cierre el ticket.<br>
-      - <strong>Liquidación al Dueño:</strong> Como Admin en <code>/admin/liquidaciones</code> genere la liquidación mensual. El sistema descontará la comisión (5%) y la reparación del plomero, emitiendo la <strong>Liquidación PDF</strong> final.
-    </div>
-
-    <div class="page-break"></div>
-
-    <!-- 1. Enlaces -->
-    <h2>1. Enlaces de Acceso a Producción</h2>
+    <!-- Section 1: URLs -->
+    <h2 id="sec-1">1. Enlaces Oficiales de Acceso a la Plataforma</h2>
+    <p>La plataforma está optimizada para acceso universal desde computadoras de escritorio, tablets y teléfonos móviles:</p>
+    
     <table>
       <thead>
         <tr>
-          <th>Servicio / Pantalla</th>
-          <th>URL Directa</th>
-          <th>Propósito</th>
+          <th>Módulo / Pantalla</th>
+          <th>URL de Acceso Directo</th>
+          <th>Función y Destinatarios</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Portal Web Público</strong></td>
+          <td><strong>Portal Público Principal</strong></td>
           <td><a href="https://trebond-frontend.vercel.app" target="_blank">https://trebond-frontend.vercel.app</a></td>
-          <td>Página principal, catálogo y acceso a portales.</td>
+          <td>Buscador de inmuebles, catálogo con filtros, tasaciones y contacto.</td>
         </tr>
         <tr>
-          <td><strong>Mapa Interactivo 全屏</strong></td>
-          <td><a href="https://trebond-frontend.vercel.app/mapa" target="_blank">https://trebond-frontend.vercel.app/mapa</a></td>
-          <td>Mapa panorámico con todos los inmuebles disponibles y GPS.</td>
+          <td><strong>Facturación Electrónica AFIP</strong></td>
+          <td><a href="https://trebond-frontend.vercel.app/admin/facturacion" target="_blank">/admin/facturacion</a></td>
+          <td>Emisión de Facturas A/B/C con CAE, QR RG 5003 y descarga PDF.</td>
         </tr>
         <tr>
-          <td><strong>Inicio de Sesión</strong></td>
-          <td><a href="https://trebond-frontend.vercel.app/login" target="_blank">https://trebond-frontend.vercel.app/login</a></td>
-          <td>Ingreso de usuarios con cualquier rol.</td>
+          <td><strong>Caja y Arqueo Diario</strong></td>
+          <td><a href="https://trebond-frontend.vercel.app/admin/caja" target="_blank">/admin/caja</a></td>
+          <td>Libro de ingresos y egresos (ARS/USD), cheques y arqueo diario.</td>
         </tr>
         <tr>
-          <td><strong>Registro de Usuarios</strong></td>
-          <td><a href="https://trebond-frontend.vercel.app/signup" target="_blank">https://trebond-frontend.vercel.app/signup</a></td>
-          <td>Alta de nuevas cuentas de postulantes.</td>
+          <td><strong>Cuentas Corrientes</strong></td>
+          <td><a href="https://trebond-frontend.vercel.app/admin/cuenta-corriente" target="_blank">/admin/cuenta-corriente</a></td>
+          <td>Estado de cuenta por Inquilino y Propietario con cálculo de mora.</td>
         </tr>
         <tr>
-          <td><strong>Servidor API Backend</strong></td>
-          <td><a href="https://trebond-app-production.up.railway.app" target="_blank">https://trebond-app-production.up.railway.app</a></td>
-          <td>Servidor de base de datos y negocio (Railway).</td>
+          <td><strong>Liquidaciones a Dueños</strong></td>
+          <td><a href="https://trebond-frontend.vercel.app/admin/liquidaciones" target="_blank">/admin/liquidaciones</a></td>
+          <td>Liquidación mensual, descuento de honorarios y retenciones.</td>
+        </tr>
+        <tr>
+          <td><strong>CRM Comercial (Kanban)</strong></td>
+          <td><a href="https://trebond-frontend.vercel.app/admin/crm" target="_blank">/admin/crm</a></td>
+          <td>Embudo de ventas/alquileres, seguimiento de prospectos y notas.</td>
+        </tr>
+        <tr>
+          <td><strong>Portal Inquilino (Mobile)</strong></td>
+          <td><a href="https://trebond-frontend.vercel.app/portal/pagos" target="_blank">/portal/pagos</a></td>
+          <td>Pago de alquiler, comprobantes, facturas PDF y tickets de arreglos.</td>
+        </tr>
+        <tr>
+          <td><strong>Portal Propietario</strong></td>
+          <td><a href="https://trebond-frontend.vercel.app/dashboard/owner" target="_blank">/dashboard/owner</a></td>
+          <td>Inmuebles propios, contratos, liquidaciones y balances netos.</td>
+        </tr>
+        <tr>
+          <td><strong>Mapa Interactivo Fullscreen</strong></td>
+          <td><a href="https://trebond-frontend.vercel.app/mapa" target="_blank">/mapa</a></td>
+          <td>Geolocalización interactiva de propiedades con GPS Google Maps.</td>
         </tr>
       </tbody>
     </table>
 
-    <!-- 2. Credenciales -->
-    <h2>2. Cuentas de Prueba Precargadas</h2>
-    <p>La base de datos de producción cuenta con las siguientes cuentas precargadas para probar los diferentes roles del sistema:</p>
+    <!-- Section 2: Credentials -->
+    <h2 id="sec-2">2. Credenciales de Prueba Precargadas</h2>
+    <p>Para auditar los diferentes permisos y vistas del sistema, utilice las siguientes cuentas operativas:</p>
 
     <table>
       <thead>
         <tr>
-          <th>Rol de Usuario</th>
-          <th>Email de Acceso</th>
+          <th>Rol</th>
+          <th>Correo Electrónico</th>
           <th>Contraseña</th>
-          <th>Alcance de Permisos</th>
+          <th>Alcance y Privilegios</th>
         </tr>
       </thead>
       <tbody>
@@ -407,208 +536,265 @@
           <td><span class="badge badge-admin">🔴 Administrador</span></td>
           <td><code>admin@trebond.com</code></td>
           <td><code>admin123</code></td>
-          <td>Control total de la inmobiliaria: configuración de comisiones, aprobación de postulaciones, creación de contratos, cobranzas, liquidaciones y AFIP.</td>
+          <td>Control global: Facturación AFIP, Caja, Liquidaciones, CRM, Sindicación y Aprobación de Postulaciones.</td>
         </tr>
         <tr>
           <td><span class="badge badge-owner">🟠 Propietario</span></td>
           <td><code>marcelo.rodriguez@owner.com</code></td>
           <td><code>admin123</code></td>
-          <td>Consulta de inmuebles propios, firma digital de alquileres con OTP y recibos de liquidación mensual.</td>
+          <td>Acceso a sus inmuebles, firma digital de contratos con OTP y descarga de liquidaciones netas.</td>
         </tr>
         <tr>
           <td><span class="badge badge-tenant">🟢 Inquilino</span></td>
           <td><code>carlos@tenant.com</code></td>
           <td><code>admin123</code></td>
-          <td>Firma digital de contrato, carga de transferencias de pago de alquiler/expensas y creación de tickets de mantenimiento.</td>
+          <td>Consulta de contrato, pago mensual de cuotas, descarga de Facturas Oficiales con CAE y tickets de mantenimiento.</td>
         </tr>
       </tbody>
     </table>
 
-    <!-- 3. Módulos Administrativos -->
-    <h2>3. Panel de Administración (Todos los 24 Módulos)</h2>
-    <p>Al iniciar sesión con <code>admin@trebond.com</code>, la barra lateral le otorga acceso a los 24 módulos operativos de la agencia:</p>
+    <div class="page-break"></div>
 
-    <div class="module-card">
-      <div class="module-title">⚙️ 1. Configuración de la Agencia <span class="module-route">/admin/config-agencia</span></div>
-      Configuración central de la empresa: Nombre comercial, CUIT, dirección, teléfono y correo oficial. Permite definir la <strong>comisión cobrada al propietario (ej. 5%)</strong>, los <strong>honorarios al inquilino (ej. 4.5%)</strong>, el <strong>fee inicial de contrato (2 meses)</strong>, la <strong>tasa de interés moratorio diario/mensual por pagos a destiempo (ej. 2.5%)</strong> y los días límite de tolerancia de pago (del 1 al 10 de cada mes).
+    <!-- Section 3: AFIP Invoicing -->
+    <h2 id="sec-3">3. Facturación Electrónica AFIP Oficial (`/admin/facturacion`)</h2>
+    <p>El módulo de facturación está integrado mediante el SDK oficial de AFIP (Web Services WSFE), permitiendo emitir comprobantes fiscales electrónicos de forma transparente tanto en modo <strong>Sandbox de prueba</strong> como en <strong>Producción Real</strong>.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h4><span class="badge badge-afip">AFIP</span> Obtención Automática de CAE</h4>
+        <p>Generación de Código de Autorización Electrónico (14 dígitos) con fecha de vencimiento y correlatividad legal de punto de venta.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="badge badge-afip">QR RG 5003</span> Código QR Oficial</h4>
+        <p>Cumple con la Resolución General 5003/2021 con JSON base64 verificable desde la app de AFIP o cámara de celular.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="badge badge-afip">PDF</span> Factura Oficial Inmobiliaria</h4>
+        <p>Renderizado vectorial de comprobante fiscal con membrete corporativo, datos del locatario/locador y discriminación de IVA.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="badge badge-afip">Trazable</span> Enlace Contable Automático</h4>
+        <p>Cada cobro en Caja o Cuenta Corriente puede facturarse con 1 solo clic o emitirse de forma voluntaria según la política fiscal de la agencia.</p>
+      </div>
     </div>
 
-    <div class="module-card">
-      <div class="module-title">📊 2. Dashboard Principal & KPIs <span class="module-route">/admin/dashboard</span></div>
-      Visión ejecutiva del negocio. Muestra tarjetas métricas de <strong>Propiedades Totales</strong>, <strong>Contratos Activos</strong>, <strong>Cobranza Acumulada del Mes</strong> y <strong>Porcentaje de Vacancia</strong>, acompañados de gráficos de tendencia de ingresos de los últimos 6 meses.
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">1</span> Emisión de Comprobante</div>
+      En <code>/admin/facturacion</code>, presione <strong>"Emitir Factura"</strong>. Seleccione el Tipo (<em>Factura C para Monotributo, Factura B/A para Responsable Inscripto</em>), el Concepto (<em>Concepto 2: Servicios Inmobiliarios / Alquiler</em>), el importe y el receptor (CUIT o DNI).
     </div>
 
-    <div class="module-card">
-      <div class="module-title">👥 3. Gestión de Usuarios & Asignación de Roles <span class="module-route">/admin/usuarios</span></div>
-      Control de todos los usuarios registrados. Permite buscar por nombre o correo, cambiar el rol de cualquier usuario (convertir un <code>user</code> a <code>owner</code> o <code>tenant</code>), desactivar cuentas o <strong>forzar el cierre de sesión remoto (Force Logout)</strong>.
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">2</span> Descarga y Entrega al Inquilino</div>
+      El comprobante aparecerá listado de inmediato con su estado fiscal <code>Emitido con CAE</code>. Presione <strong>"Descargar PDF"</strong> para obtener la factura oficial. Simultáneamente, el inquilino podrá descargarla desde su portal en <code>/portal/pagos</code>.
     </div>
 
-    <div class="module-card">
-      <div class="module-title">🏠 4. Catálogo de Propiedades <span class="module-route">/admin/propiedades</span></div>
-      Alta, edición y eliminación de inmuebles. Permite cargar dirección, ciudad, precio, habitaciones, superficie, asignar el propietario del inmueble, cambiar su estado (<code>available</code>, <code>rented</code>, <code>maintenance</code>) y realizar la <strong>carga masiva de fotografías de alta resolución</strong>.
+    <div class="callout callout-amber">
+      <div class="callout-title">⚙️ Configuración de Certificados AFIP</div>
+      Para operar con su CUIT real, presione el botón <strong>"Configuración AFIP"</strong> en la cabecera del módulo. Podrá cargar su CUIT, Punto de Venta y pegar su Certificado digital (<code>.crt</code>) y Clave Privada (<code>.key</code>). En modo de prueba sin certificados, el sistema opera con el simulador Sandbox de alta fidelidad sin generar deudas ante AFIP.
     </div>
 
-    <div class="module-card">
-      <div class="module-title">✅ 5. Aprobación de Inmuebles de Dueños <span class="module-route">/admin/property-approvals</span></div>
-      Módulo de control de calidad. Revisa y aprueba las propiedades publicadas por propietarios o vendedores externos antes de hacerlas visibles en el catálogo público y en el mapa.
+    <!-- Section 4: Cash Box & Daily Balance -->
+    <h2 id="sec-4">4. Caja y Arqueo Diario de Fondos (`/admin/caja`)</h2>
+    <p>Control operativo y de tesorería para administrar el flujo diario de dinero físico y bancario de la inmobiliaria:</p>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">1</span> Multi-Moneda y Medios de Pago</div>
+      Soporte nativo para movimientos en <strong>Pesos Argentinos (ARS)</strong>, <strong>Dólares Estadounidenses (USD)</strong>, transferencias electrónicas y cheques con fecha de cobro diferido.
     </div>
 
-    <div class="module-card">
-      <div class="module-title">📝 6. Solicitudes de Alquiler & Conversión <span class="module-route">/admin/solicitudes</span></div>
-      Evaluación de postulantes. Muestra las solicitudes enviadas por interesados con su documentación adjunta (DNI, 3 recibos de sueldo y garantía). Al presionar <strong>"Aprobar y Convertir"</strong>, el sistema transforma al usuario en Inquilino oficial y redacta el borrador del contrato.
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">2</span> Registro Atómico de Cobranzas y Egresos</div>
+      Al registrar un pago de alquiler en caja, el sistema asienta en una única transacción indivisible el ingreso en el libro de caja y el crédito correspondiente en la cuenta corriente del inquilino, asegurando cuadre permanente.
     </div>
 
-    <div class="module-card">
-      <div class="module-title">📅 7. Gestión de Visitas & Agenda <span class="module-route">/admin/turnos</span></div>
-      Calendario de turnos agendados por clientes interesados para conocer propiedades. Permite asignar el agente inmobiliario que acompañará la visita y confirmar o reprogramar la cita.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">⏰ 8. Configuración de Horarios de Citas <span class="module-route">/admin/turnos/config</span></div>
-      Definición de días hábiles de atención (Lunes a Sábados), franjas horarias (ej. 09:00 a 18:00 hs) y duración estimada por visita (30 o 45 min) para habilitar en el turnero automático.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">🏷️ 9. Solicitudes de Tasación <span class="module-route">/admin/tasaciones</span></div>
-      Módulo para atender pedidos de vendedores que desean cotizar su propiedad. Permite asignar un tasador oficial, registrar la visita técnica e ingresar la valuación final de mercado.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">📜 10. Contratos Activos & Firma OTP <span class="module-route">/admin/contratos</span></div>
-      Módulo central contractual. Redacción de contratos de alquiler especificando valor mensual, depósito en garantía, comisión de la agencia, fecha de inicio/vencimiento y seguimiento de las firmas digitales del Inquilino y Propietario.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">📈 11. Indexación por Inflación <span class="module-route">/admin/indexacion</span></div>
-      Reajuste periódico de alquileres. Permite aplicar los índices oficiales de actualización (ICL, IPC, IPIM), calcular automáticamente el nuevo canon locativo e informar por correo a las partes.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">🔒 12. Depósitos en Garantía <span class="module-route">/admin/depositos</span></div>
-      Control de los fondos de reserva en custodia. Administra la restitución del depósito al finalizar el contrato o la aplicación de deducciones por deudas o reparaciones.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">💰 13. Cobranzas & Validación de Pagos <span class="module-route">/admin/pagos</span></div>
-      Módulo de tesorería. Muestra los comprobantes de transferencia subidos por los inquilinos. Al hacer clic en <strong>"Validar Pago"</strong>, el sistema liquida la cuota, actualiza el estado de cuenta y emite el **Recibo Oficial en PDF**.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">🏢 14. Control de Expensas <span class="module-route">/admin/expensas</span></div>
-      Registro de liquidaciones de expensas enviadas por la administración del edificio, control de vencimientos y verificación de pago oportuno por parte del inquilino.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">💡 15. Control de Servicios de Inquilinos <span class="module-route">/admin/servicios-inquilinos</span></div>
-      Monitoreo de boletas de servicios públicos (Luz, Gas, Agua, Tasa Municipal) cargadas por el inquilino para garantizar el certificado de libre deuda continuo.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">🎁 16. Bonificaciones & Descuentos <span class="module-route">/admin/bonificaciones</span></div>
-      Gestión de créditos o quitas especiales sobre el valor del alquiler (por ejemplo, cuando el inquilino abona arreglos a su cargo o por promociones de la inmobiliaria).
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">💵 17. Liquidaciones a Propietarios <span class="module-route">/admin/liquidaciones</span></div>
-      Cálculo de rendición mensual al dueña del inmueble. Descuenta la comisión de administración (5%) y retenciones por mantenimiento, emitiendo la orden de pago y comprobante de liquidación PDF.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">📖 18. Cuenta Corriente <span class="module-route">/admin/cuenta-corriente</span></div>
-      Libro mayor contable por cliente. Detalla el historial completo de débitos (alquileres, honorarios) y créditos (pagos, transferencias) por contrato.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">🏦 19. Caja & Bancos <span class="module-route">/admin/caja</span></div>
-      Flujo de fondos diario de la inmobiliaria. Registra ingresos en efectivo, cobranzas bancarias, pago a proveedores y retiros.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">🧾 20. Facturación Electrónica AFIP <span class="module-route">/admin/facturacion</span></div>
-      Integración directa con los servidores de la AFIP. Emisión de Facturas electrónicas A, B y C con código CAE oficial para el cobro de comisiones y servicios.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">🛠️ 21. Reclamos & Tickets de Mantenimiento <span class="module-route">/admin/mantenimiento</span></div>
-      Módulo de incidencias. Recibe las solicitudes de reparación enviadas por los inquilinos (ej. filtración, cortocircuito). Asigna el proveedor de la agencia, fija prioridad, sigue el arreglo y carga el gasto.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">🔧 22. Gestión de Proveedores <span class="module-route">/admin/proveedores</span></div>
-      Directorio de especialistas de confianza (plomeros, electricistas, gasistas, cerrajeros). Almacena contacto, rubro, historial de trabajos y datos de facturación.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">📈 23. Reportes de Vacancia & Mercado <span class="module-route">/admin/reportes</span></div>
-      Informes analíticos sobre tasa de vacancia, tiempo promedio de publicación antes de alquilar y rendimiento porcentual de alquiler por zona.
-    </div>
-
-    <div class="module-card">
-      <div class="module-title">🔐 24. Auditoría & Logs de Seguridad <span class="module-route">/admin/seguridad</span></div>
-      Registro inalterable de eventos: inicios de sesión, cambios de roles, modificaciones de valores locativos e intentos de ingreso fallidos.
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">3</span> Cierre y Arqueo de Caja Diario</div>
+      Permite al responsable de administración conciliar el saldo real físico versus el saldo del sistema al finalizar la jornada, generando un reporte de arqueo inmutable.
     </div>
 
     <div class="page-break"></div>
 
-    <!-- 4. Portal del Inquilino -->
-    <h2>4. Guía de Uso: Portal del Inquilino</h2>
+    <!-- Section 5: Checking Accounts -->
+    <h2 id="sec-5">5. Cuentas Corrientes y Cálculo de Mora (`/admin/cuenta-corriente`)</h2>
+    <p>Historial contable transparente por cada cliente (inquilinos, propietarios y proveedores):</p>
+    <ul>
+      <li><strong>Débitos Automáticos:</strong> Al inicio de cada período locativo, el sistema asienta la obligación de pago del alquiler y las expensas ordinarias devengadas.</li>
+      <li><strong>Créditos por Pago:</strong> Asiento de pagos totales o parciales con identificación de medio de pago y comprobante de transferencia bancaria adjunto.</li>
+      <li><strong>Punitorios Diarios por Mora:</strong> Si el inquilino realiza el pago posterior a la fecha pactada en el contrato (ej: día 10 de cada mes), el sistema calcula automáticamente los intereses por mora según la tasa diaria fijada en la configuración de la agencia.</li>
+      <li><strong>Inmutabilidad Financiera:</strong> Los asientos contables no se pueden borrar físicamente; cualquier corrección requiere la emisión de un contra-asiento o nota de crédito para trazabilidad legal.</li>
+    </ul>
+
+    <!-- Section 6: Owner Settlements -->
+    <h2 id="sec-6">6. Liquidaciones a Propietarios (`/admin/liquidaciones`)</h2>
+    <p>Cálculo y rendición mensual de cuentas a los dueños de los inmuebles administrados:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Concepto de Liquidación</th>
+          <th>Tipo</th>
+          <th>Cálculo Aplicado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Alquiler Bruto Cobrado</strong></td>
+          <td><span class="badge badge-tenant">Haber (+)</span></td>
+          <td>Monto total cobrado al inquilino correspondiente al período.</td>
+        </tr>
+        <tr>
+          <td><strong>Comisión de Administración</strong></td>
+          <td><span class="badge badge-admin">Debe (-)</span></td>
+          <td>Porcentaje de honorarios pactado con la inmobiliaria (ej: 8% o 10% configurable).</td>
+        </tr>
+        <tr>
+          <td><strong>Gastos de Mantenimiento / Arreglos</strong></td>
+          <td><span class="badge badge-owner">Debe (-)</span></td>
+          <td>Deducción de facturas de proveedores por reparaciones autorizadas en el inmueble.</td>
+        </tr>
+        <tr>
+          <td><strong>Neto a Transferir al Propietario</strong></td>
+          <td><strong>Total Neto</strong></td>
+          <td>Importe final acreditado a la cuenta bancaria del titular con comprobante PDF.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Section 7: CRM & Pipeline -->
+    <h2 id="sec-7">7. CRM Inmobiliario y Pipeline Comercial (`/admin/crm`)</h2>
+    <p>Embudo de ventas y alquileres para el equipo comercial de Trebond con vista Kanban de arrastrar y soltar:</p>
+
+    <div class="callout callout-purple">
+      <div class="callout-title"><span class="badge badge-crm">CRM</span> Embudo Comercial en 8 Etapas</div>
+      El pipeline gestiona todo el ciclo de vida de los prospectos:
+      <div style="margin-top: 8px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 8px;">
+        <span class="badge" style="background:#e0f2fe;color:#0369a1;">1. Nuevo Lead</span> &rarr;
+        <span class="badge" style="background:#f1f5f9;color:#334155;">2. Contactado</span> &rarr;
+        <span class="badge" style="background:#fef3c7;color:#92400e;">3. Visita Agendada</span> &rarr;
+        <span class="badge" style="background:#fde68a;color:#854d0e;">4. Visita Realizada</span> &rarr;
+        <span class="badge" style="background:#fed7aa;color:#9a3412;">5. Oferta Hecha</span> &rarr;
+        <span class="badge" style="background:#fbcfe8;color:#9d174d;">6. En Negociación</span> &rarr;
+        <span class="badge badge-tenant">7. Ganado (Cerrado)</span> |
+        <span class="badge badge-admin">8. Perdido</span>
+      </div>
+    </div>
+
+    <ul>
+      <li><strong>Captura Automática de Leads:</strong> Cuando un usuario solicita una visita desde el mapa o envía una postulación web, se crea automáticamente la ficha del prospecto asociada a la propiedad.</li>
+      <li><strong>Registro Cronológico de Interacciones:</strong> Bitácora completa de llamadas telefónicas, chats de WhatsApp, reuniones presenciales y correos electrónicos con fecha y notas de seguimiento.</li>
+      <li><strong>Métricas de Conversión:</strong> Tasa de éxito por agente, tiempo promedio de cierre y origen de clientes más rentable (portal web, cartel, referidos o redes sociales).</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <!-- Section 8: Syndication -->
+    <h2 id="sec-8">8. Sindicación Multi-Portal: ZonaProp & ArgenProp (`/admin/propiedades`)</h2>
+    <p>Publicación simultánea e inteligente para multiplicar el alcance comercial de las propiedades:</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h4><span class="badge badge-sync">ZonaProp</span> Sincronización Automática</h4>
+        <p>Publica y actualiza precios, descripción, fotos en alta resolución y estado de disponibilidad en ZonaProp con un solo clic.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="badge badge-sync">ArgenProp</span> Sincronización Paralela</h4>
+        <p>Distribuye la ficha técnica a ArgenProp de forma independiente, garantizando que fallas de un portal no interrumpan al otro.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="badge badge-admin">Toggles</span> Control Individual</h4>
+        <p>Panel de switches en la ficha de cada propiedad para activar o pausar la sindicación en cada portal de forma granular.</p>
+      </div>
+      <div class="feature-card">
+        <h4><span class="badge badge-tenant">Baja</span> Despublicación Inmediata</h4>
+        <p>Al firmar el contrato de alquiler o concretar la venta en Trebond, la propiedad se despublica automáticamente de los portales externos.</p>
+      </div>
+    </div>
+
+    <!-- Section 9: Biometrics & OTP -->
+    <h2 id="sec-9">9. Firma Digital con Validación Biométrica Facial y OTP (`/portal/contratos`)</h2>
+    <p>Seguridad jurídica de nivel bancario para la firma de contratos de locación y reservas sin necesidad de acudir a la oficina:</p>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">1</span> Panel Principal & Mi Contrato (/portal)</div>
-      Visualización del alquiler vigente, vencimiento de la cuota mensual, valor actualizado e historial de pagos.
+      <div class="step-title"><span class="step-number">1</span> Captura de Selfie en Tiempo Real</div>
+      El firmante (inquilino o propietario) abre el contrato desde su teléfono o computadora. El sistema solicita una captura fotográfica frontal mediante la cámara del dispositivo con <em>detección de vida (liveness)</em> para evitar fraudes con fotos impresas o pantallas.
     </div>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">2</span> Carga de Comprobantes de Pago (/portal/pagos)</div>
-      Permite informar transferencias del alquiler o expensas adjuntando la foto/PDF del comprobante para su validación administrativa y descarga del recibo oficial.
+      <div class="step-title"><span class="step-number">2</span> Cotejo Facial con AWS Rekognition</div>
+      El motor biométrico compara la selfie en tiempo real contra la foto frontal del DNI previamente validada durante la postulación, exigiendo un porcentaje de coincidencia mínimo del <strong>90%</strong>.
     </div>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">3</span> Carga de Boletas de Servicios (/portal/servicios)</div>
-      Sección para subir facturas abonadas de luz, gas o agua a fin de mantener al día la carpeta del inmueble.
+      <div class="step-title"><span class="step-number">3</span> Firma y Sellado con Código OTP</div>
+      Una vez aprobada la biometría, el firmante solicita su código OTP de 6 dígitos (enviado por correo electrónico y notificaciones push) e introduce la clave para sellar digitalmente el contrato con fecha, hora exacta, IP y score biométrico auditado.
+    </div>
+
+    <!-- Section 10: Mobile-First Portals -->
+    <h2 id="sec-10">10. Portales de Inquilino y Propietario Mobile-First</h2>
+    <p>Experiencia de usuario fluida diseñada específicamente para pantallas táctiles de smartphones:</p>
+    <ul>
+      <li><strong>Barra de Navegación Inferior (Bottom Nav):</strong> Accesos rápidos con el pulgar para <em>Inicio, Pagos, Contratos, Arreglos y Perfil</em>.</li>
+      <li><strong>Cajón Lateral Deslizable (Drawer):</strong> Menú completo táctil accesible desde cualquier sección sin saturar la pantalla.</li>
+      <li><strong>Tarjetas Colapsables de Cuotas:</strong> En lugar de tablas anchas con desbordamiento horizontal, los vencimientos, estados de pago y liquidaciones se visualizan en tarjetas estilizadas adaptadas al ancho exacto del teléfono.</li>
+      <li><strong>Descarga Inmediata de Comprobantes:</strong> Acceso a Facturas AFIP oficiales en PDF con 1 toque para enviar por WhatsApp o guardar en el dispositivo.</li>
+    </ul>
+
+    <div class="page-break"></div>
+
+    <!-- Section 11: Map -->
+    <h2 id="sec-11">11. Mapa Interactivo de Propiedades (`/mapa`)</h2>
+    <p>Exploración geográfica de inmuebles en pantalla completa con sincronización en tiempo real:</p>
+    <ul>
+      <li><strong>Pins Interactivos por Operación:</strong> Marcadores diferenciados con precios de alquiler y venta sobre el mapa geográfico.</li>
+      <li><strong>Centrado Instantáneo:</strong> Al presionar cualquier inmueble en el panel lateral, el mapa hace foco automáticamente en su coordenada GPS.</li>
+      <li><strong>Navegación Externa:</strong> Botón rojo <code>📍 Ver en Google Maps</code> para abrir el trayecto GPS o Street View en la app de Google Maps.</li>
+    </ul>
+
+    <!-- Section 12: Recommended E2E Test -->
+    <h2 id="sec-12">12. Paso a Paso: Guía de Prueba E2E Recomendada (7 Minutos)</h2>
+    <p>Para comprobar la excelencia operativa del sistema de punta a punta, recomendamos realizar este circuito de validación:</p>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">1</span> Postulación a Propiedad</div>
+      Ingrese a <a href="https://trebond-frontend.vercel.app/propiedades" target="_blank">/propiedades</a> como visitante, seleccione una unidad y presione <strong>"Postularse para Alquilar"</strong> adjuntando DNI y recibos de prueba.
     </div>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">4</span> Solicitud de Mantenimiento / Tickets (/portal/mantenimiento/nuevo)</div>
-      Ante cualquier inconveniente en la propiedad, el inquilino completa un formulario especificando la categoría (<em>Plomería, Gas, Electricidad, Cerrajería</em>), nivel de urgencia, descripción del problema y fotos del daño. Puede seguir el estado de la visita técnica desde <code>/portal/mantenimiento</code>.
+      <div class="step-title"><span class="step-number">2</span> Conversión y Aprobación Administrativa</div>
+      Inicie sesión como Admin (<code>admin@trebond.com</code> / <code>admin123</code>), acceda a <code>/admin/solicitudes</code> y presione <strong>"Aprobar y Convertir en Inquilino"</strong>.
     </div>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">5</span> Mi Perfil & Seguridad (/portal/perfil)</div>
-      Gestión de datos personales (Nombre, Email, Teléfono, DNI) y formulario seguro para actualizar la contraseña de ingreso.
-    </div>
-
-    <!-- 5. Portal del Propietario -->
-    <h2>5. Guía de Uso: Portal del Propietario</h2>
-
-    <div class="step-card">
-      <div class="step-title"><span class="step-number">1</span> Control de Inmuebles</div>
-      Al ingresar con su cuenta (<code>marcelo.rodriguez@owner.com</code>), el dueño observa la lista de sus departamentos, el estado de cobro de cada inquilino y la fecha de contrato.
+      <div class="step-title"><span class="step-number">3</span> Firma Digital con OTP y Biometría</div>
+      Inicie sesión con el inquilino en <code>/portal/contratos</code>, complete la verificación y firme con su clave OTP de 6 dígitos. Luego ingrese con el dueño (<code>marcelo.rodriguez@owner.com</code>) y confirme la firma de la parte locadora.
     </div>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">2</span> Firma Digital OTP de Alquileres</div>
-      Cuando la inmobiliaria confecciona un nuevo contrato, el dueño ingresa al sistema, verifica los montos y cláusulas, solicita su clave OTP y realiza la firma digital.
+      <div class="step-title"><span class="step-number">4</span> Cobro y Facturación Electrónica AFIP</div>
+      En <code>/admin/facturacion</code> emita la factura por el alquiler. Verifique que se asigne el <strong>CAE oficial</strong>, el <strong>código QR RG 5003</strong> y descargue el <strong>PDF oficial</strong>.
     </div>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">3</span> Rendición & Liquidaciones</div>
-      Consulta mensual del monto cobrado por la agencia, deducción de comisión administrativa (5%), retenciones por arreglos ejecutados y botón para descargar el comprobante de liquidación PDF.
+      <div class="step-title"><span class="step-number">5</span> Control en Caja y Cuenta Corriente</div>
+      Compruebe en <code>/admin/caja</code> el ingreso de los fondos y en <code>/admin/cuenta-corriente</code> el saldo actualizado del inquilino.
     </div>
 
-    <!-- 6. Novedad Mapa -->
-    <h2>6. Novedad: Mapa Interactivo & Integración GPS</h2>
-    <div class="callout callout-blue">
-      <div class="callout-title">🗺️ Exploración Geográfica Completa (`/mapa`)</div>
-      - <strong>Visión Panorámica:</strong> Presenta todos los inmuebles de la inmobiliaria posicionados en un mapa interactivo.<br>
-      - <strong>Selección Cruzada:</strong> Al seleccionar una propiedad en la lista lateral, el mapa se desplaza suavemente hacia su posición exactas.<br>
-      - <strong>Acceso GPS Móvil:</strong> Al hacer clic en el pin de una propiedad, el botón destacado <code>📍 Ver en Google Maps</code> abre las coordenadas en la app de Google Maps para iniciar navegación giro a giro o visualizar Street View.
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">6</span> Liquidación Neta al Dueño</div>
+      En <code>/admin/liquidaciones</code> emita la liquidación mensual: confirme el descuento automático de los honorarios de Trebond y descargue el recibo de liquidación neta para el propietario.
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">7</span> Verificación en CRM y Portales Móviles</div>
+      Acceda a <code>/admin/crm</code> para ver la tarjeta del prospecto avanzar automáticamente a la columna <strong>"Cerrado Ganado"</strong> y abra <code>/portal/pagos</code> en su teléfono para validar la visualización mobile-first.
     </div>
 
     <!-- Footer -->
-    <div style="margin-top: 50px; padding-top: 20px; border-top: 2px solid #e2e8f0; text-align: center; color: #94a3b8; font-size: 11.5px;">
-      Trebond Inmobiliaria &copy; 2026 — Plataforma de Gestión Inmobiliaria Integral. Todos los derechos reservados.
+    <div style="margin-top: 45px; padding-top: 24px; border-top: 2px solid #e2e8f0; text-align: center; color: #94a3b8; font-size: 11.5px;">
+      Trebond Inmobiliaria &copy; 2026 — Plataforma de Gestión Inmobiliaria Integral. Todos los derechos reservados.<br/>
+      Documentación sincronizada automáticamente con GitHub Pages.
     </div>
+
   </div>
 
 </body>
