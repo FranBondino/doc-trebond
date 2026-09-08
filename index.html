@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Guía Maestra de Uso Oficial — Trebond Inmobiliaria</title>
+  <link rel="icon" href="https://trebond-frontend.vercel.app/logo/Logo%20Trebond_Isotipo_Color.svg" type="image/svg+xml">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
     
@@ -18,8 +19,13 @@
       print-color-adjust: exact !important;
     }
     
+    html, body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
     body {
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       color: #0f172a;
       background-color: #f8fafc;
       margin: 0;
@@ -28,84 +34,107 @@
       font-size: 13.5px;
     }
 
-    /* Floating Print & Action Bar */
-    .no-print-bar {
-      position: fixed;
-      top: 20px;
-      right: 20px;
+    /* Action Top Bar */
+    .action-bar-container {
+      position: sticky;
+      top: 0;
       z-index: 9999;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      padding: 10px 20px;
       display: flex;
+      justify-content: flex-end;
+      align-items: center;
       gap: 12px;
     }
 
     .btn-action {
-      background-color: #003345;
-      color: white;
+      background-color: #262960;
+      color: #ffffff !important;
       border: none;
-      padding: 11px 22px;
-      font-size: 13px;
+      padding: 9px 18px;
+      font-size: 12.5px;
       font-weight: 700;
       border-radius: 50px;
       cursor: pointer;
-      box-shadow: 0 10px 25px -5px rgba(0, 51, 69, 0.35);
+      box-shadow: 0 4px 14px rgba(38, 41, 96, 0.25);
       transition: all 0.2s ease;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       gap: 8px;
-      text-decoration: none;
+      text-decoration: none !important;
     }
 
     .btn-action:hover {
-      transform: translateY(-2px);
-      background-color: #002230;
-      box-shadow: 0 15px 30px -5px rgba(0, 51, 69, 0.45);
-      color: white;
+      transform: translateY(-1px);
+      background-color: #1a1c43;
+      box-shadow: 0 6px 20px rgba(38, 41, 96, 0.35);
+      color: #ffffff !important;
     }
 
     .btn-secondary {
       background-color: #0284c7;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.25);
     }
     .btn-secondary:hover {
       background-color: #0369a1;
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.35);
     }
 
     /* Document Container */
     .document-container {
       max-width: 940px;
-      margin: 30px auto;
-      background-color: white;
-      padding: 55px 65px;
+      margin: 24px auto 40px auto;
+      background-color: #ffffff;
+      padding: 50px 60px;
       border-radius: 20px;
-      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.07);
+      box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
       border: 1px solid #e2e8f0;
+      overflow: hidden;
     }
 
     /* Cover Header */
     .cover-header {
-      border-bottom: 3px solid #003345;
+      border-bottom: 3px solid #262960;
       padding-bottom: 24px;
       margin-bottom: 32px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+      gap: 20px;
+    }
+
+    .brand-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .brand-logo-img {
+      height: 38px;
+      width: auto;
+      margin-bottom: 4px;
+      display: block;
     }
 
     .brand-title {
-      font-size: 34px;
+      font-size: 32px;
       font-weight: 900;
-      color: #003345;
+      color: #262960;
       letter-spacing: -1px;
       margin: 0;
-      line-height: 1.1;
+      line-height: 1.15;
     }
 
     .brand-subtitle {
-      font-size: 14px;
+      font-size: 13.5px;
       color: #0284c7;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-top: 6px;
+      letter-spacing: 1.8px;
+      margin: 0;
     }
 
     .doc-meta {
@@ -113,7 +142,8 @@
       font-size: 12px;
       color: #64748b;
       font-weight: 500;
-      line-height: 1.5;
+      line-height: 1.6;
+      flex-shrink: 0;
     }
 
     .doc-meta strong {
@@ -124,12 +154,16 @@
     h2 {
       font-size: 19px;
       font-weight: 800;
-      color: #003345;
-      border-left: 4px solid #003345;
+      color: #262960;
+      border-left: 4px solid #262960;
       padding-left: 12px;
-      margin-top: 36px;
+      margin-top: 40px;
       margin-bottom: 16px;
       letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
       page-break-after: avoid;
     }
 
@@ -137,7 +171,7 @@
       font-size: 15px;
       font-weight: 700;
       color: #1e293b;
-      margin-top: 20px;
+      margin-top: 22px;
       margin-bottom: 10px;
       page-break-after: avoid;
     }
@@ -147,12 +181,41 @@
       color: #334155;
     }
 
+    a {
+      color: #262960;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: #cbd5e1;
+      text-underline-offset: 2px;
+      transition: all 0.15s ease;
+    }
+    a:hover {
+      color: #0284c7;
+      text-decoration-color: #0284c7;
+    }
+
+    /* Route Tag in Headings */
+    .route-tag {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #262960;
+      background-color: #eef2ff;
+      border: 1px solid #c7d2fe;
+      padding: 2px 8px;
+      border-radius: 6px;
+      letter-spacing: 0;
+      display: inline-block;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+
     /* Table of Contents */
     .toc-box {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
       border-radius: 14px;
-      padding: 20px 24px;
+      padding: 22px 26px;
       margin-bottom: 30px;
     }
 
@@ -161,58 +224,76 @@
       font-size: 13px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: #003345;
-      margin-bottom: 12px;
+      color: #262960;
+      margin-bottom: 14px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
     .toc-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 8px 20px;
+      gap: 10px 24px;
       font-size: 12.5px;
     }
 
     .toc-link {
       color: #0369a1;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
       display: flex;
       align-items: center;
       gap: 6px;
+      transition: color 0.15s ease;
     }
     .toc-link:hover {
       text-decoration: underline;
-      color: #003345;
+      color: #262960;
     }
 
-    /* Tables */
+    /* Responsive Tables */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 18px 0 26px 0;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      background-color: #ffffff;
+    }
+
     table {
       width: 100%;
+      min-width: 620px;
       border-collapse: collapse;
-      margin: 16px 0 24px 0;
       font-size: 12.5px;
-      page-break-inside: avoid;
+      margin: 0;
     }
 
     th {
-      background-color: #003345;
-      color: white;
+      background-color: #262960;
+      color: #ffffff;
       font-weight: 700;
       text-align: left;
-      padding: 10px 14px;
+      padding: 12px 16px;
       text-transform: uppercase;
       font-size: 11px;
       letter-spacing: 0.8px;
+      white-space: nowrap;
     }
 
     td {
-      padding: 10px 14px;
+      padding: 12px 16px;
       border-bottom: 1px solid #e2e8f0;
       color: #334155;
       vertical-align: middle;
+      word-break: break-word;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
     }
 
     tr:nth-child(even) td {
@@ -221,45 +302,62 @@
 
     /* Badges & Highlights */
     .badge {
-      display: inline-block;
-      padding: 3px 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 9px;
       border-radius: 6px;
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       white-space: nowrap;
+      line-height: 1.3;
     }
 
-    .badge-admin { background-color: #fee2e2; color: #991b1b; }
-    .badge-owner { background-color: #ffedd5; color: #9a3412; }
-    .badge-tenant { background-color: #dcfce7; color: #166534; }
-    .badge-afip { background-color: #e0e7ff; color: #3730a3; }
-    .badge-crm { background-color: #f3e8ff; color: #6b21a8; }
-    .badge-sync { background-color: #fef3c7; color: #92400e; }
-    .badge-bio { background-color: #ccfbf1; color: #115e59; }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .badge-admin { background-color: #fee2e2; color: #991b1b; border: 1px solid #fecaca; }
+    .badge-admin .status-dot { background-color: #dc2626; }
+
+    .badge-owner { background-color: #ffedd5; color: #9a3412; border: 1px solid #fed7aa; }
+    .badge-owner .status-dot { background-color: #ea580c; }
+
+    .badge-tenant { background-color: #dcfce7; color: #166534; border: 1px solid #bbf7d0; }
+    .badge-tenant .status-dot { background-color: #16a34a; }
+
+    .badge-afip { background-color: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
+    .badge-crm { background-color: #f3e8ff; color: #6b21a8; border: 1px solid #e9d5ff; }
+    .badge-sync { background-color: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .badge-bio { background-color: #ccfbf1; color: #115e59; border: 1px solid #99f6e4; }
 
     /* Callout Boxes */
     .callout {
       background-color: #f0fdf4;
       border-left: 4px solid #16a34a;
-      padding: 14px 18px;
-      border-radius: 8px;
-      margin: 18px 0;
-      font-size: 12.5px;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-size: 13px;
       page-break-inside: avoid;
     }
 
     .callout-title {
       font-weight: 800;
       color: #166534;
-      margin-bottom: 4px;
-      font-size: 11.5px;
+      margin-bottom: 6px;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 7px;
     }
 
     .callout-blue {
@@ -284,9 +382,9 @@
     .step-card {
       background-color: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 14px 18px;
-      margin-bottom: 12px;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 14px;
       page-break-inside: avoid;
     }
 
@@ -296,70 +394,153 @@
       justify-content: center;
       width: 24px;
       height: 24px;
-      background-color: #003345;
+      background-color: #262960;
       color: white;
       font-weight: 800;
       font-size: 11px;
       border-radius: 50%;
-      margin-right: 8px;
+      margin-right: 10px;
       flex-shrink: 0;
     }
 
     .step-title {
       font-weight: 700;
-      font-size: 14px;
+      font-size: 14.5px;
       color: #0f172a;
       display: flex;
       align-items: center;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     /* Grid for Feature Cards */
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-      margin: 18px 0;
+      gap: 16px;
+      margin: 20px 0;
     }
 
     .feature-card {
       border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 14px 16px;
-      background: white;
+      border-radius: 12px;
+      padding: 16px 18px;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
     }
 
     .feature-card h4 {
-      margin: 0 0 6px 0;
+      margin: 0 0 8px 0;
       font-size: 13.5px;
-      color: #003345;
+      color: #262960;
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
     }
 
     .feature-card p {
       margin: 0;
       font-size: 12px;
       color: #64748b;
+      line-height: 1.5;
     }
 
+    /* Code Snippets */
     code {
       background-color: #f1f5f9;
-      color: #0f172a;
-      padding: 2px 6px;
-      border-radius: 4px;
+      color: #1e293b;
+      border: 1px solid #e2e8f0;
+      padding: 2px 7px;
+      border-radius: 5px;
       font-size: 12px;
+      font-weight: 600;
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    /* CRM Stepper Flow */
+    .pipeline-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 6px;
+      margin-top: 12px;
+      padding-top: 4px;
+    }
+
+    .pipeline-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #1e293b;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      white-space: nowrap;
+    }
+
+    .pipeline-step .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: #262960;
+      color: #ffffff;
+      font-size: 10px;
+    }
+
+    .pipeline-step.step-won {
+      background: #dcfce7;
+      border-color: #86efac;
+      color: #166534;
+    }
+    .pipeline-step.step-won .step-num {
+      background: #16a34a;
+    }
+
+    .pipeline-step.step-lost {
+      background: #fee2e2;
+      border-color: #fca5a5;
+      color: #991b1b;
+    }
+    .pipeline-step.step-lost .step-num {
+      background: #dc2626;
+    }
+
+    .pipeline-arrow {
+      color: #94a3b8;
+      font-weight: 800;
+      font-size: 13px;
+      user-select: none;
+    }
+
+    .pipeline-sep {
+      color: #cbd5e1;
+      font-weight: 700;
+      margin: 0 4px;
+      user-select: none;
+    }
+
+    /* SVG Icon Helpers */
+    .icon-svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      display: inline-block;
+      vertical-align: text-bottom;
     }
 
     /* Print CSS */
     @media print {
       body {
         background-color: white;
-        font-size: 11.5px;
+        font-size: 11px;
       }
-      .no-print-bar {
+      .action-bar-container {
         display: none !important;
       }
       .document-container {
@@ -382,12 +563,13 @@
     @media (max-width: 768px) {
       .document-container {
         padding: 24px 18px;
-        margin: 10px;
+        margin: 12px 10px 30px 10px;
+        border-radius: 14px;
       }
       .cover-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 12px;
+        gap: 14px;
       }
       .doc-meta {
         text-align: left;
@@ -395,32 +577,45 @@
       .toc-grid, .feature-grid {
         grid-template-columns: 1fr;
       }
-      .no-print-bar {
-        position: static;
-        margin: 12px auto;
+      .action-bar-container {
         justify-content: center;
+        padding: 10px 14px;
+      }
+      .btn-action {
+        padding: 8px 14px;
+        font-size: 12px;
+      }
+      .brand-title {
+        font-size: 26px;
+      }
+      h2 {
+        font-size: 17px;
+      }
+      .route-tag {
+        font-size: 11px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Floating Print & Quick Access Bar -->
-  <div class="no-print-bar">
+  <!-- Top Action & Print Bar (Clean sticky bar, zero overlap) -->
+  <header class="action-bar-container">
     <a href="https://trebond-frontend.vercel.app" target="_blank" class="btn-action btn-secondary">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
       Abrir App en Vivo
     </a>
     <button class="btn-action" onclick="window.print()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+      <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
       Imprimir / PDF
     </button>
-  </div>
+  </header>
 
-  <div class="document-container">
-    <!-- Header / Cover -->
+  <main class="document-container">
+    <!-- Header / Cover with Official Logo -->
     <div class="cover-header">
-      <div>
+      <div class="brand-group">
+        <img src="logo.svg" alt="Trebond Inmobiliaria" class="brand-logo-img">
         <h1 class="brand-title">Trebond Inmobiliaria</h1>
         <div class="brand-subtitle">Guía Maestra de Uso & Manual de Operaciones</div>
       </div>
@@ -434,13 +629,19 @@
 
     <!-- Intro Box -->
     <div class="callout callout-blue">
-      <div class="callout-title">📌 Propósito de la Guía</div>
+      <div class="callout-title">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+        Propósito de la Guía
+      </div>
       Este documento es el manual operativo integral de <strong>Trebond Inmobiliaria</strong>. Contempla el ecosistema completo de la plataforma: desde la captación comercial y sindicación de propiedades, pasando por el alquiler con validación biométrica facial, hasta la administración financiera avanzada con <strong>Facturación Electrónica AFIP oficial</strong>, <strong>Arqueo de Caja</strong>, <strong>Cuentas Corrientes</strong> y <strong>Liquidaciones a Propietarios</strong>.
     </div>
 
     <!-- Table of Contents -->
-    <div class="toc-box">
-      <div class="toc-title">📑 Índice de Contenidos</div>
+    <nav class="toc-box" aria-label="Índice de contenidos">
+      <div class="toc-title">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        Índice de Contenidos
+      </div>
       <div class="toc-grid">
         <a href="#sec-1" class="toc-link">1. Enlaces y Accesos a la Plataforma</a>
         <a href="#sec-2" class="toc-link">2. Credenciales de Prueba Precargadas</a>
@@ -455,108 +656,112 @@
         <a href="#sec-11" class="toc-link">11. Mapa Interactivo de Propiedades</a>
         <a href="#sec-12" class="toc-link">12. Paso a Paso: Guía de Prueba E2E (7 Min)</a>
       </div>
-    </div>
+    </nav>
 
     <!-- Section 1: URLs -->
     <h2 id="sec-1">1. Enlaces Oficiales de Acceso a la Plataforma</h2>
     <p>La plataforma está optimizada para acceso universal desde computadoras de escritorio, tablets y teléfonos móviles:</p>
     
-    <table>
-      <thead>
-        <tr>
-          <th>Módulo / Pantalla</th>
-          <th>URL de Acceso Directo</th>
-          <th>Función y Destinatarios</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Portal Público Principal</strong></td>
-          <td><a href="https://trebond-frontend.vercel.app" target="_blank">https://trebond-frontend.vercel.app</a></td>
-          <td>Buscador de inmuebles, catálogo con filtros, tasaciones y contacto.</td>
-        </tr>
-        <tr>
-          <td><strong>Facturación Electrónica AFIP</strong></td>
-          <td><a href="https://trebond-frontend.vercel.app/admin/facturacion" target="_blank">/admin/facturacion</a></td>
-          <td>Emisión de Facturas A/B/C con CAE, QR RG 5003 y descarga PDF.</td>
-        </tr>
-        <tr>
-          <td><strong>Caja y Arqueo Diario</strong></td>
-          <td><a href="https://trebond-frontend.vercel.app/admin/caja" target="_blank">/admin/caja</a></td>
-          <td>Libro de ingresos y egresos (ARS/USD), cheques y arqueo diario.</td>
-        </tr>
-        <tr>
-          <td><strong>Cuentas Corrientes</strong></td>
-          <td><a href="https://trebond-frontend.vercel.app/admin/cuenta-corriente" target="_blank">/admin/cuenta-corriente</a></td>
-          <td>Estado de cuenta por Inquilino y Propietario con cálculo de mora.</td>
-        </tr>
-        <tr>
-          <td><strong>Liquidaciones a Dueños</strong></td>
-          <td><a href="https://trebond-frontend.vercel.app/admin/liquidaciones" target="_blank">/admin/liquidaciones</a></td>
-          <td>Liquidación mensual, descuento de honorarios y retenciones.</td>
-        </tr>
-        <tr>
-          <td><strong>CRM Comercial (Kanban)</strong></td>
-          <td><a href="https://trebond-frontend.vercel.app/admin/crm" target="_blank">/admin/crm</a></td>
-          <td>Embudo de ventas/alquileres, seguimiento de prospectos y notas.</td>
-        </tr>
-        <tr>
-          <td><strong>Portal Inquilino (Mobile)</strong></td>
-          <td><a href="https://trebond-frontend.vercel.app/portal/pagos" target="_blank">/portal/pagos</a></td>
-          <td>Pago de alquiler, comprobantes, facturas PDF y tickets de arreglos.</td>
-        </tr>
-        <tr>
-          <td><strong>Portal Propietario</strong></td>
-          <td><a href="https://trebond-frontend.vercel.app/dashboard/owner" target="_blank">/dashboard/owner</a></td>
-          <td>Inmuebles propios, contratos, liquidaciones y balances netos.</td>
-        </tr>
-        <tr>
-          <td><strong>Mapa Interactivo Fullscreen</strong></td>
-          <td><a href="https://trebond-frontend.vercel.app/mapa" target="_blank">/mapa</a></td>
-          <td>Geolocalización interactiva de propiedades con GPS Google Maps.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Módulo / Pantalla</th>
+            <th>URL de Acceso Directo</th>
+            <th>Función y Destinatarios</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Portal Público Principal</strong></td>
+            <td><a href="https://trebond-frontend.vercel.app" target="_blank">https://trebond-frontend.vercel.app</a></td>
+            <td>Buscador de inmuebles, catálogo con filtros, tasaciones y contacto.</td>
+          </tr>
+          <tr>
+            <td><strong>Facturación Electrónica AFIP</strong></td>
+            <td><a href="https://trebond-frontend.vercel.app/admin/facturacion" target="_blank">/admin/facturacion</a></td>
+            <td>Emisión de Facturas A/B/C con CAE, QR RG 5003 y descarga PDF.</td>
+          </tr>
+          <tr>
+            <td><strong>Caja y Arqueo Diario</strong></td>
+            <td><a href="https://trebond-frontend.vercel.app/admin/caja" target="_blank">/admin/caja</a></td>
+            <td>Libro de ingresos y egresos (ARS/USD), cheques y arqueo diario.</td>
+          </tr>
+          <tr>
+            <td><strong>Cuentas Corrientes</strong></td>
+            <td><a href="https://trebond-frontend.vercel.app/admin/cuenta-corriente" target="_blank">/admin/cuenta-corriente</a></td>
+            <td>Estado de cuenta por Inquilino y Propietario con cálculo de mora.</td>
+          </tr>
+          <tr>
+            <td><strong>Liquidaciones a Dueños</strong></td>
+            <td><a href="https://trebond-frontend.vercel.app/admin/liquidaciones" target="_blank">/admin/liquidaciones</a></td>
+            <td>Liquidación mensual, descuento de honorarios y retenciones.</td>
+          </tr>
+          <tr>
+            <td><strong>CRM Comercial (Kanban)</strong></td>
+            <td><a href="https://trebond-frontend.vercel.app/admin/crm" target="_blank">/admin/crm</a></td>
+            <td>Embudo de ventas/alquileres, seguimiento de prospectos y notas.</td>
+          </tr>
+          <tr>
+            <td><strong>Portal Inquilino (Mobile)</strong></td>
+            <td><a href="https://trebond-frontend.vercel.app/portal/pagos" target="_blank">/portal/pagos</a></td>
+            <td>Pago de alquiler, comprobantes, facturas PDF y tickets de arreglos.</td>
+          </tr>
+          <tr>
+            <td><strong>Portal Propietario</strong></td>
+            <td><a href="https://trebond-frontend.vercel.app/dashboard/owner" target="_blank">/dashboard/owner</a></td>
+            <td>Inmuebles propios, contratos, liquidaciones y balances netos.</td>
+          </tr>
+          <tr>
+            <td><strong>Mapa Interactivo Fullscreen</strong></td>
+            <td><a href="https://trebond-frontend.vercel.app/mapa" target="_blank">/mapa</a></td>
+            <td>Geolocalización interactiva de propiedades con GPS Google Maps.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <!-- Section 2: Credentials -->
     <h2 id="sec-2">2. Credenciales de Prueba Precargadas</h2>
     <p>Para auditar los diferentes permisos y vistas del sistema, utilice las siguientes cuentas operativas:</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Rol</th>
-          <th>Correo Electrónico</th>
-          <th>Contraseña</th>
-          <th>Alcance y Privilegios</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><span class="badge badge-admin">🔴 Administrador</span></td>
-          <td><code>admin@trebond.com</code></td>
-          <td><code>admin123</code></td>
-          <td>Control global: Facturación AFIP, Caja, Liquidaciones, CRM, Sindicación y Aprobación de Postulaciones.</td>
-        </tr>
-        <tr>
-          <td><span class="badge badge-owner">🟠 Propietario</span></td>
-          <td><code>marcelo.rodriguez@owner.com</code></td>
-          <td><code>admin123</code></td>
-          <td>Acceso a sus inmuebles, firma digital de contratos con OTP y descarga de liquidaciones netas.</td>
-        </tr>
-        <tr>
-          <td><span class="badge badge-tenant">🟢 Inquilino</span></td>
-          <td><code>carlos@tenant.com</code></td>
-          <td><code>admin123</code></td>
-          <td>Consulta de contrato, pago mensual de cuotas, descarga de Facturas Oficiales con CAE y tickets de mantenimiento.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Rol</th>
+            <th>Correo Electrónico</th>
+            <th>Contraseña</th>
+            <th>Alcance y Privilegios</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-admin"><span class="status-dot"></span> Administrador</span></td>
+            <td><code>admin@trebond.com</code></td>
+            <td><code>admin123</code></td>
+            <td>Control global: Facturación AFIP, Caja, Liquidaciones, CRM, Sindicación y Aprobación de Postulaciones.</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-owner"><span class="status-dot"></span> Propietario</span></td>
+            <td><code>marcelo.rodriguez@owner.com</code></td>
+            <td><code>admin123</code></td>
+            <td>Acceso a sus inmuebles, firma digital de contratos con OTP y descarga de liquidaciones netas.</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-tenant"><span class="status-dot"></span> Inquilino</span></td>
+            <td><code>carlos@tenant.com</code></td>
+            <td><code>admin123</code></td>
+            <td>Consulta de contrato, pago mensual de cuotas, descarga de Facturas Oficiales con CAE y tickets de mantenimiento.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <div class="page-break"></div>
 
     <!-- Section 3: AFIP Invoicing -->
-    <h2 id="sec-3">3. Facturación Electrónica AFIP Oficial (`/admin/facturacion`)</h2>
+    <h2 id="sec-3">3. Facturación Electrónica AFIP Oficial <span class="route-tag">/admin/facturacion</span></h2>
     <p>El módulo de facturación está integrado mediante el SDK oficial de AFIP (Web Services WSFE), permitiendo emitir comprobantes fiscales electrónicos de forma transparente tanto en modo <strong>Sandbox de prueba</strong> como en <strong>Producción Real</strong>.</p>
 
     <div class="feature-grid">
@@ -589,12 +794,15 @@
     </div>
 
     <div class="callout callout-amber">
-      <div class="callout-title">⚙️ Configuración de Certificados AFIP</div>
+      <div class="callout-title">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        Configuración de Certificados AFIP
+      </div>
       Para operar con su CUIT real, presione el botón <strong>"Configuración AFIP"</strong> en la cabecera del módulo. Podrá cargar su CUIT, Punto de Venta y pegar su Certificado digital (<code>.crt</code>) y Clave Privada (<code>.key</code>). En modo de prueba sin certificados, el sistema opera con el simulador Sandbox de alta fidelidad sin generar deudas ante AFIP.
     </div>
 
     <!-- Section 4: Cash Box & Daily Balance -->
-    <h2 id="sec-4">4. Caja y Arqueo Diario de Fondos (`/admin/caja`)</h2>
+    <h2 id="sec-4">4. Caja y Arqueo Diario de Fondos <span class="route-tag">/admin/caja</span></h2>
     <p>Control operativo y de tesorería para administrar el flujo diario de dinero físico y bancario de la inmobiliaria:</p>
 
     <div class="step-card">
@@ -615,7 +823,7 @@
     <div class="page-break"></div>
 
     <!-- Section 5: Checking Accounts -->
-    <h2 id="sec-5">5. Cuentas Corrientes y Cálculo de Mora (`/admin/cuenta-corriente`)</h2>
+    <h2 id="sec-5">5. Cuentas Corrientes y Cálculo de Mora <span class="route-tag">/admin/cuenta-corriente</span></h2>
     <p>Historial contable transparente por cada cliente (inquilinos, propietarios y proveedores):</p>
     <ul>
       <li><strong>Débitos Automáticos:</strong> Al inicio de cada período locativo, el sistema asienta la obligación de pago del alquiler y las expensas ordinarias devengadas.</li>
@@ -625,57 +833,69 @@
     </ul>
 
     <!-- Section 6: Owner Settlements -->
-    <h2 id="sec-6">6. Liquidaciones a Propietarios (`/admin/liquidaciones`)</h2>
+    <h2 id="sec-6">6. Liquidaciones a Propietarios <span class="route-tag">/admin/liquidaciones</span></h2>
     <p>Cálculo y rendición mensual de cuentas a los dueños de los inmuebles administrados:</p>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Concepto de Liquidación</th>
-          <th>Tipo</th>
-          <th>Cálculo Aplicado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Alquiler Bruto Cobrado</strong></td>
-          <td><span class="badge badge-tenant">Haber (+)</span></td>
-          <td>Monto total cobrado al inquilino correspondiente al período.</td>
-        </tr>
-        <tr>
-          <td><strong>Comisión de Administración</strong></td>
-          <td><span class="badge badge-admin">Debe (-)</span></td>
-          <td>Porcentaje de honorarios pactado con la inmobiliaria (ej: 8% o 10% configurable).</td>
-        </tr>
-        <tr>
-          <td><strong>Gastos de Mantenimiento / Arreglos</strong></td>
-          <td><span class="badge badge-owner">Debe (-)</span></td>
-          <td>Deducción de facturas de proveedores por reparaciones autorizadas en el inmueble.</td>
-        </tr>
-        <tr>
-          <td><strong>Neto a Transferir al Propietario</strong></td>
-          <td><strong>Total Neto</strong></td>
-          <td>Importe final acreditado a la cuenta bancaria del titular con comprobante PDF.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>Concepto de Liquidación</th>
+            <th>Tipo</th>
+            <th>Cálculo Aplicado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Alquiler Bruto Cobrado</strong></td>
+            <td><span class="badge badge-tenant">Haber (+)</span></td>
+            <td>Monto total cobrado al inquilino correspondiente al período.</td>
+          </tr>
+          <tr>
+            <td><strong>Comisión de Administración</strong></td>
+            <td><span class="badge badge-admin">Debe (-)</span></td>
+            <td>Porcentaje de honorarios pactado con la inmobiliaria (ej: 8% o 10% configurable).</td>
+          </tr>
+          <tr>
+            <td><strong>Gastos de Mantenimiento / Arreglos</strong></td>
+            <td><span class="badge badge-owner">Debe (-)</span></td>
+            <td>Deducción de facturas de proveedores por reparaciones autorizadas en el inmueble.</td>
+          </tr>
+          <tr>
+            <td><strong>Neto a Transferir al Propietario</strong></td>
+            <td><span class="badge badge-afip">Total Neto</span></td>
+            <td>Importe final acreditado a la cuenta bancaria del titular con comprobante PDF.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <!-- Section 7: CRM & Pipeline -->
-    <h2 id="sec-7">7. CRM Inmobiliario y Pipeline Comercial (`/admin/crm`)</h2>
+    <h2 id="sec-7">7. CRM Inmobiliario y Pipeline Comercial <span class="route-tag">/admin/crm</span></h2>
     <p>Embudo de ventas y alquileres para el equipo comercial de Trebond con vista Kanban de arrastrar y soltar:</p>
 
     <div class="callout callout-purple">
-      <div class="callout-title"><span class="badge badge-crm">CRM</span> Embudo Comercial en 8 Etapas</div>
-      El pipeline gestiona todo el ciclo de vida de los prospectos:
-      <div style="margin-top: 8px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 8px;">
-        <span class="badge" style="background:#e0f2fe;color:#0369a1;">1. Nuevo Lead</span> &rarr;
-        <span class="badge" style="background:#f1f5f9;color:#334155;">2. Contactado</span> &rarr;
-        <span class="badge" style="background:#fef3c7;color:#92400e;">3. Visita Agendada</span> &rarr;
-        <span class="badge" style="background:#fde68a;color:#854d0e;">4. Visita Realizada</span> &rarr;
-        <span class="badge" style="background:#fed7aa;color:#9a3412;">5. Oferta Hecha</span> &rarr;
-        <span class="badge" style="background:#fbcfe8;color:#9d174d;">6. En Negociación</span> &rarr;
-        <span class="badge badge-tenant">7. Ganado (Cerrado)</span> |
-        <span class="badge badge-admin">8. Perdido</span>
+      <div class="callout-title">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        Embudo Comercial en 8 Etapas
+      </div>
+      El pipeline gestiona todo el ciclo de vida de los prospectos de forma interactiva:
+      <div class="pipeline-flow">
+        <div class="pipeline-step"><span class="step-num">1</span> Nuevo Lead</div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step"><span class="step-num">2</span> Contactado</div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step"><span class="step-num">3</span> Visita Agendada</div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step"><span class="step-num">4</span> Visita Realizada</div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step"><span class="step-num">5</span> Oferta Hecha</div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step"><span class="step-num">6</span> En Negociación</div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-step step-won"><span class="step-num">✓</span> Ganado (Cerrado)</div>
+        <div class="pipeline-sep">|</div>
+        <div class="pipeline-step step-lost"><span class="step-num">✕</span> Perdido</div>
       </div>
     </div>
 
@@ -688,7 +908,7 @@
     <div class="page-break"></div>
 
     <!-- Section 8: Syndication -->
-    <h2 id="sec-8">8. Sindicación Multi-Portal: ZonaProp & ArgenProp (`/admin/propiedades`)</h2>
+    <h2 id="sec-8">8. Sindicación Multi-Portal: ZonaProp & ArgenProp <span class="route-tag">/admin/propiedades</span></h2>
     <p>Publicación simultánea e inteligente para multiplicar el alcance comercial de las propiedades:</p>
 
     <div class="feature-grid">
@@ -711,7 +931,7 @@
     </div>
 
     <!-- Section 9: Biometrics & OTP -->
-    <h2 id="sec-9">9. Firma Digital con Validación Biométrica Facial y OTP (`/portal/contratos`)</h2>
+    <h2 id="sec-9">9. Firma Digital con Validación Biométrica Facial y OTP <span class="route-tag">/portal/contratos</span></h2>
     <p>Seguridad jurídica de nivel bancario para la firma de contratos de locación y reservas sin necesidad de acudir a la oficina:</p>
 
     <div class="step-card">
@@ -734,7 +954,7 @@
     <p>Experiencia de usuario fluida diseñada específicamente para pantallas táctiles de smartphones:</p>
     <ul>
       <li><strong>Barra de Navegación Inferior (Bottom Nav):</strong> Accesos rápidos con el pulgar para <em>Inicio, Pagos, Contratos, Arreglos y Perfil</em>.</li>
-      <li><strong>Cajón Lateral Deslizable (Drawer):</strong> Menú completo táctil accesible desde cualquier sección sin saturar la pantalla.</li>
+      <li><strong>Cajón Lateral Deslizable (Drawer):</strong> Menú completo táctil accesible desde cualquier sección sin saturar la pantalla ni duplicar logos.</li>
       <li><strong>Tarjetas Colapsables de Cuotas:</strong> En lugar de tablas anchas con desbordamiento horizontal, los vencimientos, estados de pago y liquidaciones se visualizan en tarjetas estilizadas adaptadas al ancho exacto del teléfono.</li>
       <li><strong>Descarga Inmediata de Comprobantes:</strong> Acceso a Facturas AFIP oficiales en PDF con 1 toque para enviar por WhatsApp o guardar en el dispositivo.</li>
     </ul>
@@ -742,12 +962,12 @@
     <div class="page-break"></div>
 
     <!-- Section 11: Map -->
-    <h2 id="sec-11">11. Mapa Interactivo de Propiedades (`/mapa`)</h2>
+    <h2 id="sec-11">11. Mapa Interactivo de Propiedades <span class="route-tag">/mapa</span></h2>
     <p>Exploración geográfica de inmuebles en pantalla completa con sincronización en tiempo real:</p>
     <ul>
       <li><strong>Pins Interactivos por Operación:</strong> Marcadores diferenciados con precios de alquiler y venta sobre el mapa geográfico.</li>
       <li><strong>Centrado Instantáneo:</strong> Al presionar cualquier inmueble en el panel lateral, el mapa hace foco automáticamente en su coordenada GPS.</li>
-      <li><strong>Navegación Externa:</strong> Botón rojo <code>📍 Ver en Google Maps</code> para abrir el trayecto GPS o Street View en la app de Google Maps.</li>
+      <li><strong>Navegación Externa:</strong> Botón destacado <code>📍 Ver en Google Maps</code> para abrir el trayecto GPS o Street View en la app oficial de Google Maps.</li>
     </ul>
 
     <!-- Section 12: Recommended E2E Test -->
@@ -790,12 +1010,12 @@
     </div>
 
     <!-- Footer -->
-    <div style="margin-top: 45px; padding-top: 24px; border-top: 2px solid #e2e8f0; text-align: center; color: #94a3b8; font-size: 11.5px;">
+    <footer style="margin-top: 45px; padding-top: 24px; border-top: 2px solid #e2e8f0; text-align: center; color: #94a3b8; font-size: 11.5px;">
       Trebond Inmobiliaria &copy; 2026 — Plataforma de Gestión Inmobiliaria Integral. Todos los derechos reservados.<br/>
       Documentación sincronizada automáticamente con GitHub Pages.
-    </div>
+    </footer>
 
-  </div>
+  </main>
 
 </body>
 </html>
