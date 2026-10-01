@@ -861,7 +861,23 @@
       Al confirmar, se genera la entidad inmutable <code>CajaCierre</code> con fecha, hora, saldo teórico, saldo real, responsable del arqueo y observaciones, impidiendo modificaciones retroactivas de los movimientos de esa jornada.
     </div>
 
-    <!-- Screenshot Caja -->
+    <!-- Screenshot Caja Principal -->
+    <div class="screenshot-box">
+      <div class="screenshot-bar">
+        <div class="screenshot-dots">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <span>Pantalla /admin/caja — Panel de Control de Tesorería y Botón de Cierre de Caja</span>
+      </div>
+      <img class="screenshot-img" src="screenshots/05_admin_caja_principal.png" alt="Caja Principal y Movimientos">
+      <div class="screenshot-caption">
+        <strong>Figura 4.1:</strong> Consola de Caja activa. Muestra los saldos iniciales, ingresos y egresos consolidados en ARS y USD, filtros por medio de pago y el botón visible y accesible de <em>"Cerrar Caja"</em>.
+      </div>
+    </div>
+
+    <!-- Screenshot Caja Cierre Modal -->
     <div class="screenshot-box">
       <div class="screenshot-bar">
         <div class="screenshot-dots">
@@ -873,7 +889,7 @@
       </div>
       <img class="screenshot-img" src="screenshots/05_admin_caja_cierre_modal.png" alt="Cierre de Caja y Arqueo">
       <div class="screenshot-caption">
-        <strong>Figura 4.1:</strong> Modal de Arqueo de Caja diario en Trebond. Compara el saldo teórico del sistema contra el conteo físico de billetes, calcula diferencias al instante y sella el libro diario.
+        <strong>Figura 4.2:</strong> Modal interactivo de Arqueo de Caja diario en Trebond. Compara el saldo teórico del sistema contra el conteo físico de billetes, calcula diferencias al instante y sella el libro diario.
       </div>
     </div>
 
@@ -978,6 +994,22 @@
       Al confirmar la liquidación, se emite el recibo formal de liquidación y se acredita en el saldo a favor del propietario. Cuando el propietario ingresa a su portal (<code>/dashboard/owner</code>), visualiza el desglose exacto con la fecha de pago y el botón para descargar el comprobante en PDF.
     </div>
 
+    <!-- Screenshot Liquidaciones -->
+    <div class="screenshot-box">
+      <div class="screenshot-bar">
+        <div class="screenshot-dots">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <span>Pantalla /admin/liquidaciones — Tablero Maestro de Liquidaciones a Propietarios</span>
+      </div>
+      <img class="screenshot-img" src="screenshots/15_admin_liquidaciones.png" alt="Liquidaciones a Propietarios Trebond">
+      <div class="screenshot-caption">
+        <strong>Figura 6.1:</strong> Panel general de Liquidaciones a Propietarios. Monitoreo de alquileres cobrados, retenciones fiduciarias, comisiones inmobiliarias Trebond (8%), fondos en tránsito y emisión de órdenes de transferencia bancaria.
+      </div>
+    </div>
+
     <!-- Section 7: Property-Owner Linking -->
     <h2 id="sec-7">7. Vinculación de Propiedades a Propietarios <span class="route-tag">/admin/propiedades</span></h2>
     <p><strong>¿Cómo asociar una propiedad a un propietario?</strong> Para que una propiedad pueda alquilarse, tener contratos vigentes y generar liquidaciones mensuales, es obligatorio que esté vinculada a su titular:</p>
@@ -1043,7 +1075,7 @@
         </div>
         <span>Pantalla /admin/contratos — Gestión de Contratos Locativos e Índices de Ajuste</span>
       </div>
-      <img class="screenshot-img" src="screenshots/10_admin_contratos.svg" alt="Gestión de Contratos de Alquiler">
+      <img class="screenshot-img" src="screenshots/10_admin_contratos.png" alt="Gestión de Contratos de Alquiler">
       <div class="screenshot-caption">
         <strong>Figura 8.1:</strong> Panel de control de contratos locativos con periodicidad de ajuste por ICL/IPC, cánones vigentes, plazos de vencimiento y estado de firmas.
       </div>
@@ -1074,7 +1106,7 @@
         </div>
         <span>Pantalla /admin/solicitudes — Mesa de Postulaciones y Scoring Crediticio</span>
       </div>
-      <img class="screenshot-img" src="screenshots/13_admin_solicitudes_scoring.svg" alt="Postulaciones y Scoring">
+      <img class="screenshot-img" src="screenshots/13_admin_solicitudes_scoring.png" alt="Postulaciones y Scoring">
       <div class="screenshot-caption">
         <strong>Figura 9.1:</strong> Evaluación de postulantes con revisión de recibos de sueldo, scoring sobre 1000 puntos y botón de aprobación directa.
       </div>
@@ -1109,7 +1141,7 @@
         </div>
         <span>Pantalla /admin/mantenimiento — Tablero de Incidencias y Asignación de Contratistas</span>
       </div>
-      <img class="screenshot-img" src="screenshots/11_admin_mantenimiento_tickets.svg" alt="Tickets de Mantenimiento">
+      <img class="screenshot-img" src="screenshots/11_admin_mantenimiento_tickets.png" alt="Tickets de Mantenimiento">
       <div class="screenshot-caption">
         <strong>Figura 10.1:</strong> Tablero de incidentes por estados: Pendiente de Asignar, En Presupuesto, En Curso y Finalizado con factura imputada.
       </div>
@@ -1125,6 +1157,22 @@
       <li><strong>CAE Oficial Inalterable:</strong> Obtención de Código de Autorización Electrónico en 2 segundos con fecha de vencimiento legal.</li>
       <li><strong>Código QR RG 5003/2021:</strong> Generación automática de QR normativo escaneable por inspectores o clientes con la app móvil de AFIP.</li>
     </ul>
+
+    <!-- Screenshot Facturacion AFIP -->
+    <div class="screenshot-box">
+      <div class="screenshot-bar">
+        <div class="screenshot-dots">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <span>Pantalla /admin/facturacion — Módulo de Facturación Electrónica AFIP (WSFE)</span>
+      </div>
+      <img class="screenshot-img" src="screenshots/16_admin_facturacion.png" alt="Facturación Electrónica AFIP">
+      <div class="screenshot-caption">
+        <strong>Figura 11.1:</strong> Panel de Facturación Electrónica AFIP. Monitoreo en tiempo real del estado de conexión con Web Services AFIP, punto de venta 0001, CUIT emisor, generación automática de CAE y emisión de Facturas A y B.
+      </div>
+    </div>
 
     <!-- Section 12: Security Deposits -->
     <h2 id="sec-12">12. Depósitos en Garantía y Custodia de Fondos <span class="route-tag">/admin/depositos</span></h2>
@@ -1148,7 +1196,7 @@
         </div>
         <span>Pantalla /admin/crm — Pipeline Comercial en 8 Etapas</span>
       </div>
-      <img class="screenshot-img" src="screenshots/12_admin_crm_kanban.svg" alt="CRM Inmobiliario Kanban">
+      <img class="screenshot-img" src="screenshots/12_admin_crm_kanban.png" alt="CRM Inmobiliario Kanban">
       <div class="screenshot-caption">
         <strong>Figura 13.1:</strong> Tablero Kanban de prospectos. Permite arrastrar leads desde Nuevo Contacto hasta Cerrado Ganado con registro de llamadas y visitas agendadas.
       </div>
@@ -1225,9 +1273,9 @@
         </div>
         <span>Portal de Firma Digital — Validación Biométrica Facial y Cotejo con AWS Rekognition</span>
       </div>
-      <img class="screenshot-img" src="screenshots/09_validacion_biometrica.svg" alt="Validación Biométrica Facial Trebond">
+      <img class="screenshot-img" src="screenshots/09_validacion_biometrica.png" alt="Validación Biométrica Facial Trebond">
       <div class="screenshot-caption">
-        <strong>Figura 15.1:</strong> Flujo de firma segura en 4 pasos: validación de selfie en vivo con liveness, cotejo facial del 98.4% contra DNI, validación de clave OTP y sellado criptográfico.
+        <strong>Figura 15.1:</strong> Paso 3 de Firma Digital: Captura biométrica dual (Selfie en vivo con prueba de vida y encuadre facial ovalado + fotografía nítida del frente del DNI) y cotejo facial con inteligencia artificial (>90% de similitud).
       </div>
     </div>
 
