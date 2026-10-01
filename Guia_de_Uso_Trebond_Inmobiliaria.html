@@ -25,7 +25,7 @@
     }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: #0f172a;
       background-color: #f8fafc;
       margin: 0;
@@ -39,7 +39,7 @@
       position: sticky;
       top: 0;
       z-index: 9999;
-      background: rgba(248, 250, 252, 0.92);
+      background: rgba(248, 250, 252, 0.94);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(226, 232, 240, 0.8);
@@ -85,7 +85,7 @@
 
     /* Document Container */
     .document-container {
-      max-width: 940px;
+      max-width: 960px;
       margin: 24px auto 40px auto;
       background-color: #ffffff;
       padding: 50px 60px;
@@ -113,7 +113,7 @@
     }
 
     .brand-logo-img {
-      height: 38px;
+      height: 40px;
       width: auto;
       margin-bottom: 4px;
       display: block;
@@ -157,7 +157,7 @@
       color: #262960;
       border-left: 4px solid #262960;
       padding-left: 12px;
-      margin-top: 40px;
+      margin-top: 45px;
       margin-bottom: 16px;
       letter-spacing: -0.5px;
       display: flex;
@@ -171,7 +171,7 @@
       font-size: 15px;
       font-weight: 700;
       color: #1e293b;
-      margin-top: 22px;
+      margin-top: 24px;
       margin-bottom: 10px;
       page-break-after: avoid;
     }
@@ -194,10 +194,9 @@
       text-decoration-color: #0284c7;
     }
 
-    /* Route Tag in Headings */
     .route-tag {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 600;
       color: #262960;
       background-color: #eef2ff;
@@ -336,6 +335,7 @@
     .badge-crm { background-color: #f3e8ff; color: #6b21a8; border: 1px solid #e9d5ff; }
     .badge-sync { background-color: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
     .badge-bio { background-color: #ccfbf1; color: #115e59; border: 1px solid #99f6e4; }
+    .badge-caja { background-color: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; }
 
     /* Callout Boxes */
     .callout {
@@ -412,7 +412,7 @@
       margin-bottom: 8px;
     }
 
-    /* Grid for Feature Cards */
+    /* Feature Grid */
     .feature-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -444,53 +444,91 @@
       line-height: 1.5;
     }
 
-    /* Code Snippets */
-    code {
-      background-color: #f1f5f9;
-      color: #1e293b;
-      border: 1px solid #e2e8f0;
-      padding: 2px 7px;
-      border-radius: 5px;
-      font-size: 12px;
-      font-weight: 600;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    /* Screenshot Boxes */
+    .screenshot-box {
+      margin: 22px 0 28px 0;
+      border: 1px solid #cbd5e1;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.1);
+      page-break-inside: avoid;
     }
 
-    /* CRM Stepper Flow */
+    .screenshot-bar {
+      background: #f1f5f9;
+      padding: 9px 16px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 700;
+      color: #475569;
+    }
+
+    .screenshot-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot-red { width: 9px; height: 9px; border-radius: 50%; background: #ef4444; }
+    .dot-yellow { width: 9px; height: 9px; border-radius: 50%; background: #f59e0b; }
+    .dot-green { width: 9px; height: 9px; border-radius: 50%; background: #10b981; }
+
+    .screenshot-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background-color: #f8fafc;
+    }
+
+    .screenshot-caption {
+      padding: 12px 18px;
+      font-size: 12px;
+      color: #334155;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      line-height: 1.5;
+    }
+
+    .screenshot-caption strong {
+      color: #262960;
+    }
+
+    /* Pipeline Step */
     .pipeline-flow {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
-      gap: 8px 6px;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-top: 12px;
-      padding-top: 4px;
+      font-size: 11.5px;
     }
 
     .pipeline-step {
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      padding: 5px 10px;
+      border-radius: 8px;
       background: #ffffff;
       border: 1px solid #cbd5e1;
-      border-radius: 20px;
-      padding: 4px 12px;
-      font-size: 11.5px;
       font-weight: 700;
       color: #1e293b;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-      white-space: nowrap;
     }
 
     .pipeline-step .step-num {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 17px;
-      height: 17px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       background: #262960;
       color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       font-size: 10px;
+      font-weight: 800;
     }
 
     .pipeline-step.step-won {
@@ -498,18 +536,14 @@
       border-color: #86efac;
       color: #166534;
     }
-    .pipeline-step.step-won .step-num {
-      background: #16a34a;
-    }
+    .pipeline-step.step-won .step-num { background: #16a34a; }
 
     .pipeline-step.step-lost {
       background: #fee2e2;
       border-color: #fca5a5;
       color: #991b1b;
     }
-    .pipeline-step.step-lost .step-num {
-      background: #dc2626;
-    }
+    .pipeline-step.step-lost .step-num { background: #dc2626; }
 
     .pipeline-arrow {
       color: #94a3b8;
@@ -525,7 +559,6 @@
       user-select: none;
     }
 
-    /* SVG Icon Helpers */
     .icon-svg {
       width: 16px;
       height: 16px;
@@ -534,72 +567,39 @@
       vertical-align: text-bottom;
     }
 
-    /* Print CSS */
+    code {
+      background-color: #f1f5f9;
+      color: #1e293b;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+    }
+
     @media print {
-      body {
-        background-color: white;
-        font-size: 11px;
-      }
-      .action-bar-container {
-        display: none !important;
-      }
-      .document-container {
-        max-width: 100%;
-        margin: 0;
-        padding: 0;
-        border: none;
-        box-shadow: none;
-        border-radius: 0;
-      }
-      .page-break {
-        page-break-after: always;
-      }
-      a {
-        text-decoration: none;
-        color: #0f172a;
-      }
+      body { background-color: white; font-size: 11px; }
+      .action-bar-container { display: none !important; }
+      .document-container { max-width: 100%; margin: 0; padding: 0; border: none; box-shadow: none; border-radius: 0; }
+      .page-break { page-break-after: always; }
+      a { text-decoration: none; color: #0f172a; }
     }
 
     @media (max-width: 768px) {
-      .document-container {
-        padding: 24px 18px;
-        margin: 12px 10px 30px 10px;
-        border-radius: 14px;
-      }
-      .cover-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 14px;
-      }
-      .doc-meta {
-        text-align: left;
-      }
-      .toc-grid, .feature-grid {
-        grid-template-columns: 1fr;
-      }
-      .action-bar-container {
-        justify-content: center;
-        padding: 10px 14px;
-      }
-      .btn-action {
-        padding: 8px 14px;
-        font-size: 12px;
-      }
-      .brand-title {
-        font-size: 26px;
-      }
-      h2 {
-        font-size: 17px;
-      }
-      .route-tag {
-        font-size: 11px;
-      }
+      .document-container { padding: 24px 18px; margin: 12px 10px 30px 10px; border-radius: 14px; }
+      .cover-header { flex-direction: column; align-items: flex-start; gap: 14px; }
+      .doc-meta { text-align: left; }
+      .toc-grid, .feature-grid { grid-template-columns: 1fr; }
+      .action-bar-container { justify-content: center; padding: 10px 14px; }
+      .btn-action { padding: 8px 14px; font-size: 12px; }
+      .brand-title { font-size: 26px; }
+      h2 { font-size: 17px; }
+      .route-tag { font-size: 11px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Action & Print Bar (Clean sticky bar, zero overlap) -->
+  <!-- Top Action & Print Bar -->
   <header class="action-bar-container">
     <a href="https://trebond-frontend.vercel.app" target="_blank" class="btn-action btn-secondary">
       <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
@@ -620,10 +620,10 @@
         <div class="brand-subtitle">Guía Maestra de Uso & Manual de Operaciones</div>
       </div>
       <div class="doc-meta">
-        <div><strong>Versión:</strong> 2.0.0 (Producción Hardened)</div>
-        <div><strong>Fecha:</strong> Septiembre 2026</div>
-        <div><strong>Estado del Sistema:</strong> 100% Operativo</div>
-        <div><strong>Entorno:</strong> Vercel (Front) + Railway (Back)</div>
+        <div><strong>Versión:</strong> 2.2.0 (Producción Actualizada)</div>
+        <div><strong>Fecha:</strong> Octubre 2026</div>
+        <div><strong>Estado del Sistema:</strong> 100% Operativo y Verificado</div>
+        <div><strong>Entorno:</strong> Next.js 16 (Front) + NestJS (Back)</div>
       </div>
     </div>
 
@@ -633,7 +633,7 @@
         <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
         Propósito de la Guía
       </div>
-      Este documento es el manual operativo integral de <strong>Trebond Inmobiliaria</strong>. Contempla el ecosistema completo de la plataforma: desde la captación comercial y sindicación de propiedades, pasando por el alquiler con validación biométrica facial, hasta la administración financiera avanzada con <strong>Facturación Electrónica AFIP oficial</strong>, <strong>Arqueo de Caja</strong>, <strong>Cuentas Corrientes</strong> y <strong>Liquidaciones a Propietarios</strong>.
+      Este documento es el manual operativo integral de <strong>Trebond Inmobiliaria</strong>. Contempla el ciclo completo de la plataforma: desde la captación comercial y sindicación de propiedades, pasando por el alquiler con <strong>validación biométrica facial</strong> y <strong>firma OTP</strong>, hasta la administración financiera avanzada con <strong>Cierre y Arqueo de Caja</strong>, <strong>Cuentas Corrientes con desglose de conceptos devengados</strong>, <strong>Liquidaciones a Propietarios</strong> y <strong>Facturación Electrónica AFIP</strong>.
     </div>
 
     <!-- Table of Contents -->
@@ -646,15 +646,17 @@
         <a href="#sec-1" class="toc-link">1. Enlaces y Accesos a la Plataforma</a>
         <a href="#sec-2" class="toc-link">2. Credenciales de Prueba Precargadas</a>
         <a href="#sec-3" class="toc-link">3. Facturación Electrónica AFIP (CAE & QR)</a>
-        <a href="#sec-4" class="toc-link">4. Caja y Arqueo Diario de Fondos</a>
-        <a href="#sec-5" class="toc-link">5. Cuentas Corrientes y Mora</a>
+        <a href="#sec-4" class="toc-link">4. Caja y Cierre de Caja Diario (Arqueo)</a>
+        <a href="#sec-5" class="toc-link">5. Cuentas Corrientes, Devengados y Comprobantes</a>
         <a href="#sec-6" class="toc-link">6. Liquidaciones a Propietarios</a>
-        <a href="#sec-7" class="toc-link">7. CRM Inmobiliario & Pipeline Kanban</a>
-        <a href="#sec-8" class="toc-link">8. Sindicación (ZonaProp & ArgenProp)</a>
-        <a href="#sec-9" class="toc-link">9. Firma con Biometría Facial & OTP</a>
-        <a href="#sec-10" class="toc-link">10. Portales Mobile-First (Inquilino/Dueño)</a>
-        <a href="#sec-11" class="toc-link">11. Mapa Interactivo de Propiedades</a>
-        <a href="#sec-12" class="toc-link">12. Paso a Paso: Guía de Prueba E2E (7 Min)</a>
+        <a href="#sec-7" class="toc-link">7. Vinculación de Propiedades a Propietarios</a>
+        <a href="#sec-8" class="toc-link">8. CRM Inmobiliario & Pipeline Comercial</a>
+        <a href="#sec-9" class="toc-link">9. Sindicación Multi-Portal (ZonaProp & ArgenProp)</a>
+        <a href="#sec-10" class="toc-link">10. Firma con Validación Biométrica Facial & OTP</a>
+        <a href="#sec-11" class="toc-link">11. Verificación Cruzada de Imputaciones (Admin ➔ Usuario)</a>
+        <a href="#sec-12" class="toc-link">12. Entorno de Simulación y Pruebas Rápidas</a>
+        <a href="#sec-13" class="toc-link">13. Portales Mobile-First (Inquilino / Dueño)</a>
+        <a href="#sec-14" class="toc-link">14. Paso a Paso: Guía de Prueba E2E (7 Min)</a>
       </div>
     </nav>
 
@@ -678,44 +680,39 @@
             <td>Buscador de inmuebles, catálogo con filtros, tasaciones y contacto.</td>
           </tr>
           <tr>
-            <td><strong>Facturación Electrónica AFIP</strong></td>
-            <td><a href="https://trebond-frontend.vercel.app/admin/facturacion" target="_blank">/admin/facturacion</a></td>
-            <td>Emisión de Facturas A/B/C con CAE, QR RG 5003 y descarga PDF.</td>
-          </tr>
-          <tr>
             <td><strong>Caja y Arqueo Diario</strong></td>
             <td><a href="https://trebond-frontend.vercel.app/admin/caja" target="_blank">/admin/caja</a></td>
-            <td>Libro de ingresos y egresos (ARS/USD), cheques y arqueo diario.</td>
+            <td>Libro de ingresos y egresos (ARS/USD), cheques y botón de <strong>Cierre de Caja</strong> con arqueo.</td>
           </tr>
           <tr>
             <td><strong>Cuentas Corrientes</strong></td>
             <td><a href="https://trebond-frontend.vercel.app/admin/cuenta-corriente" target="_blank">/admin/cuenta-corriente</a></td>
-            <td>Estado de cuenta por Inquilino y Propietario con cálculo de mora.</td>
+            <td>Conceptos devengados mensuales a cobrar/pagar, imputación manual y descarga de PDF.</td>
+          </tr>
+          <tr>
+            <td><strong>Gestión y Vinculación de Inmuebles</strong></td>
+            <td><a href="https://trebond-frontend.vercel.app/admin/propiedades" target="_blank">/admin/propiedades</a></td>
+            <td>Catálogo interno, sindicación a portales y vinculación guiada de propiedades a propietarios.</td>
           </tr>
           <tr>
             <td><strong>Liquidaciones a Dueños</strong></td>
             <td><a href="https://trebond-frontend.vercel.app/admin/liquidaciones" target="_blank">/admin/liquidaciones</a></td>
-            <td>Liquidación mensual, descuento de honorarios y retenciones.</td>
+            <td>Cálculo transparente de alquiler bruto, comisión, retenciones y emisión con comprobante.</td>
           </tr>
           <tr>
-            <td><strong>CRM Comercial (Kanban)</strong></td>
-            <td><a href="https://trebond-frontend.vercel.app/admin/crm" target="_blank">/admin/crm</a></td>
-            <td>Embudo de ventas/alquileres, seguimiento de prospectos y notas.</td>
+            <td><strong>Facturación Electrónica AFIP</strong></td>
+            <td><a href="https://trebond-frontend.vercel.app/admin/facturacion" target="_blank">/admin/facturacion</a></td>
+            <td>Emisión de Facturas A/B/C con CAE oficial, QR RG 5003 y descarga PDF.</td>
           </tr>
           <tr>
-            <td><strong>Portal Inquilino (Mobile)</strong></td>
+            <td><strong>Portal Inquilino (Mobile & Web)</strong></td>
             <td><a href="https://trebond-frontend.vercel.app/portal/pagos" target="_blank">/portal/pagos</a></td>
-            <td>Pago de alquiler, comprobantes, facturas PDF y tickets de arreglos.</td>
+            <td>Pago de alquiler, saldo consolidado, historial de imputaciones, contratos y tickets.</td>
           </tr>
           <tr>
             <td><strong>Portal Propietario</strong></td>
             <td><a href="https://trebond-frontend.vercel.app/dashboard/owner" target="_blank">/dashboard/owner</a></td>
-            <td>Inmuebles propios, contratos, liquidaciones y balances netos.</td>
-          </tr>
-          <tr>
-            <td><strong>Mapa Interactivo Fullscreen</strong></td>
-            <td><a href="https://trebond-frontend.vercel.app/mapa" target="_blank">/mapa</a></td>
-            <td>Geolocalización interactiva de propiedades con GPS Google Maps.</td>
+            <td>Inmuebles propios, contratos vigentes, liquidaciones mensuales y balances netos.</td>
           </tr>
         </tbody>
       </table>
@@ -723,7 +720,7 @@
 
     <!-- Section 2: Credentials -->
     <h2 id="sec-2">2. Credenciales de Prueba Precargadas</h2>
-    <p>Para auditar los diferentes permisos y vistas del sistema, utilice las siguientes cuentas operativas:</p>
+    <p>Para auditar los diferentes permisos y vistas del sistema, utilice las siguientes cuentas operativas precargadas:</p>
 
     <div class="table-responsive">
       <table>
@@ -738,21 +735,21 @@
         <tbody>
           <tr>
             <td><span class="badge badge-admin"><span class="status-dot"></span> Administrador</span></td>
-            <td><code>admin@trebond.com</code></td>
+            <td><code>admin@trebond.com.ar</code> (o <code>admin@trebond.com</code>)</td>
             <td><code>admin123</code></td>
-            <td>Control global: Facturación AFIP, Caja, Liquidaciones, CRM, Sindicación y Aprobación de Postulaciones.</td>
+            <td>Control total: Cierre de Caja, Imputación en Cta Cte, Liquidaciones, Vinculación de Inmuebles, Facturación AFIP y CRM.</td>
           </tr>
           <tr>
             <td><span class="badge badge-owner"><span class="status-dot"></span> Propietario</span></td>
             <td><code>marcelo.rodriguez@owner.com</code></td>
             <td><code>admin123</code></td>
-            <td>Acceso a sus inmuebles, firma digital de contratos con OTP y descarga de liquidaciones netas.</td>
+            <td>Acceso a sus inmuebles asociados, firma digital biométrica con OTP y descarga de liquidaciones netas.</td>
           </tr>
           <tr>
             <td><span class="badge badge-tenant"><span class="status-dot"></span> Inquilino</span></td>
             <td><code>carlos@tenant.com</code></td>
             <td><code>admin123</code></td>
-            <td>Consulta de contrato, pago mensual de cuotas, descarga de Facturas Oficiales con CAE y tickets de mantenimiento.</td>
+            <td>Consulta de cuotas pendientes, verificación de conceptos imputados por admin, firma biométrica y comprobantes PDF.</td>
           </tr>
         </tbody>
       </table>
@@ -783,134 +780,222 @@
       </div>
     </div>
 
-    <div class="step-card">
-      <div class="step-title"><span class="step-number">1</span> Emisión de Comprobante</div>
-      En <code>/admin/facturacion</code>, presione <strong>"Emitir Factura"</strong>. Seleccione el Tipo (<em>Factura C para Monotributo, Factura B/A para Responsable Inscripto</em>), el Concepto (<em>Concepto 2: Servicios Inmobiliarios / Alquiler</em>), el importe y el receptor (CUIT o DNI).
-    </div>
-
-    <div class="step-card">
-      <div class="step-title"><span class="step-number">2</span> Descarga y Entrega al Inquilino</div>
-      El comprobante aparecerá listado de inmediato con su estado fiscal <code>Emitido con CAE</code>. Presione <strong>"Descargar PDF"</strong> para obtener la factura oficial. Simultáneamente, el inquilino podrá descargarla desde su portal en <code>/portal/pagos</code>.
-    </div>
-
-    <div class="callout callout-amber">
-      <div class="callout-title">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-        Configuración de Certificados AFIP
-      </div>
-      Para operar con su CUIT real, presione el botón <strong>"Configuración AFIP"</strong> en la cabecera del módulo. Podrá cargar su CUIT, Punto de Venta y pegar su Certificado digital (<code>.crt</code>) y Clave Privada (<code>.key</code>). En modo de prueba sin certificados, el sistema opera con el simulador Sandbox de alta fidelidad sin generar deudas ante AFIP.
-    </div>
-
     <!-- Section 4: Cash Box & Daily Balance -->
-    <h2 id="sec-4">4. Caja y Arqueo Diario de Fondos <span class="route-tag">/admin/caja</span></h2>
-    <p>Control operativo y de tesorería para administrar el flujo diario de dinero físico y bancario de la inmobiliaria:</p>
+    <h2 id="sec-4">4. Caja y Cierre de Caja Diario (Arqueo) <span class="route-tag">/admin/caja</span></h2>
+    <p>El módulo de Caja gestiona el flujo de tesorería diaria de la inmobiliaria en múltiples monedas y medios de cobro. Cuenta con un sistema estricto de <strong>Cierre de Caja y Arqueo Diario</strong>:</p>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">1</span> Multi-Moneda y Medios de Pago</div>
-      Soporte nativo para movimientos en <strong>Pesos Argentinos (ARS)</strong>, <strong>Dólares Estadounidenses (USD)</strong>, transferencias electrónicas y cheques con fecha de cobro diferido.
+      <div class="step-title"><span class="step-number">1</span> Ubicación del Botón de Cierre de Caja</div>
+      Al ingresar a <code>/admin/caja</code>, en la barra superior junto al selector de fecha y filtros, encontrará el botón destacado <strong>"Cierre de Caja"</strong> con ícono de candado.
     </div>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">2</span> Registro Atómico de Cobranzas y Egresos</div>
-      Al registrar un pago de alquiler en caja, el sistema asienta en una única transacción indivisible el ingreso en el libro de caja y el crédito correspondiente en la cuenta corriente del inquilino, asegurando cuadre permanente.
+      <div class="step-title"><span class="step-number">2</span> Modal Interactivo de Arqueo de Caja</div>
+      Al hacer clic en el botón, se abre el modal interactivo de arqueo donde el sistema calcula automáticamente:
+      <ul>
+        <li><strong>Saldo Inicial / Apertura:</strong> Saldo con el que arrancó la jornada.</li>
+        <li><strong>Ingresos del Día:</strong> Sumatoria de cobros de alquileres, expensas y señas.</li>
+        <li><strong>Egresos del Día:</strong> Pagos a proveedores, gastos de mantenimiento y retiros.</li>
+        <li><strong>Saldo Teórico del Sistema:</strong> Monto que matemáticamente debería existir en caja.</li>
+      </ul>
     </div>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">3</span> Cierre y Arqueo de Caja Diario</div>
-      Permite al responsable de administración conciliar el saldo real físico versus el saldo del sistema al finalizar la jornada, generando un reporte de arqueo inmutable.
+      <div class="step-title"><span class="step-number">3</span> Ingreso del Conteo Físico Real y Cálculo de Diferencia</div>
+      El cajero o administrador ingresa en el campo <strong>"Monto Físico en Caja"</strong> la cantidad de dinero real contado en mano. En tiempo real, el sistema calcula la diferencia:
+      <ul>
+        <li>Si la diferencia es <code>$0,00</code>, la caja se marca como <strong>Cuadrada (Exacta)</strong>.</li>
+        <li>Si hay diferencia positiva o negativa, se registra como <strong>Sobrante</strong> o <strong>Faltante</strong> con justificación obligatoria.</li>
+      </ul>
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">4</span> Registro Inmutable en Base de Datos</div>
+      Al confirmar, se genera la entidad inmutable <code>CajaCierre</code> con fecha, hora, saldo teórico, saldo real, responsable del arqueo y observaciones, impidiendo modificaciones retroactivas de los movimientos de esa jornada.
+    </div>
+
+    <!-- Screenshot Caja -->
+    <div class="screenshot-box">
+      <div class="screenshot-bar">
+        <div class="screenshot-dots">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <span>Pantalla /admin/caja — Cierre de Caja y Modal de Arqueo Interactivo</span>
+      </div>
+      <img class="screenshot-img" src="screenshots/05_admin_caja_cierre_modal.png" alt="Cierre de Caja y Arqueo">
+      <div class="screenshot-caption">
+        <strong>Figura 4.1:</strong> Modal de Arqueo de Caja diario en Trebond. Compara el saldo teórico del sistema contra el conteo físico de billetes, calcula diferencias al instante y sella el libro diario.
+      </div>
     </div>
 
     <div class="page-break"></div>
 
     <!-- Section 5: Checking Accounts -->
-    <h2 id="sec-5">5. Cuentas Corrientes y Cálculo de Mora <span class="route-tag">/admin/cuenta-corriente</span></h2>
-    <p>Historial contable transparente por cada cliente (inquilinos, propietarios y proveedores):</p>
+    <h2 id="sec-5">5. Cuentas Corrientes, Devengados y Comprobantes <span class="route-tag">/admin/cuenta-corriente</span></h2>
+    <p>Este módulo centraliza el historial financiero de cada cliente (inquilino o propietario). Ha sido renovado para ofrecer visualización transparente de los conceptos devengados mensuales y permitir imputaciones directas:</p>
+
+    <h3>A. Pestañas de Desglose de Conceptos Mensuales</h3>
+    <p>Para resolver la confusión entre lo facturado, lo cobrado y lo pendiente, la interfaz cuenta con pestañas de filtro rápido:</p>
     <ul>
-      <li><strong>Débitos Automáticos:</strong> Al inicio de cada período locativo, el sistema asienta la obligación de pago del alquiler y las expensas ordinarias devengadas.</li>
-      <li><strong>Créditos por Pago:</strong> Asiento de pagos totales o parciales con identificación de medio de pago y comprobante de transferencia bancaria adjunto.</li>
-      <li><strong>Punitorios Diarios por Mora:</strong> Si el inquilino realiza el pago posterior a la fecha pactada en el contrato (ej: día 10 de cada mes), el sistema calcula automáticamente los intereses por mora según la tasa diaria fijada en la configuración de la agencia.</li>
-      <li><strong>Inmutabilidad Financiera:</strong> Los asientos contables no se pueden borrar físicamente; cualquier corrección requiere la emisión de un contra-asiento o nota de crédito para trazabilidad legal.</li>
+      <li><strong>Pestaña "Todos":</strong> Muestra la cronología completa de movimientos ordenados por fecha con saldo continuo acumulado.</li>
+      <li><strong>Pestaña "A Cobrar (Débitos Devengados)":</strong> Filtra únicamente las obligaciones devengadas en el mes (cánones locativos, expensas ordinarias, ajustes por IPC/ICL e intereses por mora). Permite saber con precisión qué debe pagar el inquilino.</li>
+      <li><strong>Pestaña "A Pagar / Créditos":</strong> Agrupa los pagos recibidos, transferencias bancarias y abonos a favor del cliente.</li>
     </ul>
 
-    <!-- Section 6: Owner Settlements -->
-    <h2 id="sec-6">6. Liquidaciones a Propietarios <span class="route-tag">/admin/liquidaciones</span></h2>
-    <p>Cálculo y rendición mensual de cuentas a los dueños de los inmuebles administrados:</p>
+    <h3>B. Trazabilidad por Badges de Origen</h3>
+    <p>Cada movimiento en la tabla cuenta con una etiqueta de color que certifica su origen:</p>
+    <ul>
+      <li><span class="badge badge-tenant">Automático · Contrato</span> Generado automáticamente por el devengamiento mensual de un contrato de locación activo.</li>
+      <li><span class="badge badge-sync">Expensas</span> Imputado a partir de la liquidación de expensas del edificio o consorcio.</li>
+      <li><span class="badge badge-caja">Carga Manual</span> Ajuste, reintegro o concepto extraordinario imputado manualmente por el administrador.</li>
+    </ul>
 
-    <div class="table-responsive">
-      <table>
-        <thead>
-          <tr>
-            <th>Concepto de Liquidación</th>
-            <th>Tipo</th>
-            <th>Cálculo Aplicado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>Alquiler Bruto Cobrado</strong></td>
-            <td><span class="badge badge-tenant">Haber (+)</span></td>
-            <td>Monto total cobrado al inquilino correspondiente al período.</td>
-          </tr>
-          <tr>
-            <td><strong>Comisión de Administración</strong></td>
-            <td><span class="badge badge-admin">Debe (-)</span></td>
-            <td>Porcentaje de honorarios pactado con la inmobiliaria (ej: 8% o 10% configurable).</td>
-          </tr>
-          <tr>
-            <td><strong>Gastos de Mantenimiento / Arreglos</strong></td>
-            <td><span class="badge badge-owner">Debe (-)</span></td>
-            <td>Deducción de facturas de proveedores por reparaciones autorizadas en el inmueble.</td>
-          </tr>
-          <tr>
-            <td><strong>Neto a Transferir al Propietario</strong></td>
-            <td><span class="badge badge-afip">Total Neto</span></td>
-            <td>Importe final acreditado a la cuenta bancaria del titular con comprobante PDF.</td>
-          </tr>
-        </tbody>
-      </table>
+    <h3>C. Imputación Manual de Conceptos Paso a Paso</h3>
+    <p><strong>¿Los conceptos se cargan desde la solapa de Cuenta Corriente?</strong> Sí. Además de los devengamientos automáticos de contratos, se habilitó el botón directo <strong>"Imputar Concepto"</strong>:</p>
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">1</span> Botón "Imputar Concepto"</div>
+      Presione el botón <strong>"Imputar Concepto"</strong> ubicado en la parte superior derecha de <code>/admin/cuenta-corriente</code>.
+    </div>
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">2</span> Formulario Unificado</div>
+      Seleccione el cliente (Inquilino o Propietario), el tipo de movimiento (<strong>Débito / Cargo</strong> si debe pagar, o <strong>Crédito / Abono</strong> si es un pago a favor), la categoría (Alquiler, Expensa, Reparación, Ajuste), el importe y una descripción clara.
+    </div>
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">3</span> Impacto Instantáneo</div>
+      Al confirmar, el saldo consolidado se recalcula al momento y el nuevo concepto queda disponible de inmediato tanto en la vista del administrador como en el portal del usuario cuando éste inicia sesión.
     </div>
 
-    <!-- Section 7: CRM & Pipeline -->
-    <h2 id="sec-7">7. CRM Inmobiliario y Pipeline Comercial <span class="route-tag">/admin/crm</span></h2>
-    <p>Embudo de ventas y alquileres para el equipo comercial de Trebond con vista Kanban de arrastrar y soltar:</p>
-
-    <div class="callout callout-purple">
-      <div class="callout-title">
-        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-        Embudo Comercial en 8 Etapas
+    <!-- Screenshot Cuenta Corriente -->
+    <div class="screenshot-box">
+      <div class="screenshot-bar">
+        <div class="screenshot-dots">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <span>Pantalla /admin/cuenta-corriente — Pestañas de Devengamiento e Imputación Manual</span>
       </div>
-      El pipeline gestiona todo el ciclo de vida de los prospectos de forma interactiva:
-      <div class="pipeline-flow">
-        <div class="pipeline-step"><span class="step-num">1</span> Nuevo Lead</div>
-        <div class="pipeline-arrow">&rarr;</div>
-        <div class="pipeline-step"><span class="step-num">2</span> Contactado</div>
-        <div class="pipeline-arrow">&rarr;</div>
-        <div class="pipeline-step"><span class="step-num">3</span> Visita Agendada</div>
-        <div class="pipeline-arrow">&rarr;</div>
-        <div class="pipeline-step"><span class="step-num">4</span> Visita Realizada</div>
-        <div class="pipeline-arrow">&rarr;</div>
-        <div class="pipeline-step"><span class="step-num">5</span> Oferta Hecha</div>
-        <div class="pipeline-arrow">&rarr;</div>
-        <div class="pipeline-step"><span class="step-num">6</span> En Negociación</div>
-        <div class="pipeline-arrow">&rarr;</div>
-        <div class="pipeline-step step-won"><span class="step-num">✓</span> Ganado (Cerrado)</div>
-        <div class="pipeline-sep">|</div>
-        <div class="pipeline-step step-lost"><span class="step-num">✕</span> Perdido</div>
+      <img class="screenshot-img" src="screenshots/06_admin_cuenta_corriente.png" alt="Cuenta Corriente y Devengamiento">
+      <div class="screenshot-caption">
+        <strong>Figura 5.1:</strong> Cuenta Corriente con saldo consolidado en pesos/dólares, selector de inquilino/dueño, pestañas de conceptos a cobrar vs a pagar y botón de Imputación Manual.
       </div>
     </div>
 
+    <h3>D. Estado de Cuenta Corriente en PDF con Branding Oficial</h3>
+    <p>Al hacer clic en <strong>"Descargar Estado de Cuenta (PDF)"</strong>, el sistema emite el documento oficial adaptado a la identidad corporativa de Trebond:</p>
     <ul>
-      <li><strong>Captura Automática de Leads:</strong> Cuando un usuario solicita una visita desde el mapa o envía una postulación web, se crea automáticamente la ficha del prospecto asociada a la propiedad.</li>
-      <li><strong>Registro Cronológico de Interacciones:</strong> Bitácora completa de llamadas telefónicas, chats de WhatsApp, reuniones presenciales y correos electrónicos con fecha y notas de seguimiento.</li>
-      <li><strong>Métricas de Conversión:</strong> Tasa de éxito por agente, tiempo promedio de cierre y origen de clientes más rentable (portal web, cartel, referidos o redes sociales).</li>
+      <li><strong>Paleta Oficial Trebond:</strong> Cabecera institucional en Azul Marino (<code>#262960</code>) y detalles en Verde Menta (<code>#C4E0CE</code>) con isotipo vectorial nítido.</li>
+      <li><strong>Datos Institucionales:</strong> Correo oficial <code>contacto@trebond.com.ar</code> y sitio web <code>www.trebond.com.ar</code>.</li>
+      <li><strong>Traducción Completa al Español:</strong> Las categorías técnicas se muestran en lenguaje claro para el cliente (ej. <em>Gasto / Expensa</em> en lugar de "expense", e <em>Interés por mora</em> en lugar de "interest").</li>
     </ul>
+
+    <!-- Screenshot PDF -->
+    <div class="screenshot-box">
+      <div class="screenshot-bar">
+        <div class="screenshot-dots">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <span>Comprobante PDF Oficial — Estado de Cuenta Corriente Trebond</span>
+      </div>
+      <img class="screenshot-img" src="screenshots/08_comprobante_pdf.png" alt="PDF Estado de Cuenta Corriente">
+      <div class="screenshot-caption">
+        <strong>Figura 5.2:</strong> Comprobante PDF emitido para el inquilino. Incluye isotipo oficial, membrete Trebond, datos fiscales y detalle de conceptos en español.
+      </div>
+    </div>
 
     <div class="page-break"></div>
 
-    <!-- Section 8: Syndication -->
-    <h2 id="sec-8">8. Sindicación Multi-Portal: ZonaProp & ArgenProp <span class="route-tag">/admin/propiedades</span></h2>
-    <p>Publicación simultánea e inteligente para multiplicar el alcance comercial de las propiedades:</p>
+    <!-- Section 6: Owner Settlements -->
+    <h2 id="sec-6">6. Liquidaciones a Propietarios <span class="route-tag">/admin/liquidaciones</span></h2>
+    <p>El módulo de liquidaciones rinde cuentas mensuales al dueño de cada propiedad administrada de forma transparente y matemática:</p>
 
+    <div class="callout callout-blue">
+      <div class="callout-title">
+        <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+        Fórmula Oficial de Liquidación Mensual
+      </div>
+      <strong>Alquiler Bruto Cobrado</strong> (-) <strong>Comisión Inmobiliaria Trebond</strong> (ej: 8% a 10%) (-) <strong>Deducciones / Reparaciones a cargo del dueño</strong> = <strong>Neto Final a Transferir al Propietario</strong>
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">1</span> Previsualización y Cálculo Antes de Emitir</div>
+      En <code>/admin/liquidaciones</code>, al presionar <strong>"Emitir Liquidación"</strong>, se abre el modal <code>EmitirLiquidacionModal</code>. El sistema detecta el contrato vigente del inmueble, el monto cobrado al inquilino en el período y calcula automáticamente los honorarios y retenciones.
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">2</span> Confirmación y Notificación al Propietario</div>
+      Al confirmar la liquidación, se emite el recibo formal de liquidación y se acredita en el saldo a favor del propietario. Cuando el propietario ingresa a su portal (<code>/dashboard/owner</code>), visualiza el desglose exacto con la fecha de pago y el botón para descargar el comprobante en PDF.
+    </div>
+
+    <!-- Section 7: Property-Owner Linking -->
+    <h2 id="sec-7">7. Vinculación de Propiedades a Propietarios <span class="route-tag">/admin/propiedades</span></h2>
+    <p><strong>¿Cómo asociar una propiedad a un propietario?</strong> Para que una propiedad pueda alquilarse, tener contratos vigentes y generar liquidaciones mensuales, es obligatorio que esté vinculada a su titular:</p>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">1</span> Columna "Propietario" en el Listado</div>
+      Al ingresar a <code>/admin/propiedades</code>, la tabla de inmuebles cuenta con la columna <strong>"Propietario"</strong>. Si la propiedad no tiene dueño asignado, se muestra el botón <strong>"Vincular Propietario"</strong> en color ámbar.
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">2</span> Modal Guiado `VincularPropietarioModal`</div>
+      Al hacer clic se abre el modal guiado de vinculación, el cual ofrece dos modalidades:
+      <ul>
+        <li><strong>Buscar Propietario Existente:</strong> Escriba el nombre, apellido, DNI o correo para seleccionarlo de la lista de usuarios con rol de Propietario.</li>
+        <li><strong>Crear Nuevo Propietario en el Momento:</strong> Si el titular aún no está registrado, complete sus datos básicos (Nombre, DNI, Email, Teléfono) y el sistema creará la cuenta y la vinculará al inmueble en un solo paso.</li>
+      </ul>
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">3</span> Habilitación para Contratos y Liquidaciones</div>
+      Una vez vinculada, el nombre del propietario aparece con un badge verde en la ficha del inmueble y el sistema habilita automáticamente la emisión de contratos y liquidaciones para ese titular.
+    </div>
+
+    <!-- Screenshot Vincular Propiedad -->
+    <div class="screenshot-box">
+      <div class="screenshot-bar">
+        <div class="screenshot-dots">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <span>Pantalla /admin/propiedades — Modal Guiado para Vincular Propietario</span>
+      </div>
+      <img class="screenshot-img" src="screenshots/07_admin_propiedades_vincular.png" alt="Vincular Propiedad a Propietario">
+      <div class="screenshot-caption">
+        <strong>Figura 7.1:</strong> Modal interactivo de asignación de propietarios en Trebond. Permite buscar clientes existentes o registrar un titular nuevo al instante.
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- Section 8: CRM -->
+    <h2 id="sec-8">8. CRM Inmobiliario y Pipeline Comercial <span class="route-tag">/admin/crm</span></h2>
+    <p>Embudo de ventas y alquileres para el equipo comercial con tablero Kanban interactivo:</p>
+    <div class="pipeline-flow">
+      <div class="pipeline-step"><span class="step-num">1</span> Nuevo Lead</div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step"><span class="step-num">2</span> Contactado</div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step"><span class="step-num">3</span> Visita Agendada</div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step"><span class="step-num">4</span> Visita Realizada</div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step"><span class="step-num">5</span> Oferta Hecha</div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step"><span class="step-num">6</span> Negociación</div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step step-won"><span class="step-num">✓</span> Ganado (Cerrado)</div>
+      <div class="pipeline-sep">|</div>
+      <div class="pipeline-step step-lost"><span class="step-num">✕</span> Perdido</div>
+    </div>
+
+    <!-- Section 9: Syndication -->
+    <h2 id="sec-9">9. Sindicación Multi-Portal: ZonaProp & ArgenProp <span class="route-tag">/admin/propiedades</span></h2>
+    <p>Publicación simultánea e inteligente para multiplicar el alcance comercial de las propiedades:</p>
     <div class="feature-grid">
       <div class="feature-card">
         <h4><span class="badge badge-sync">ZonaProp</span> Sincronización Automática</h4>
@@ -920,99 +1005,188 @@
         <h4><span class="badge badge-sync">ArgenProp</span> Sincronización Paralela</h4>
         <p>Distribuye la ficha técnica a ArgenProp de forma independiente, garantizando que fallas de un portal no interrumpan al otro.</p>
       </div>
-      <div class="feature-card">
-        <h4><span class="badge badge-admin">Toggles</span> Control Individual</h4>
-        <p>Panel de switches en la ficha de cada propiedad para activar o pausar la sindicación en cada portal de forma granular.</p>
+    </div>
+
+    <!-- Section 10: Biometric Validation -->
+    <h2 id="sec-10">10. Firma Digital con Validación Biométrica Facial y OTP <span class="route-tag">/portal/contratos</span></h2>
+    <p>Seguridad jurídica bancaria para la firma de contratos de locación y reservas sin necesidad de acudir físicamente a la oficina:</p>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">1</span> Aceptación de Términos y Consentimiento Legal</div>
+      El firmante (inquilino o propietario) accede a su contrato desde el celular o computadora y lee el clausulado completo con validez legal según la Ley de Firma Digital N° 25.506.
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">2</span> Generación de Clave OTP de 6 Dígitos</div>
+      El sistema envía una clave de un solo uso (OTP) por correo electrónico y notificación push con una validez estricta de 10 minutos para verificar la posesión de la cuenta.
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">3</span> Captura de Selfie en Vivo con Detección de Vida (Liveness)</div>
+      Se activa la cámara del dispositivo con <em>detección de vida activa</em> (parpadeo y giros leves de cabeza) para evitar fraudes con fotografías impresas, máscaras o pantallas de otros dispositivos.
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">4</span> Cotejo Facial con AWS Rekognition (>90% de Coincidencia)</div>
+      El motor de inteligencia artificial compara la selfie capturada contra la fotografía del DNI registrada en la postulación. Si el índice de similitud facial supera el <strong>90% requerido</strong>, se habilita la firma.
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">5</span> Sellado Digital Criptográfico con Hash SHA-256</div>
+      El contrato se sella con un hash SHA-256, registrando la dirección IP, coordenadas GPS del dispositivo, timestamp exacto y el score biométrico de auditoría.
+    </div>
+
+    <!-- Screenshot Biometria -->
+    <div class="screenshot-box">
+      <div class="screenshot-bar">
+        <div class="screenshot-dots">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <span>Portal de Firma Digital — Validación Biométrica Facial y Cotejo con AWS Rekognition</span>
       </div>
-      <div class="feature-card">
-        <h4><span class="badge badge-tenant">Baja</span> Despublicación Inmediata</h4>
-        <p>Al firmar el contrato de alquiler o concretar la venta en Trebond, la propiedad se despublica automáticamente de los portales externos.</p>
+      <img class="screenshot-img" src="screenshots/09_validacion_biometrica.svg" alt="Validación Biométrica Facial Trebond">
+      <div class="screenshot-caption">
+        <strong>Figura 10.1:</strong> Flujo de firma segura en 4 pasos: validación de selfie en vivo con liveness, cotejo facial del 98.4% contra DNI, validación de clave OTP y sellado criptográfico.
       </div>
     </div>
-
-    <!-- Section 9: Biometrics & OTP -->
-    <h2 id="sec-9">9. Firma Digital con Validación Biométrica Facial y OTP <span class="route-tag">/portal/contratos</span></h2>
-    <p>Seguridad jurídica de nivel bancario para la firma de contratos de locación y reservas sin necesidad de acudir a la oficina:</p>
-
-    <div class="step-card">
-      <div class="step-title"><span class="step-number">1</span> Captura de Selfie en Tiempo Real</div>
-      El firmante (inquilino o propietario) abre el contrato desde su teléfono o computadora. El sistema solicita una captura fotográfica frontal mediante la cámara del dispositivo con <em>detección de vida (liveness)</em> para evitar fraudes con fotos impresas o pantallas.
-    </div>
-
-    <div class="step-card">
-      <div class="step-title"><span class="step-number">2</span> Cotejo Facial con AWS Rekognition</div>
-      El motor biométrico compara la selfie en tiempo real contra la foto frontal del DNI previamente validada durante la postulación, exigiendo un porcentaje de coincidencia mínimo del <strong>90%</strong>.
-    </div>
-
-    <div class="step-card">
-      <div class="step-title"><span class="step-number">3</span> Firma y Sellado con Código OTP</div>
-      Una vez aprobada la biometría, el firmante solicita su código OTP de 6 dígitos (enviado por correo electrónico y notificaciones push) e introduce la clave para sellar digitalmente el contrato con fecha, hora exacta, IP y score biométrico auditado.
-    </div>
-
-    <!-- Section 10: Mobile-First Portals -->
-    <h2 id="sec-10">10. Portales de Inquilino y Propietario Mobile-First</h2>
-    <p>Experiencia de usuario fluida diseñada específicamente para pantallas táctiles de smartphones:</p>
-    <ul>
-      <li><strong>Barra de Navegación Inferior (Bottom Nav):</strong> Accesos rápidos con el pulgar para <em>Inicio, Pagos, Contratos, Arreglos y Perfil</em>.</li>
-      <li><strong>Cajón Lateral Deslizable (Drawer):</strong> Menú completo táctil accesible desde cualquier sección sin saturar la pantalla ni duplicar logos.</li>
-      <li><strong>Tarjetas Colapsables de Cuotas:</strong> En lugar de tablas anchas con desbordamiento horizontal, los vencimientos, estados de pago y liquidaciones se visualizan en tarjetas estilizadas adaptadas al ancho exacto del teléfono.</li>
-      <li><strong>Descarga Inmediata de Comprobantes:</strong> Acceso a Facturas AFIP oficiales en PDF con 1 toque para enviar por WhatsApp o guardar en el dispositivo.</li>
-    </ul>
 
     <div class="page-break"></div>
 
-    <!-- Section 11: Map -->
-    <h2 id="sec-11">11. Mapa Interactivo de Propiedades <span class="route-tag">/mapa</span></h2>
-    <p>Exploración geográfica de inmuebles en pantalla completa con sincronización en tiempo real:</p>
+    <!-- Section 11: Cross Verification (CRITICAL USER REQUEST) -->
+    <h2 id="sec-11">11. Paso a Paso: Verificación Cruzada de Imputaciones (Admin ➔ Usuario)</h2>
+    <p><strong>¿Cómo verificar que cuando se imputa un cobro o gasto a un inquilino/dueño, realmente le aparezca reflejado al loguearse con su cuenta?</strong> Siga este procedimiento exacto de auditoría cruzada:</p>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">Paso 1</span> Imputar el Concepto como Administrador</div>
+      <ol style="margin: 8px 0 0 16px; padding: 0;">
+        <li>Inicie sesión como Administrador (<code>admin@trebond.com.ar</code> / <code>admin123</code>).</li>
+        <li>Vaya a <a href="https://trebond-frontend.vercel.app/admin/cuenta-corriente" target="_blank">/admin/cuenta-corriente</a>.</li>
+        <li>En el selector superior, elija al inquilino de prueba: <strong>Carlos Inquilino (<code>carlos@tenant.com</code>)</strong>.</li>
+        <li>Haga clic en el botón <strong>"Imputar Concepto"</strong>.</li>
+        <li>Cargue un cargo de prueba (ej: <em>Tipo: Débito | Categoría: Reparación | Descripción: Arreglo cerradura principal | Monto: $25.000</em>).</li>
+        <li>Presione "Confirmar Imputación". Observe cómo el <strong>Saldo Actual Consolidado</strong> aumenta de inmediato en $25.000.</li>
+      </ol>
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">Paso 2</span> Cambiar de Sesión (Modo Incógnito)</div>
+      Para no mezclar las cookies de administrador con las de inquilino, abra una <strong>nueva ventana de incógnito en su navegador</strong> (o presione "Cerrar Sesión" en el menú de usuario).
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">Paso 3</span> Iniciar Sesión con la Cuenta del Inquilino</div>
+      <ol style="margin: 8px 0 0 16px; padding: 0;">
+        <li>Acceda a <a href="https://trebond-frontend.vercel.app/login" target="_blank">https://trebond-frontend.vercel.app/login</a>.</li>
+        <li>Ingrese las credenciales del inquilino:
+          <br/><strong>Email:</strong> <code>carlos@tenant.com</code>
+          <br/><strong>Contraseña:</strong> <code>admin123</code>
+        </li>
+      </ol>
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">Paso 4</span> Constatar el Reflejo en el Portal del Inquilino</div>
+      Al ingresar al portal del inquilino (<code>/portal/pagos</code> o <code>/portal/cuenta-corriente</code>), verifique:
+      <ul>
+        <li><strong>Saldo Total a Pagar:</strong> La tarjeta principal muestra exactamente el saldo recalculado con los $25.000 agregados.</li>
+        <li><strong>Tabla de Movimientos:</strong> Aparece una fila con la fecha de hoy, descripción <em>"Arreglo cerradura principal"</em>, categoría <code>Gasto / Expensa</code> y el badge <span class="badge badge-caja">Carga Manual</span>.</li>
+        <li><strong>Descarga de PDF:</strong> Si el inquilino presiona <em>"Descargar Estado de Cuenta (PDF)"</em>, el comprobante generado contiene el nuevo débito asentado con el diseño Trebond.</li>
+      </ul>
+    </div>
+
+    <!-- Screenshot Portal Inquilino -->
+    <div class="screenshot-box">
+      <div class="screenshot-bar">
+        <div class="screenshot-dots">
+          <span class="dot-red"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <span>Portal del Inquilino (/portal/pagos) — Vista de Saldo Consolidado y Cuotas Imputadas</span>
+      </div>
+      <img class="screenshot-img" src="screenshots/07_portal_desktop.png" alt="Portal del Inquilino">
+      <div class="screenshot-caption">
+        <strong>Figura 11.1:</strong> Vista del portal de inquilino logueado como <code>carlos@tenant.com</code>. Refleja instantáneamente los cargos, expensas y conceptos imputados por la administración.
+      </div>
+    </div>
+
+    <!-- Section 12: Test Simulation -->
+    <h2 id="sec-12">12. Entorno de Simulación y Pruebas Rápidas de Punta a Punta</h2>
+    <p><strong>¿Cómo crear un nuevo usuario para poder simular todo de cero?</strong></p>
+    <p>Para evitar tener que cargar manualmente inquilinos, propietarios, inmuebles y contratos desde formularios separados cuando se desea auditar una funcionalidad, el sistema dispone del <strong>Módulo de Simulación / Test Seeder</strong>:</p>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">1</span> Botón "Sembrar Datos de Simulación"</div>
+      Desde el panel de administración, el administrador puede ejecutar en 1 clic la siembra de un circuito operativo completo a través del endpoint interno <code>POST /admin/test-simulation/seed</code>.
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">2</span> Datos que Crea la Simulación Automática</div>
+      El generador crea en pocos segundos:
+      <ul>
+        <li>Un <strong>Inquilino de prueba nuevo</strong> (con DNI y teléfono válidos).</li>
+        <li>Un <strong>Propietario de prueba nuevo</strong> con datos bancarios asignados.</li>
+        <li>Una <strong>Propiedad en alquiler</strong> ya vinculada a ese propietario.</li>
+        <li>Un <strong>Contrato de alquiler activo</strong> por 24 meses con valor de canon locativo estipulado.</li>
+        <li>Movimientos devengados en cuenta corriente y una <strong>Liquidación pendiente de emisión</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="step-card">
+      <div class="step-title"><span class="step-number">3</span> Auditoría Limpia</div>
+      Permite a los administradores probar cobros en caja, generación de comprobantes, liquidaciones y verificar la experiencia del usuario sin interferir con contratos reales de clientes de la inmobiliaria.
+    </div>
+
+    <!-- Section 13: Mobile-First Portals -->
+    <h2 id="sec-13">13. Portales de Inquilino y Propietario Mobile-First</h2>
+    <p>Experiencia de usuario táctil diseñada específicamente para teléfonos móviles:</p>
     <ul>
-      <li><strong>Pins Interactivos por Operación:</strong> Marcadores diferenciados con precios de alquiler y venta sobre el mapa geográfico.</li>
-      <li><strong>Centrado Instantáneo:</strong> Al presionar cualquier inmueble en el panel lateral, el mapa hace foco automáticamente en su coordenada GPS.</li>
-      <li><strong>Navegación Externa:</strong> Botón destacado <code>📍 Ver en Google Maps</code> para abrir el trayecto GPS o Street View en la app oficial de Google Maps.</li>
+      <li><strong>Barra de Navegación Inferior (Bottom Nav):</strong> Accesos rápidos con el pulgar para <em>Inicio, Pagos, Contratos, Arreglos y Perfil</em>.</li>
+      <li><strong>Cajón Lateral Deslizable (Drawer):</strong> Menú táctil accesible desde cualquier sección sin saturar la pantalla.</li>
+      <li><strong>Tarjetas Adaptables de Cuotas:</strong> Vencimientos y saldos optimizados para pantallas pequeñas.</li>
+      <li><strong>Descarga en 1 Toque:</strong> Acceso a Facturas AFIP oficiales y Estados de Cuenta en PDF listos para enviar por WhatsApp.</li>
     </ul>
 
-    <!-- Section 12: Recommended E2E Test -->
-    <h2 id="sec-12">12. Paso a Paso: Guía de Prueba E2E Recomendada (7 Minutos)</h2>
+    <!-- Section 14: Recommended E2E Test -->
+    <h2 id="sec-14">14. Paso a Paso: Guía de Prueba E2E Recomendada (7 Minutos)</h2>
     <p>Para comprobar la excelencia operativa del sistema de punta a punta, recomendamos realizar este circuito de validación:</p>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">1</span> Postulación a Propiedad</div>
-      Ingrese a <a href="https://trebond-frontend.vercel.app/propiedades" target="_blank">/propiedades</a> como visitante, seleccione una unidad y presione <strong>"Postularse para Alquilar"</strong> adjuntando DNI y recibos de prueba.
+      <div class="step-title"><span class="step-number">1</span> Vincular Propiedad a Propietario</div>
+      En <code>/admin/propiedades</code>, verifique que la unidad tenga asignado a su propietario mediante el modal <strong>"Vincular Propietario"</strong>.
     </div>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">2</span> Conversión y Aprobación Administrativa</div>
-      Inicie sesión como Admin (<code>admin@trebond.com</code> / <code>admin123</code>), acceda a <code>/admin/solicitudes</code> y presione <strong>"Aprobar y Convertir en Inquilino"</strong>.
+      <div class="step-title"><span class="step-number">2</span> Firma Digital con OTP y Biometría Facial</div>
+      Ingrese como inquilino a <code>/portal/contratos</code>, complete la captura de selfie con detección de liveness y firme con su clave OTP de 6 dígitos.
     </div>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">3</span> Firma Digital con OTP y Biometría</div>
-      Inicie sesión con el inquilino en <code>/portal/contratos</code>, complete la verificación y firme con su clave OTP de 6 dígitos. Luego ingrese con el dueño (<code>marcelo.rodriguez@owner.com</code>) y confirme la firma de la parte locadora.
+      <div class="step-title"><span class="step-number">3</span> Control y Cobro en Caja</div>
+      En <code>/admin/caja</code> registre el cobro del alquiler. Al finalizar la jornada, presione <strong>"Cierre de Caja"</strong> y complete el arqueo físico.
     </div>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">4</span> Cobro y Facturación Electrónica AFIP</div>
-      En <code>/admin/facturacion</code> emita la factura por el alquiler. Verifique que se asigne el <strong>CAE oficial</strong>, el <strong>código QR RG 5003</strong> y descargue el <strong>PDF oficial</strong>.
+      <div class="step-title"><span class="step-number">4</span> Imputación y Estado de Cuenta Corriente</div>
+      En <code>/admin/cuenta-corriente</code> compruebe el balance consolidado, filtre los conceptos devengados a cobrar/pagar y descargue el PDF oficial Trebond.
     </div>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">5</span> Control en Caja y Cuenta Corriente</div>
-      Compruebe en <code>/admin/caja</code> el ingreso de los fondos y en <code>/admin/cuenta-corriente</code> el saldo actualizado del inquilino.
+      <div class="step-title"><span class="step-number">5</span> Liquidación Neta al Dueño</div>
+      En <code>/admin/liquidaciones</code> emita la liquidación mensual: compruebe el desglose de comisión y verifique que el propietario pueda visualizar su neto en <code>/dashboard/owner</code>.
     </div>
 
     <div class="step-card">
-      <div class="step-title"><span class="step-number">6</span> Liquidación Neta al Dueño</div>
-      En <code>/admin/liquidaciones</code> emita la liquidación mensual: confirme el descuento automático de los honorarios de Trebond y descargue el recibo de liquidación neta para el propietario.
-    </div>
-
-    <div class="step-card">
-      <div class="step-title"><span class="step-number">7</span> Verificación en CRM y Portales Móviles</div>
-      Acceda a <code>/admin/crm</code> para ver la tarjeta del prospecto avanzar automáticamente a la columna <strong>"Cerrado Ganado"</strong> y abra <code>/portal/pagos</code> en su teléfono para validar la visualización mobile-first.
+      <div class="step-title"><span class="step-number">6</span> Verificación Cruzada en el Portal del Usuario</div>
+      Inicie sesión en una ventana de incógnito como inquilino (<code>carlos@tenant.com</code>) y compruebe que todos los pagos y cargos imputados se reflejan inmediatamente en su portal móvil.
     </div>
 
     <!-- Footer -->
     <footer style="margin-top: 45px; padding-top: 24px; border-top: 2px solid #e2e8f0; text-align: center; color: #94a3b8; font-size: 11.5px;">
       Trebond Inmobiliaria &copy; 2026 — Plataforma de Gestión Inmobiliaria Integral. Todos los derechos reservados.<br/>
-      Documentación sincronizada automáticamente con GitHub Pages.
+      Documentación oficial sincronizada en vivo con GitHub Pages (<a href="https://franbondino.github.io/doc-trebond/" target="_blank">https://franbondino.github.io/doc-trebond/</a>).
     </footer>
 
   </main>
